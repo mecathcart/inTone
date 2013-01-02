@@ -1,0 +1,21 @@
+{
+  "name": "inTone",
+  "version": "1.0.0",
+   "manifest_version": 2,
+  "description": "How good is your intonation?",
+  "app": {
+    "launch": {
+      "local_path": "view/index.html"
+    }
+  },
+  "offline_enabled": true,
+  "permissions": [
+  	"unlimitedStorage"
+  ],
+  "icons": { 
+  	"16": "applepie16.png",
+    "48": "applepie48.png",
+    "128": "applepie128.png" 
+  }
+  
+}
