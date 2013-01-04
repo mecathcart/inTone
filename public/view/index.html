@@ -20,7 +20,11 @@
 
     <h1>inTone</h1>
     <h2> Welcome to the inTone experiment!</h2>
-      <input class = "large green button" type="button" value="Sound Check" onClick="StressTest();"/>
+
+    <div id="audio_div" class="">
+        <audio id="sound_check" src="./../audio_stimuli/test1/01-CI-ambitious.mp3"> </audio>
+    </div>
+      <input class = "large green button" type="button" value="Sound Check" onClick="soundCheck()"/>
       <a href= "./../view/stressTest.html"><input class = "large green button" type="button" value="Stress Test" /></a>
     
  <script type="text/javascript" charset="utf-8" src="./../src/StressTest.js">
