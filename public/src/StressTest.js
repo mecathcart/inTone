@@ -14,6 +14,10 @@ var playAudioFile = function(divid) {
 var stressTest = function(){
 	
 	/* Play stimuli*/
+	var stressAudio = document.createElement("audio");
+	stressAudio.id = "stress_test_stimuli"
+	stressAudio.src = "./../audio_stimuli/stressTest/believe_full.wav";
+	audio_div.appendChild(stressAudio);
 	playAudioFile("stress_test_stimuli");
 
 	/* Inserts Image*/
@@ -26,6 +30,10 @@ var stressTest = function(){
 	stress_test_image.appendChild(stressMap);
 	stressMap.name = "stressMap";
 	stressImg.useMap = "#stressMap";
+
+
+
+
 
 };
 
