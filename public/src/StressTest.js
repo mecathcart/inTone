@@ -28,16 +28,43 @@ var stressStimuli = [
 /* Stress Stimuli Index*/
 var i = 0;
 
+
 /* Inserts audio stimuli*/
 var stressAudio = document.createElement("audio");
 stressAudio.id = "stress_test_stimuli";
 audio_div.appendChild(stressAudio);
 
+var stressStimuliImg = [
+"./../audio_stimuli/stressTest/believe.gif",
+	"./../audio_stimuli/stressTest/biology.gif",
+	"./../audio_stimuli/stressTest/blanket.gif",
+	"./../audio_stimuli/stressTest/critical.gif",
+	"./../audio_stimuli/stressTest/energy.gif",
+	"./../audio_stimuli/stressTest/evaporate.gif",
+	"./../audio_stimuli/stressTest/paper.gif",
+	"./../audio_stimuli/stressTest/politician.gif",
+	"./../audio_stimuli/stressTest/procedure.gif",
+	"./../audio_stimuli/stressTest/reputation.gif",
+	"./../audio_stimuli/stressTest/today.gif",
+	"./../audio_stimuli/stressTest/tomato.gif",
+
+]
+
+/* Stress Stimuli Image Index*/
+var j = 0;
+
+/* Inserts Image*/
+var stressImg = document.createElement("img");
+
+//stressImg.src = stressStimuliImg[j];
+//stress_test_image.appendChild(stressImg);
+
+
+
 
 /* Start Stress Test*/
 var stressTest = function(){
 		
-
 	/* Plays audio stimuli*/	
 	var sample = stressStimuli[i];
 	stressAudio.src = sample;
@@ -45,9 +72,11 @@ var stressTest = function(){
 	i++;
 		
 	/* Inserts Image*/
-	var stressImg = document.createElement("img");
-	stressImg.src = "./../audio_stimuli/stressTest/believe.gif";
+//	var stressImg = document.createElement("img");
+	var sampleImage = stressStimuliImg[j];
+	stressImg.src = sampleImage;
 	stress_test_image.appendChild(stressImg);
+	j++;
 
 	/* Inserts Map*/
 	var stressMap = document.createElement("map");
