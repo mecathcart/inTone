@@ -21,19 +21,18 @@ var stressTest = function(){
 	stressImg.src = "./../audio_stimuli/stressTest/believe.gif";
 	stress_test_image.appendChild(stressImg);
 
-
-
-
-	/* Creates Map*/
-	//Not sure why this bit of code won't work
+	/* Inserts Map*/
 	var stressMap = document.createElement("map");
-	stressMap.name = "stressMap";
 	stress_test_image.appendChild(stressMap);
-	stressMap.shape = "default";
-	//stressMap.coords = "0,0,500,500";
-	stressMap.alt = "be";
+	stressMap.name = "stressMap";
 	stressImg.useMap = "#stressMap";
-	stressMap.onclick = function() {
-		console.log("be");
- 	};
+
+};
+
+var syllable1 = function(){
+	console.log("first syllable");
+};
+
+var syllable2 = function(){
+	console.log("second syllable");
 };
