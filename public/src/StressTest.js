@@ -67,6 +67,16 @@ var stressTest = function(){
 	stressMap.name = "stressMap";
 	stressImg.useMap = "#stressMap";
 
+	var area1 = document.createElement("area");
+	stressMap.appendChild(area1);
+	area1.shape = "rect";
+	area1.coords = "0,0,200,300";
+	area1.href = "#";
+	area1.onclick = function(){
+		console.log("I clicked on the first syllable");
+	};
+
+
 };
 
 var syllable1 = function(){
