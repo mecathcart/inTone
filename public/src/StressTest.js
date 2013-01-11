@@ -10,55 +10,40 @@ var playAudioFile = function(divid) {
     document.getElementById(divid).play();
 };
 
-var stressStimuli = [
-	"./../audio_stimuli/stressTest/believe_full.wav",
-	"./../audio_stimuli/stressTest/biology_full.wav",
-	"./../audio_stimuli/stressTest/blanket_full.wav",
-	"./../audio_stimuli/stressTest/critical_full.wav",
-	"./../audio_stimuli/stressTest/energy_full.wav",
-	"./../audio_stimuli/stressTest/evaporate_full.wav",
-	"./../audio_stimuli/stressTest/paper_full.wav",
-	"./../audio_stimuli/stressTest/politician_full.wav",
-	"./../audio_stimuli/stressTest/procedure_full.wav",
-	"./../audio_stimuli/stressTest/reputation_full.wav",
-	"./../audio_stimuli/stressTest/today_full.wav",
-	"./../audio_stimuli/stressTest/tomato_full.wav",
-]
 
-/* Stress Stimuli Index*/
+/*Constructor*/
+function StressStimuli(audio,image,numSyllables,stressSyllable){
+	this.audio = audio;
+	this.image = image;
+	this.numSyllables = numSyllables;
+	this.stressSyllable = stressSyllable;
+
+}
+
+var believe = new StressStimuli( "./../audio_stimuli/stressTest/believe_full.wav","./../audio_stimuli/stressTest/believe.gif",2,2);
+var biology = new StressStimuli( "./../audio_stimuli/stressTest/biology_full.wav","./../audio_stimuli/stressTest/biology.gif",4,2);
+var blanket = new StressStimuli( "./../audio_stimuli/stressTest/blanket_full.wav","./../audio_stimuli/stressTest/blanket.gif",2,1);
+var critical = new StressStimuli( "./../audio_stimuli/stressTest/critical_full.wav","./../audio_stimuli/stressTest/critical.gif",3,1);
+var energy = new StressStimuli( "./../audio_stimuli/stressTest/energy_full.wav","./../audio_stimuli/stressTest/energy.gif",3,1);
+var evaporate = new StressStimuli( "./../audio_stimuli/stressTest/evaporate_full.wav","./../audio_stimuli/stressTest/evaporate.gif",4,2);
+var paper = new StressStimuli( "./../audio_stimuli/stressTest/paper_full.wav","./../audio_stimuli/stressTest/paper.gif",2,1);
+var politician = new StressStimuli( "./../audio_stimuli/stressTest/politician_full.wav","./../audio_stimuli/stressTest/politician.gif",4,3);
+var procedure = new StressStimuli( "./../audio_stimuli/stressTest/procedure_full.wav","./../audio_stimuli/stressTest/procedure.gif",3,2);
+var reputation = new StressStimuli( "./../audio_stimuli/stressTest/reputation_full.wav","./../audio_stimuli/stressTest/reputation.gif",4,3);
+var today = new StressStimuli( "./../audio_stimuli/stressTest/today_full.wav","./../audio_stimuli/stressTest/today.gif",2,2);
+var tomato = new StressStimuli( "./../audio_stimuli/stressTest/tomato_full.wav","./../audio_stimuli/stressTest/tomato.gif",3,2);
+
+/*array of stimuli*/
+var stressStimuli = [believe, biology, blanket, critical, energy, evaporate, paper, politician, procedure, reputation, today, tomato];
 var i = 0;
 
+/* Inserts Image placeholder*/
+var stressImg = document.createElement("img");
 
 /* Inserts audio stimuli*/
 var stressAudio = document.createElement("audio");
 stressAudio.id = "stress_test_stimuli";
 audio_div.appendChild(stressAudio);
-
-var stressStimuliImg = [
-"./../audio_stimuli/stressTest/believe.gif",
-	"./../audio_stimuli/stressTest/biology.gif",
-	"./../audio_stimuli/stressTest/blanket.gif",
-	"./../audio_stimuli/stressTest/critical.gif",
-	"./../audio_stimuli/stressTest/energy.gif",
-	"./../audio_stimuli/stressTest/evaporate.gif",
-	"./../audio_stimuli/stressTest/paper.gif",
-	"./../audio_stimuli/stressTest/politician.gif",
-	"./../audio_stimuli/stressTest/procedure.gif",
-	"./../audio_stimuli/stressTest/reputation.gif",
-	"./../audio_stimuli/stressTest/today.gif",
-	"./../audio_stimuli/stressTest/tomato.gif",
-
-]
-
-/* Stress Stimuli Image Index*/
-var j = 0;
-
-/* Inserts Image*/
-var stressImg = document.createElement("img");
-
-//stressImg.src = stressStimuliImg[j];
-//stress_test_image.appendChild(stressImg);
-
 
 
 
@@ -67,16 +52,14 @@ var stressTest = function(){
 		
 	/* Plays audio stimuli*/	
 	var sample = stressStimuli[i];
-	stressAudio.src = sample;
+	stressAudio.src = sample.audio;
 	playAudioFile("stress_test_stimuli");
 	i++;
 		
 	/* Inserts Image*/
-//	var stressImg = document.createElement("img");
-	var sampleImage = stressStimuliImg[j];
-	stressImg.src = sampleImage;
+	stressImg.src = sample.image;
 	stress_test_image.appendChild(stressImg);
-	j++;
+	
 
 	/* Inserts Map*/
 	var stressMap = document.createElement("map");
