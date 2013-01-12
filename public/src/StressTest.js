@@ -45,6 +45,50 @@ var stressAudio = document.createElement("audio");
 stressAudio.id = "stress_test_stimuli";
 audio_div.appendChild(stressAudio);
 
+/* Creates the Maps*/
+var createMap1 = function(){
+	var stressMap1 = document.createElement("map");
+	stressMap1.name = "stressMap1";
+
+	var area1 = document.createElement("area");
+	area1.shape = "rect";
+	area1.coords = "0,0,200,300";
+	area1.href = "#";
+	area1.onclick = function(){
+		console.log("I clicked on the first syllable");
+	};
+
+	var area2 = document.createElement("area");
+		area2.shape = "rect";
+		area2.coords = "200,0,400,300";
+		area2.href = "#";
+		area2.onclick = function(){
+			console.log("I clicked on the second syllable");
+	};
+
+	stressImg.useMap = "#stressMap1";
+	stress_test_image.appendChild(stressMap1);
+	stressMap1.appendChild(area1);
+	stressMap1.appendChild(area2);
+};
+
+
+
+
+
+
+
+var stressMap2 = document.createElement("map");
+stressMap2.name = "stressMap2";
+
+var stressMap3 = document.createElement("map");
+stressMap3.name = "stressMap3";
+
+var stressMap4 = document.createElement("map");
+stressMap4.name = "stressMap4";
+
+
+
 
 
 /* Start Stress Test*/
@@ -59,33 +103,11 @@ var stressTest = function(){
 	/* Inserts Image*/
 	stressImg.src = sample.image;
 	stress_test_image.appendChild(stressImg);
+	createMap1();
 	
-
-	/* Inserts Map*/
-	var stressMap = document.createElement("map");
-	stress_test_image.appendChild(stressMap);
-	stressMap.name = "stressMap";
-	stressImg.useMap = "#stressMap";
-
-	var area1 = document.createElement("area");
-	stressMap.appendChild(area1);
-	area1.shape = "rect";
-	area1.coords = "0,0,200,300";
-	area1.href = "#";
-	area1.onclick = function(){
-		console.log("I clicked on the first syllable");
-	};
-
-
 };
 
-var syllable1 = function(){
-	console.log("first syllable");
-};
 
-var syllable2 = function(){
-	console.log("second syllable");
-};
 
 
 
