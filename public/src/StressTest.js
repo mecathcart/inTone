@@ -52,7 +52,7 @@ var createMap1 = function(){
 
 	var area1 = document.createElement("area");
 	area1.shape = "rect";
-	area1.coords = "0,0,155,300";
+	area1.coords = "0,0,300,300";
 	area1.href = "#";
 	area1.onclick = function(){
 		console.log("I clicked on the first syllable");
@@ -60,7 +60,7 @@ var createMap1 = function(){
 
 	var area2 = document.createElement("area");
 		area2.shape = "rect";
-		area2.coords = "155,0,400,300";
+		area2.coords = "300,0,640,300";
 		area2.href = "#";
 		area2.onclick = function(){
 			console.log("I clicked on the second syllable");
@@ -78,7 +78,7 @@ var createMap2 = function(){
 
 	var area1 = document.createElement("area");
 	area1.shape = "rect";
-	area1.coords = "0,0,100,300";
+	area1.coords = "0,0,200,300";
 	area1.href = "#";
 	area1.onclick = function(){
 		console.log("I clicked on the first syllable");
@@ -86,7 +86,7 @@ var createMap2 = function(){
 
 	var area2 = document.createElement("area");
 		area2.shape = "rect";
-		area2.coords = "100,0,200,300";
+		area2.coords = "200,0,400,300";
 		area2.href = "#";
 		area2.onclick = function(){
 			console.log("I clicked on the second syllable");
@@ -94,7 +94,7 @@ var createMap2 = function(){
 
 	var area3 = document.createElement("area");
 		area3.shape = "rect";
-		area3.coords = "200,0,300,300";
+		area3.coords = "400,0,640,300";
 		area3.href = "#";
 		area3.onclick = function(){
 			console.log("I clicked on the third syllable");
@@ -108,18 +108,51 @@ var createMap2 = function(){
 
 };
 
+var createMap3 = function(){
+	var stressMap3 = document.createElement("map");
+	stressMap3.name = "stressMap3";
+
+	var area1 = document.createElement("area");
+	area1.shape = "rect";
+	area1.coords = "0,0,150,300";
+	area1.href = "#";
+	area1.onclick = function(){
+		console.log("I clicked on the first syllable");
+	};
+
+	var area2 = document.createElement("area");
+		area2.shape = "rect";
+		area2.coords = "150,0,300,300";
+		area2.href = "#";
+		area2.onclick = function(){
+			console.log("I clicked on the second syllable");
+	};
+
+	var area3 = document.createElement("area");
+		area3.shape = "rect";
+		area3.coords = "300,0,450,300";
+		area3.href = "#";
+		area3.onclick = function(){
+			console.log("I clicked on the third syllable");
+	};
 
 
+	var area4 = document.createElement("area");
+		area4.shape = "rect";
+		area4.coords = "450,0,640,300";
+		area4.href = "#";
+		area4.onclick = function(){
+			console.log("I clicked on the fourth syllable");
+	};
 
+	stressImg.useMap = "#stressMap3";
+	stress_test_image.appendChild(stressMap3);
+	stressMap3.appendChild(area1);
+	stressMap3.appendChild(area2);
+	stressMap3.appendChild(area3);
+	stressMap3.appendChild(area4);
 
-
-var stressMap3 = document.createElement("map");
-stressMap3.name = "stressMap3";
-
-var stressMap4 = document.createElement("map");
-stressMap4.name = "stressMap4";
-
-
+};
 
 
 
@@ -140,8 +173,10 @@ var stressTest = function(){
 
 		createMap1();
 
-	}else{
+	}else if(sample.numSyllables === 3){
 		createMap2();
+	}else {
+		createMap3();
 	}
 
 
