@@ -23,11 +23,21 @@ a:hover,a:active {
 	color: #C3B4B4;
 }
 
+#stress_test_instructions{
+	margin: 20px;
+}
+
+#start_stress_test{
+	width: 135px;
+	margin-left: auto;
+	margin-right: auto;
+}
 
 #stress_test_image{
+	padding: 10px;
 	width: 700px;
-	margin-left: auto ;
-  	margin-right: auto ;
+	margin-left: auto;
+  	margin-right: auto;
 }
 
 .button,.button:visited {

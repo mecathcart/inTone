@@ -239,8 +239,13 @@ var stressTest = function(){
 		}
 		i++;
 	}else{
-		console.log("stop");
+		/*stops stress test when stimuli is done*/
+		console.log("your score is " + correctAnswer +"/" +totalAnswer);
 	}
+
+	/*hide start button*/
+	$("#start_stress_test").hide();
+	
 };
 
 

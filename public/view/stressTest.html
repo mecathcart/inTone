@@ -19,9 +19,14 @@
 
     <h1>inTone</h1>
     <h2> Stress Test</h2>
-
-    <input class = "large green button" type="button" value="Start StressTest" onClick="stressTest()"/>
-
+    <div id="stress_test_instructions">
+<p>In this 1st part of the experiment, you will hear English words and will be asked to identify the syllable
+with the most stress. The word will appear written on the screen after you hear it, and it will be separated into syllables
+for you.  You must click the syllable that matches the stressed syllable. This part of the experiment should take only a couple of minutes.</p>
+</div>
+  <div id="start_stress_test">
+    <input  class = "large green button" type="button" value="Start StressTest" onClick="stressTest()"/>
+</div>
     <div id="audio_div" class=""></div>
 
 
