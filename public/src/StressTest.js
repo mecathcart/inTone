@@ -62,8 +62,8 @@ var createMap1 = function(sample){
 			correctAnswer++;
 		}
 		console.log("The correct answer is" + correctAnswer);
-		console.log(sample);
 		totalAnswer++;
+		stress_test_image.removeChild(stressMap1);
 		stressTest();
 
 	};
@@ -77,6 +77,7 @@ var createMap1 = function(sample){
 				correctAnswer++;
 			}
 			totalAnswer++;
+			stress_test_image.removeChild(stressMap1);
 			stressTest();
 			console.log("The correct answer is" + correctAnswer);
 
@@ -101,8 +102,7 @@ var createMap2 = function(sample){
 				correctAnswer++;
 			}
 			totalAnswer++;
-			console.log(sample);
-
+			stress_test_image.removeChild(stressMap2);
 			stressTest();
 			console.log("The correct answer is" + correctAnswer);
 
@@ -117,6 +117,7 @@ var createMap2 = function(sample){
 				correctAnswer++;
 			}
 			totalAnswer++;
+			stress_test_image.removeChild(stressMap2);
 			stressTest();
 			console.log("The correct answer is" + correctAnswer);
 		};
@@ -130,6 +131,7 @@ var createMap2 = function(sample){
 				correctAnswer++;
 			}
 			totalAnswer++;
+			stress_test_image.removeChild(stressMap2);
 			stressTest();
 			console.log("The correct answer is" + correctAnswer);
 		};
@@ -157,8 +159,7 @@ var createMap3 = function(sample){
 
 			}
 			totalAnswer++;
-			console.log(sample);
-
+			stress_test_image.removeChild(stressMap3);
 			stressTest();
 			console.log("The correct answer is" + correctAnswer);
 
@@ -173,6 +174,7 @@ var createMap3 = function(sample){
 				correctAnswer++;
 			}
 			totalAnswer++;
+			stress_test_image.removeChild(stressMap3);
 			stressTest();
 			console.log("The correct answer is" + correctAnswer);
 		};
@@ -186,6 +188,7 @@ var createMap3 = function(sample){
 				correctAnswer++;
 			}
 			totalAnswer++;
+			stress_test_image.removeChild(stressMap3);
 			stressTest();
 			console.log("The correct answer is" + correctAnswer);
 
@@ -200,6 +203,7 @@ var createMap3 = function(sample){
 				correctAnswer++;
 			}
 			totalAnswer++;
+			stress_test_image.removeChild(stressMap3);
 			stressTest();
 			console.log("The correct answer is" + correctAnswer);
 
@@ -211,30 +215,31 @@ var createMap3 = function(sample){
 	stressMap3.appendChild(area2);
 	stressMap3.appendChild(area3);
 	stressMap3.appendChild(area4);
-
 };
-
 
 /* Start Stress Test*/
 var stressTest = function(){
+	if(i < stressStimuli.length){	
+		/* Plays audio stimuli*/
+		var sample = stressStimuli[i];	
+		stressAudio.src = sample.audio;
+		playAudioFile("stress_test_stimuli");
 		
-	/* Plays audio stimuli*/
-	var sample = stressStimuli[i];	
-	stressAudio.src = sample.audio;
-	playAudioFile("stress_test_stimuli");
-	i++;
-		
-	/* Inserts Image*/
-	stressImg.src = sample.image;
-	stress_test_image.appendChild(stressImg);
+		/* Inserts Image*/
+		stressImg.src = sample.image;
+		stress_test_image.appendChild(stressImg);
 
-	/*Inserts Map*/
-	if(sample.numSyllables === 2){
-		createMap1(sample);
-	}else if(sample.numSyllables === 3){
-		createMap2(sample);
-	}else {
-		createMap3(sample);
+		/*Inserts Map*/
+		if(sample.numSyllables === 2){
+			createMap1(sample);
+		}else if(sample.numSyllables === 3){
+			createMap2(sample);
+		}else {
+			createMap3(sample);
+		}
+		i++;
+	}else{
+		console.log("stop");
 	}
 };
 
