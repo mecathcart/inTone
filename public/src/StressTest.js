@@ -5,11 +5,9 @@ var soundCheck = function(){
    playAudioFile("sound_check");
 };
 
-/* Play sound check*/
 var playAudioFile = function(divid) {
     document.getElementById(divid).play();
 };
-
 
 /*Constructor*/
 function StressStimuli(audio,image,numSyllables,stressSyllable){
@@ -20,6 +18,7 @@ function StressStimuli(audio,image,numSyllables,stressSyllable){
 
 }
 
+/*Stimuli*/
 var believe = new StressStimuli( "./../audio_stimuli/stressTest/believe_full.wav","./../stress_images/believe.gif",2,2);
 var biology = new StressStimuli( "./../audio_stimuli/stressTest/biology_full.wav","./../stress_images/biology.gif",4,2);
 var blanket = new StressStimuli( "./../audio_stimuli/stressTest/blanket_full.wav","./../stress_images/blanket.gif",2,1);
@@ -45,8 +44,12 @@ var stressAudio = document.createElement("audio");
 stressAudio.id = "stress_test_stimuli";
 audio_div.appendChild(stressAudio);
 
+var totalAnswer = 0;
+var correctAnswer = 0;
+
+
 /* Creates the Maps*/
-var createMap1 = function(){
+var createMap1 = function(sample){
 	var stressMap1 = document.createElement("map");
 	stressMap1.name = "stressMap1";
 
@@ -55,7 +58,14 @@ var createMap1 = function(){
 	area1.coords = "0,0,300,300";
 	area1.href = "#";
 	area1.onclick = function(){
-		console.log("I clicked on the first syllable");
+		if(sample.stressSyllable === 1){
+			correctAnswer++;
+		}
+		console.log("The correct answer is" + correctAnswer);
+		console.log(sample);
+		totalAnswer++;
+		stressTest();
+
 	};
 
 	var area2 = document.createElement("area");
@@ -63,7 +73,13 @@ var createMap1 = function(){
 		area2.coords = "300,0,640,300";
 		area2.href = "#";
 		area2.onclick = function(){
-			console.log("I clicked on the second syllable");
+			if(sample.stressSyllable === 2){
+				correctAnswer++;
+			}
+			totalAnswer++;
+			stressTest();
+			console.log("The correct answer is" + correctAnswer);
+
 	};
 
 	stressImg.useMap = "#stressMap1";
@@ -72,7 +88,7 @@ var createMap1 = function(){
 	stressMap1.appendChild(area2);
 };
 
-var createMap2 = function(){
+var createMap2 = function(sample){
 	var stressMap2 = document.createElement("map");
 	stressMap2.name = "stressMap2";
 
@@ -81,7 +97,15 @@ var createMap2 = function(){
 	area1.coords = "0,0,200,300";
 	area1.href = "#";
 	area1.onclick = function(){
-		console.log("I clicked on the first syllable");
+		if(sample.stressSyllable === 1){
+				correctAnswer++;
+			}
+			totalAnswer++;
+			console.log(sample);
+
+			stressTest();
+			console.log("The correct answer is" + correctAnswer);
+
 	};
 
 	var area2 = document.createElement("area");
@@ -89,16 +113,26 @@ var createMap2 = function(){
 		area2.coords = "200,0,400,300";
 		area2.href = "#";
 		area2.onclick = function(){
-			console.log("I clicked on the second syllable");
-	};
+			if(sample.stressSyllable === 2){
+				correctAnswer++;
+			}
+			totalAnswer++;
+			stressTest();
+			console.log("The correct answer is" + correctAnswer);
+		};
 
 	var area3 = document.createElement("area");
 		area3.shape = "rect";
 		area3.coords = "400,0,640,300";
 		area3.href = "#";
 		area3.onclick = function(){
-			console.log("I clicked on the third syllable");
-	};
+			if(sample.stressSyllable === 3){
+				correctAnswer++;
+			}
+			totalAnswer++;
+			stressTest();
+			console.log("The correct answer is" + correctAnswer);
+		};
 
 	stressImg.useMap = "#stressMap2";
 	stress_test_image.appendChild(stressMap2);
@@ -108,7 +142,7 @@ var createMap2 = function(){
 
 };
 
-var createMap3 = function(){
+var createMap3 = function(sample){
 	var stressMap3 = document.createElement("map");
 	stressMap3.name = "stressMap3";
 
@@ -117,7 +151,17 @@ var createMap3 = function(){
 	area1.coords = "0,0,150,300";
 	area1.href = "#";
 	area1.onclick = function(){
-		console.log("I clicked on the first syllable");
+		if(sample.stressSyllable === 1){
+				correctAnswer++;
+				console.log(sample);
+
+			}
+			totalAnswer++;
+			console.log(sample);
+
+			stressTest();
+			console.log("The correct answer is" + correctAnswer);
+
 	};
 
 	var area2 = document.createElement("area");
@@ -125,25 +169,41 @@ var createMap3 = function(){
 		area2.coords = "150,0,300,300";
 		area2.href = "#";
 		area2.onclick = function(){
-			console.log("I clicked on the second syllable");
-	};
+			if(sample.stressSyllable === 2){
+				correctAnswer++;
+			}
+			totalAnswer++;
+			stressTest();
+			console.log("The correct answer is" + correctAnswer);
+		};
 
 	var area3 = document.createElement("area");
 		area3.shape = "rect";
 		area3.coords = "300,0,450,300";
 		area3.href = "#";
 		area3.onclick = function(){
-			console.log("I clicked on the third syllable");
-	};
+			if(sample.stressSyllable === 3){
+				correctAnswer++;
+			}
+			totalAnswer++;
+			stressTest();
+			console.log("The correct answer is" + correctAnswer);
 
+		};
 
 	var area4 = document.createElement("area");
 		area4.shape = "rect";
 		area4.coords = "450,0,640,300";
 		area4.href = "#";
 		area4.onclick = function(){
-			console.log("I clicked on the fourth syllable");
-	};
+			if(sample.stressSyllable === 4){
+				correctAnswer++;
+			}
+			totalAnswer++;
+			stressTest();
+			console.log("The correct answer is" + correctAnswer);
+
+		};
 
 	stressImg.useMap = "#stressMap3";
 	stress_test_image.appendChild(stressMap3);
@@ -155,12 +215,11 @@ var createMap3 = function(){
 };
 
 
-
 /* Start Stress Test*/
 var stressTest = function(){
 		
-	/* Plays audio stimuli*/	
-	var sample = stressStimuli[i];
+	/* Plays audio stimuli*/
+	var sample = stressStimuli[i];	
 	stressAudio.src = sample.audio;
 	playAudioFile("stress_test_stimuli");
 	i++;
@@ -169,18 +228,14 @@ var stressTest = function(){
 	stressImg.src = sample.image;
 	stress_test_image.appendChild(stressImg);
 
+	/*Inserts Map*/
 	if(sample.numSyllables === 2){
-
-		createMap1();
-
+		createMap1(sample);
 	}else if(sample.numSyllables === 3){
-		createMap2();
+		createMap2(sample);
 	}else {
-		createMap3();
+		createMap3(sample);
 	}
-
-
-	
 };
 
 
