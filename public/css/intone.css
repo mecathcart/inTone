@@ -8,8 +8,7 @@ body {
 	font-family: "Trebuchet MS", Verdana, Tahoma, sans-serif;
 	font-size: 1em;
 	margin: 0em;
-	padding: 0em;
-	
+	padding: 0em;	
 }
 
 a:link,a:visited {
@@ -38,6 +37,22 @@ a:hover,a:active {
 	width: 700px;
 	margin-left: auto;
   	margin-right: auto;
+}
+
+#results{
+	padding: 10px;
+	width: 700px;
+	margin-left: auto;
+  	margin-right: auto;
+
+}
+
+#practice{
+	padding: 10px;
+	width: 700px;
+	margin-left: auto;
+  	margin-right: auto;
+  	display: none;
 }
 
 .button,.button:visited {

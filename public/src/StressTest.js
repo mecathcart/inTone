@@ -47,7 +47,6 @@ audio_div.appendChild(stressAudio);
 var totalAnswer = 0;
 var correctAnswer = 0;
 
-
 /* Creates the Maps*/
 var createMap1 = function(sample){
 	var stressMap1 = document.createElement("map");
@@ -220,6 +219,7 @@ var createMap3 = function(sample){
 /* Start Stress Test*/
 var stressTest = function(){
 	if(i < stressStimuli.length){	
+
 		/* Plays audio stimuli*/
 		var sample = stressStimuli[i];	
 		stressAudio.src = sample.audio;
@@ -241,9 +241,14 @@ var stressTest = function(){
 	}else{
 		/*stops stress test when stimuli is done*/
 		console.log("your score is " + correctAnswer +"/" +totalAnswer);
+		$("#stress_test_image").hide();
+
+		document.getElementById("results").innerHTML ="Your score is " + correctAnswer +"/" +totalAnswer;
+		$("#practice").show();
 	}
 
-	/*hide start button*/
+	/*hide start button and instructions*/
+	$("#stress_test_instructions").hide();
 	$("#start_stress_test").hide();
 	
 };
