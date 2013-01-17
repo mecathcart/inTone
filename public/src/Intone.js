@@ -1,5 +1,5 @@
 
-/*Constructor*/
+/*Constructors*/
 function IntoneStimuli(category,audioI, audioN, continuationA,continuationB){
 	this.category = category;
 	this.audioI = audioI;
@@ -20,7 +20,7 @@ function Filler(audio,continuationA,continuationB,answer){
 /*Stimuli*/
 var ambitious = new IntoneStimuli("compliment", 
 	"./../audio_stimuli/Test1/01-CI-ambitious.mp3",
-	"./../audio_stimuli/Test1/01-CN-ambitious.mp3"
+	"./../audio_stimuli/Test1/01-CN-ambitious.mp3",
 	"She doesn’t have much talent, unfortunately.", 
 	"She has achieved so much in her career.");
 var children = new IntoneStimuli("compliment", 
@@ -45,7 +45,7 @@ var friendly = new IntoneStimuli("compliment",
 	"She is wonderful with children.");
 var hair = new IntoneStimuli("compliment",
 	"./../audio_stimuli/Test1/06-CI-hair.mp3",
-	"./../audio_stimuli/Test1/06-CN-hair.mp3"
+	"./../audio_stimuli/Test1/06-CN-hair.mp3",
 	"She is not very pretty otherwise.", 
 	"She has a nice face, too.");
 var intelligent = new IntoneStimuli("compliment",
@@ -79,15 +79,36 @@ var swimmer = new IntoneStimuli("compliment",
 	 "He can’t play any other sports, though.", 
 	 "He could even win an Olympic medal.");
 
-
+var intoneStimuli = [ambitious, children, colorful, food, hair, intelligent, large, popular, read, rich, swimmer];
+var i = 0;
 
 var practice = function(){
+	/*hide start button and instructions*/
+	$("#practice_instructions").hide();
+	$("#start_practice").hide();
+
+	var sample = intoneStimuli[i];	
+
+	/* Plays audio stimuli*/	
+	var intoneAudio = document.createElement("audio");
+	intoneAudio.id = "intone_stimuli";
+	audio_div.appendChild(intoneAudio);
+	intoneAudio.src = sample.audioI;
+	playAudioFile("intone_stimuli");
+
+	/*Insert continuations*/
+	document.getElementById("continuationA").innerHTML = sample.continuationA;
+	document.getElementById("continuationB").innerHTML = sample.continuationB;
+
+	/*Move on to next stimuli*/
+	i++;
 	console.log(ambitious.audioN);
 }
 
 var playAudioFile = function(divid) {
     document.getElementById(divid).play();
 };
+
 
 
 

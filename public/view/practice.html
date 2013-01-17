@@ -17,26 +17,22 @@
   </head>
 
   <body>
-
     <h2> Welcome to part 2 of the experiment!</h2>
+    <div id = "practice_instructions">
+      You will first hear an auditorily presented sentence.  Then you will see a fixation cross (+), followed by two written continuations.
+      <p>
+      Your task is to select the continuation that best follows the sentence you heard. 
+      <p>
+      You will have a practice session first, followed by the actual experiment, which lasts about 15 minutes.
+      <div id="start_practice">
+         <input  class = "large green button" type="button" value="Start Practice" onClick="practice()"/>
+      </div>
+    </div>
+    <div id="audio_div" class=""></div>
+    <div id="continuationA"></div>
+    <div id="continuationB"></div>
 
-   <div id = "practice_instructions">
-    You will first hear an auditorily presented sentence.  Then you will see a fixation cross (+), followed by two written continuations.
-
-
-<p>
-Your task is to select the continuation that best follows the sentence you heard. To choose the continuation on the top of the screen, press "t". To choose the continuation on the bottom of the screen, press "b".
-<p>
-You will have a practice session first, followed by the actual experiment, which lasts about 15 minutes.
-
-<div id="start_practice">
-    <input  class = "large green button" type="button" value="Start Practice" onClick="practice()"/>
-</div>
-
-   </div>
     
-    <script type="text/javascript" charset="utf-8" src="./../src/Intone.js">
-    </script>
-    
+    <script type="text/javascript" charset="utf-8" src="./../src/Intone.js"> </script>  
   </body>
 </html>

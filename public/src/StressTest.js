@@ -1,5 +1,3 @@
-
-
 /* Play sound check*/
 var soundCheck = function(){
    playAudioFile("sound_check");
@@ -218,6 +216,9 @@ var createMap3 = function(sample){
 
 /* Start Stress Test*/
 var stressTest = function(){
+	/*hide start button and instructions*/
+	$("#stress_test_instructions").hide();
+	$("#start_stress_test").hide();
 	if(i < stressStimuli.length){	
 
 		/* Plays audio stimuli*/
@@ -237,20 +238,16 @@ var stressTest = function(){
 		}else {
 			createMap3(sample);
 		}
+		/*Move on to next stimuli*/
 		i++;
 	}else{
 		/*stops stress test when stimuli is done*/
 		console.log("your score is " + correctAnswer +"/" +totalAnswer);
 		$("#stress_test_image").hide();
-
 		document.getElementById("results").innerHTML ="Your score is " + correctAnswer +"/" +totalAnswer;
 		$("#practice").show();
 	}
 
-	/*hide start button and instructions*/
-	$("#stress_test_instructions").hide();
-	$("#start_stress_test").hide();
-	
 };
 
 
