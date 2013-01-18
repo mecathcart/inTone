@@ -370,7 +370,7 @@ var zoo = new Filler(
 
 
 
-var practice [colorful, large, appliepie, dangerous];
+var practiceStimuli = [colorful, large, applepie, bigcities, like, planning, beach, boatride];
 
 
 var intoneStimuli = [ambitious, children, colorful, food, hair, intelligent, large, popular, read, rich, swimmer];
@@ -385,7 +385,7 @@ var practice = function(){
 	$("#practice_instructions").hide();
 	$("#start_practice").hide();
 
-	var sample = intoneStimuli[i];	
+	var sample = practiceStimuli[i];	
 
 	/* Plays audio stimuli*/	
 	intoneAudio.src = sample.audioI;
