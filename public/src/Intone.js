@@ -9,12 +9,10 @@ function IntoneStimuli(category,audioI, audioN, continuationA,continuationB){
 
 }
 
-function Filler(audio,continuationA,continuationB,answer){
+function Filler(audio,continuationA,continuationB){
 	this.audio = audio;
 	this.continuationA = continuationA;
 	this.continuationB = continuationB;
-	this.answer = answer;	
-
 }
 
 /*Stimuli*/
@@ -220,8 +218,159 @@ var wants = new IntoneStimuli("verb",
 	 "But his parents won’t let him.",
 	 "Maybe you should invite him.");
 
+/*Fillers*/
+var beach = new Filler(
+	"./../audio_stimuli/Test1/F1-I-beach.mp3",
+	"She played in the water.",
+	"She went roller-skating.");
+var boatride = new Filler(
+	"./../audio_stimuli/Test1/F2-I-boatride.mp3",
+	"He got sick, though.",
+	"He went skiing, too.");
+var boyfriend = new Filler(
+	"./../audio_stimuli/Test1/F3-I-boyfriend.mp3",
+	"They talked for a long time.",
+	"She was also reading a book.");
+var cake = new Filler(
+	"./../audio_stimuli/Test1/F4-I-cake.mp3",
+	"But she didn’t have enough flour.",
+	"She added vegetables to it.");
+var children = new Filler(
+	"./../audio_stimuli/Test1/F5-I-children.mp3",
+	"She fed them breakfast.",
+	"But she didn’t say goodbye.");
+var clothes = new Filler(
+	"./../audio_stimuli/Test1/F6-I-clothes.mp3",
+	"Then she put them in the dryer.",
+	"Then she lit some candles.");
+var concert = new Filler(
+	"./../audio_stimuli/Test1/F7-I-concert.mp3",
+	"They wouldn’t sign autographs, though.",
+	"They watched the football game.");
+var dinner = new Filler(
+	"./../audio_stimuli/Test1/F8-I-dinner.mp3",
+	"Then he washed the dishes.",
+	"Then he drove home from work.");
+var drowning = new Filler(
+	"./../audio_stimuli/Test1/F9-I-drowning.mp3",
+	"He brought the boy to the hospital afterwards.",
+	"He ate some pizza for dinner afterwards.");
+var fishing = new Filler(
+	"./../audio_stimuli/Test1/F10-I-fishin.mp3",
+	"She only caught one fish, though.",
+	"She rode a pony through the woods.");
+var flowers = new Filler(
+	"./../audio_stimuli/Test1/F11-I-flowers.mp3",
+	"Then she watered them.",
+	"Then she parked the car.");
+var goal = new Filler(
+	"./../audio_stimuli/Test1/F12-I-goal.mp3",
+	"The soccer player cheered.",
+	"But he was upset.");
+var haircut = new Filler(
+	"./../audio_stimuli/Test1/F13-I-haircut.mp3",
+	"Then she went on a date.",
+	"Then she took a shower.");
+var hand = new Filler(
+	"./../audio_stimuli/Test1/F14-I-hand.mp3",
+	"He bandaged it later.",
+	"He played tennis later.");
+var home = new Filler(
+	"./../audio_stimuli/Test1/F15-I-home.mp3",
+	"She didn’t hear the doorbell ring, though.",
+	"She went swimming near the park.");
+var homework = new Filler(
+	"./../audio_stimuli/Test1/F16-I-homework.mp3",
+	"He graded it right away.",
+	"He drew pictures on it.");
+var house = new Filler(
+	"./../audio_stimuli/Test1/F17-I-house.mp3",
+	"He wants to move across the country.",
+	"He wants to become an artist.");
+var joke = new Filler(
+	"./../audio_stimuli/Test1/F18-I-joke.mp3",
+	"She shared it with her friends.",
+	"She made some iced tea instead.");
+var leak = new Filler(
+	"./../audio_stimuli/Test1/F19-I-leak.mp3",
+	"He fixed the pipes.",
+	"He painted the wall.");
+var library = new Filler(
+	"./../audio_stimuli/Test1/F20-I-library.mp3",
+	"She will try to read there.",
+	"She will take her dog for a walk there.");
+var lost = new Filler(
+	"./../audio_stimuli/Test1/F21-I-lost.mp3",
+	"He didn’t get angry, though.",
+	"He celebrated all night.");
+var mall = new Filler(
+	"./../audio_stimuli/Test1/F22-I-mall.mp3",
+	"She bought some nice clothes.",
+	"She forgot to eat lunch, though.");
+var money = new Filler(
+	"./../audio_stimuli/Test1/F23-I-money.mp3",
+	"So he couldn’t pay the bill.",
+	"He had fun, anyway.");
+var mountain = new Filler(
+	"./../audio_stimuli/Test1/F24-I-mountain.mp3",
+	"She took lots of pictures.",
+	"She took a plane ride to Canada.");
+var movie = new Filler(
+	"./../audio_stimuli/Test1/F25-I-movie.mp3",
+	"We think it will be great.",
+	"He will play baseball next year.");
+var newyork = new Filler(
+	"./../audio_stimuli/Test1/F26-I-newyork.mp3",
+	"She went to see the Statue of Liberty.",
+	"However, she went to see the Eiffel Tower.");
+var party = new Filler(
+	"./../audio_stimuli/Test1/F27-I-party.mp3",
+	"She invited all of her friends.",
+	"She camped in the mountains.");
+var patient = new Filler(
+	"./../audio_stimuli/Test1/F28-I-patient.mp3",
+	"Then he gave some advice.",
+	"Then he drank a beer.");
+var postoffice = new Filler(
+	"./../audio_stimuli/Test1/F29-I-postoffice.mp3",
+	"He mailed a letter.",
+	"He didn’t cash his check.");
+var scarf = new Filler(
+	"./../audio_stimuli/Test1/F30-I-scarf.mp3",
+	"asdfadf",
+	"asdfasdf");
+var skirt = new Filler(
+	"./../audio_stimuli/Test1/F31-I-skirt.mp3",
+	"She got dressed afterwards.",
+	"She went hunting afterwards.");
+var spanish = new Filler(
+	"./../audio_stimuli/Test1/F32-I-spanish.mp3",
+	"She went to Mexico to practice it.",
+	"She went to China to practice it.");
+var ticket = new Filler(
+	"./../audio_stimuli/Test1/F33-I-ticket.mp3",
+	"She stayed very calm, though.",
+	"Then she started playing the violin.");
+var wallets = new Filler(
+	"./../audio_stimuli/Test1/F34-I-wallets.mp3",
+	"They ran away quickly.",
+	"They waited for the police.");
+var wedding = new Filler(
+	"./../audio_stimuli/Test1/F35-I-wedding.mp3",
+	"She danced all night.",
+	"But she wore old clothes.");
+var zoo = new Filler(
+	"./../audio_stimuli/Test1/F36-I-zoo.mp3",
+	"They saw the monkeys.",
+	"They saw the dinosaurs.");
 
 
+
+
+
+
+
+var practice [colorful, large, appliepie, dangerous];
 
 
 var intoneStimuli = [ambitious, children, colorful, food, hair, intelligent, large, popular, read, rich, swimmer];
