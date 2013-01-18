@@ -220,7 +220,7 @@ var wants = new IntoneStimuli("verb",
 
 /*Fillers*/
 var beach = new Filler(
-	"./../audio_stimuli/Test1/F1-I-beach.mp3",
+	"./../audio_stimuli/Test1/F1-P-beach.mp3",
 	"She played in the water.",
 	"She went roller-skating.");
 var boatride = new Filler(
@@ -366,21 +366,34 @@ var zoo = new Filler(
 
 
 
-
-
-
-
+/*Array of stimuli*/
 var practiceStimuli = [colorful, large, applepie, bigcities, like, planning, beach, boatride];
-
-
 var intoneStimuli = [ambitious, children, colorful, food, hair, intelligent, large, popular, read, rich, swimmer];
 var i = 0;
 
+function fisherYates ( myArray ) {
+  var i = myArray.length, j, tempi, tempj;
+  if ( i == 0 ) return false;
+  while ( --i ) {
+     j = Math.floor( Math.random() * ( i + 1 ) );
+     tempi = myArray[i];
+     tempj = myArray[j];
+     myArray[i] = tempj;
+     myArray[j] = tempi;
+   }
+}
+
+fisherYates(practiceStimuli);	
+
+
+
+/*creates audio div*/
 var intoneAudio = document.createElement("audio");
 intoneAudio.id = "intone_stimuli";
 audio_div.appendChild(intoneAudio);
 
 var practice = function(){
+
 	/*hide start button and instructions*/
 	$("#practice_instructions").hide();
 	$("#start_practice").hide();
