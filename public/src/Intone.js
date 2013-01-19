@@ -385,8 +385,6 @@ function fisherYates ( myArray ) {
 
 fisherYates(practiceStimuli);	
 
-
-
 /*creates audio div*/
 var intoneAudio = document.createElement("audio");
 intoneAudio.id = "intone_stimuli";
@@ -397,19 +395,29 @@ var practice = function(){
 	/*hide start button and instructions*/
 	$("#practice_instructions").hide();
 	$("#start_practice").hide();
+	if(i < practiceStimuli.length){	
 
-	var sample = practiceStimuli[i];	
+		var sample = practiceStimuli[i];	
 
-	/* Plays audio stimuli*/	
-	intoneAudio.src = sample.audioI;
-	playAudioFile("intone_stimuli");
+		/* Plays audio stimuli*/	
+		if ( sample.hasOwnProperty('audio') ) {
+			intoneAudio.src = sample.audio;
+			playAudioFile("intone_stimuli");
+		}else{
+			intoneAudio.src = sample.audioI;
+			playAudioFile("intone_stimuli");
+		}
 
-	/*Insert continuations*/
-	document.getElementById("continuationA").innerHTML = sample.continuationA;
-	document.getElementById("continuationB").innerHTML = sample.continuationB;
+		/*Insert continuations*/
+		document.getElementById("continuationA").innerHTML = sample.continuationA;
+		document.getElementById("continuationB").innerHTML = sample.continuationB;
 
-	/*Move on to next stimuli*/
-	i++;
+		/*Move on to next stimuli*/
+		i++;
+	}else{
+		console.log("asldfajf");
+	}
+	
 }
 
 var playAudioFile = function(divid) {
