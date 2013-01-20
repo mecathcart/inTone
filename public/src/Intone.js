@@ -15,6 +15,7 @@ var verbCount = 0;
 var practice = function(){
 
 	/*hide start button and instructions*/
+	$("h2").hide();
 	$("#practice_instructions").hide();
 	$("#start_practice").hide();
 	
