@@ -1,18 +1,6 @@
 var i = 0;
 
-function fisherYates ( myArray ) {
-  var i = myArray.length, j, tempi, tempj;
-  if ( i == 0 ) return false;
-  while ( --i ) {
-     j = Math.floor( Math.random() * ( i + 1 ) );
-     tempi = myArray[i];
-     tempj = myArray[j];
-     myArray[i] = tempj;
-     myArray[j] = tempi;
-   }
-}
 
-//fisherYates(window.practiceStimuli);	
 
 /*creates audio div*/
 var intoneAudio = document.createElement("audio");
@@ -33,12 +21,18 @@ var practice = function(){
 		var sample = window.practiceStimuli[i];	
 
 		/* Plays audio stimuli*/	
-		if ( sample.hasOwnProperty('audio') ) {
+		if (sample.hasOwnProperty('audio') ) {
 			intoneAudio.src = sample.audio;
 			playAudioFile("intone_stimuli");
 		}else{
-			intoneAudio.src = sample.audioI;
-			playAudioFile("intone_stimuli");
+			if(sample.hasOwnProperty('compliment')){
+				intoneAudio.src = sample.audioI;
+				playAudioFile("intone_stimuli");
+			}else{
+				intoneAudio.src = sample.audioN;
+				playAudioFile("intone_stimuli");
+			}
+			
 		}
 
 		/*Insert continuations*/

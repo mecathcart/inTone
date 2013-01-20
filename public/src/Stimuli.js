@@ -81,76 +81,76 @@ var swimmer = new IntoneStimuli("compliment",
 /*Test 1 Stress Adjectives*/
 var applepie = new IntoneStimuli("stressAdj",
 	 "./../audio_stimuli/Test1/13-SA-applepie.mp3",
-	 "./../audio_stimuli/Test1/13-SI-applepie.mp3",
+	 "./../audio_stimuli/Test1/13-SN-applepie.mp3",
 	 "The peach pie tasted bad.",
 	 "The apple cake tasted bad."
 	);
 var bigcities = new IntoneStimuli("stressAdj",
 	 "./../audio_stimuli/Test1/14-SA-bigcities.mp3",
-	 "./../audio_stimuli/Test1/14-SI-bigcities.mp3",
+	 "./../audio_stimuli/Test1/14-SN-bigcities.mp3",
 	 "The small cities are safe.",
 	 "The big towns are safe."
 	);
 
 var favoriteuncle = new IntoneStimuli("stressAdj",
 	 "./../audio_stimuli/Test1/15-SA-favoriteuncle.mp3",
-	 "./../audio_stimuli/Test1/15-SI-favoriteuncle.mp3",
+	 "./../audio_stimuli/Test1/15-SN-favoriteuncle.mp3",
 	 "My boring uncle takes me to the movies.",
 	 "My favorite aunt takes me to the movies."
 	);
 var glassplate = new IntoneStimuli("stressAdj",
 	 "./../audio_stimuli/Test1/16-SA-glassplate.mp3",
-	 "./../audio_stimuli/Test1/16-SI-glassplate.mp3",
+	 "./../audio_stimuli/Test1/16-SN-glassplate.mp3",
 	 "The plastic plate is dirty.",
 	 "The glass bowl is dirty."
 	);
 var goldbracelet = new IntoneStimuli("stressAdj",
 	 "./../audio_stimuli/Test1/17-SA-goldbracelet.mp3",
-	 "./../audio_stimuli/Test1/17-SI-goldbracelet.mp3",
+	 "./../audio_stimuli/Test1/17-SN-goldbracelet.mp3",
 	 "The silver bracelet is cheap.",
 	 "The gold earrings are cheap."
 	);
 var greenolives = new IntoneStimuli("stressAdj",
 	 "./../audio_stimuli/Test1/18-SA-greenolives.mp3",
-	 "./../audio_stimuli/Test1/18-SI-greenolives.mp3",
+	 "./../audio_stimuli/Test1/18-SN-greenolives.mp3",
 	 "The black olives are big.",
 	 "The green beans are big."
 	);
 var newcamera = new IntoneStimuli("stressAdj",
 	"./../audio_stimuli/Test1/19-SA-newcamera.mp3",
-	 "./../audio_stimuli/Test1/19-SI-newcamera.mp3",
+	 "./../audio_stimuli/Test1/19-SN-newcamera.mp3",
 	 "The old camera still works.",
 	 "The new phone works fine."
 	);
 var oldman = new IntoneStimuli("stressAdj",
 	"./../audio_stimuli/Test1/20-SA-oldman.mp3",
-	 "./../audio_stimuli/Test1/20-SI-oldman.mp3",
+	 "./../audio_stimuli/Test1/20-SN-oldman.mp3",
 	 "The young man is nice.",
 	 "The old woman is nice."
 	);
 var redshirt = new IntoneStimuli("stressAdj",
 	 "./../audio_stimuli/Test1/21-SA-redshirt.mp3",
-	 "./../audio_stimuli/Test1/21-SI-redshirt.mp3",
+	 "./../audio_stimuli/Test1/21-SN-redshirt.mp3",
 	 "The blue shirt is dry.",
 	 "The red pants are dry."
 
 	);
 var uglydog = new IntoneStimuli("stressAdj",
 	"./../audio_stimuli/Test1/22-SA-uglydog.mp3",
-	 "./../audio_stimuli/Test1/22-SI-uglydog.mp3",
+	 "./../audio_stimuli/Test1/22-SN-uglydog.mp3",
 	 "The cute dog sat quietly.",
 	 "The ugly cat sat quietly."
 
 		);
 var winterjacket = new IntoneStimuli("stressAdj",
 	"./../audio_stimuli/Test1/23-SA-winterjacket.mp3",
-	 "./../audio_stimuli/Test1/23-SI-winterjacket.mp3",
+	 "./../audio_stimuli/Test1/23-SN-winterjacket.mp3",
 	 "My spring jacket is in the closet.",
 	 "My winter boots are in the closet."
 	);
 var youngerbrother = new IntoneStimuli("stressAdj",
 	"./../audio_stimuli/Test1/24-SA-youngerbrother.mp3",
-	 "./../audio_stimuli/Test1/24-SI-youngerbrother.mp3",
+	 "./../audio_stimuli/Test1/24-SN-youngerbrother.mp3",
 	 "Her older brother is single.",
 	 "Her younger sister is single."
 	);
