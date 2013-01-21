@@ -1,7 +1,5 @@
 var i = 0;
 
-
-
 /*creates audio div*/
 var intoneAudio = document.createElement("audio");
 intoneAudio.id = "intone_stimuli";
@@ -18,8 +16,27 @@ var practice = function(){
 	$("h2").hide();
 	$("#practice_instructions").hide();
 	$("#start_practice").hide();
+		
+	nextPracticeStimuli();
 	
-	/*Go through stimuli*/
+}
+
+var correctAnswer = 0;
+var totalAnswer = 0;
+
+var clickContA = function(){
+	totalAnswer++;
+	var sample = window.practiceStimuli[i];	
+	if(sample.audioI == intoneAudio.src){
+		correctAnswer++;
+		console.log(correctAnswer);
+	}
+	nextPracticeStimuli();
+
+}
+
+var nextPracticeStimuli =  function(){
+ /*Go through stimuli*/
 	if(i < practiceStimuli.length){	
 
 		var sample = window.practiceStimuli[i];	
@@ -68,7 +85,6 @@ var practice = function(){
 	}else{
 		console.log("asldfajf");
 	}
-	
 }
 
 var playAudioFile = function(divid) {
