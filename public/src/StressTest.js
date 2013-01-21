@@ -244,7 +244,7 @@ var stressTest = function(){
 		/*stops stress test when stimuli is done*/
 		console.log("your score is " + correctAnswer +"/" +totalAnswer);
 		$("#stress_test_image").hide();
-		document.getElementById("results").innerHTML ="Your score is " + correctAnswer +"/" +totalAnswer;
+		document.getElementById("practice_results").innerHTML ="Your score is " + correctAnswer +"/" +totalAnswer;
 		$("#practice").show();
 	}
 

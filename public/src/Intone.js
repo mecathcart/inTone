@@ -112,6 +112,9 @@ var nextPracticeStimuli =  function(){
 		/*Move on to next stimuli*/
 		i++;
 	}else{
+		$("#continuationA").hide();
+		$("#continuationB").hide();
+		document.getElementById("practice_results").innerHTML ="Your score is " + answersCorrect +"/" +totalAnswer;
 		console.log("I got " +answersCorrect +"/" +totalAnswer);
 	}
 }
