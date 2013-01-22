@@ -17,8 +17,7 @@ var practice = function(){
 	$("#practice_instructions").hide();
 	$("#start_practice").hide();
 		
-	nextPracticeStimuli();
-		
+	nextPracticeStimuli();		
 }
 
 var answersCorrect = 0;
@@ -31,12 +30,9 @@ var clickContA = function(){
 	
 	if(correctAnswer == continuationA){
 		answersCorrect++;
-		console.log("I got it right")
 	}
 	nextPracticeStimuli();
 }
-
-
 
 var clickContB = function(){
 	totalAnswer++;
@@ -44,10 +40,8 @@ var clickContB = function(){
 	
 	if(correctAnswer == continuationB){
 		answersCorrect++;
-		console.log("I got it right")
 	}
 	nextPracticeStimuli();
-
 }
 
 var nextPracticeStimuli =  function(){
@@ -74,7 +68,6 @@ var nextPracticeStimuli =  function(){
 				intoneAudio.src = sample.audioN;
 				playAudioFile("intone_stimuli");
 				correctAnswer = continuationB;
-
 			}
 		/*Stress*/
 		}else if(sample.category == 'stressAdj'){
@@ -87,7 +80,6 @@ var nextPracticeStimuli =  function(){
 				intoneAudio.src = sample.audioN;
 				playAudioFile("intone_stimuli");
 				correctAnswer = continuationB;
-
 			}
 		/*Verb*/
 		}else{
@@ -100,22 +92,20 @@ var nextPracticeStimuli =  function(){
 				intoneAudio.src = sample.audioI;
 				playAudioFile("intone_stimuli");
 				correctAnswer = continuationA;
-
 			}
 		}
 	
-
 		/*Insert continuations*/
 		document.getElementById("continuationA").innerHTML = sample.continuationA;
 		document.getElementById("continuationB").innerHTML = sample.continuationB;
 
 		/*Move on to next stimuli*/
 		i++;
+	/*Show results after last question*/	
 	}else{
 		$("#continuationA").hide();
 		$("#continuationB").hide();
 		document.getElementById("practice_results").innerHTML ="Your score is " + answersCorrect +"/" +totalAnswer;
-		console.log("I got " +answersCorrect +"/" +totalAnswer);
 	}
 }
 

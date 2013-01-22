@@ -217,18 +217,20 @@ var createMap3 = function(sample){
 /* Start Stress Test*/
 var stressTest = function(){
 	/*hide start button and instructions*/
+	$("#stress_test_image").hide();
 	$("#stress_test_instructions").hide();
 	$("#start_stress_test").hide();
+	$("h1").hide();
+	$("h2").hide();
+
 	if(i < stressStimuli.length){	
 
 		/* Plays audio stimuli*/
 		var sample = stressStimuli[i];	
 		stressAudio.src = sample.audio;
 		playAudioFile("stress_test_stimuli");
-		
-		/* Inserts Image*/
-		stressImg.src = sample.image;
-		stress_test_image.appendChild(stressImg);
+		$("#cross").show();
+		window.setTimeout(insertImage,1000,[stressStimuli[i].image]);
 
 		/*Inserts Map*/
 		if(sample.numSyllables === 2){
@@ -238,19 +240,28 @@ var stressTest = function(){
 		}else {
 			createMap3(sample);
 		}
+		
 		/*Move on to next stimuli*/
 		i++;
 	}else{
 		/*stops stress test when stimuli is done*/
-		console.log("your score is " + correctAnswer +"/" +totalAnswer);
 		$("#stress_test_image").hide();
-		document.getElementById("practice_results").innerHTML ="Your score is " + correctAnswer +"/" +totalAnswer;
+		document.getElementById("results").innerHTML ="Your score is " + correctAnswer +"/" +totalAnswer;
 		$("#practice").show();
 	}
 
 };
 
 
+var insertImage = function(sample){
+		$("#cross").hide();
 
+		/* Inserts Image*/
+		stressImg.src = sample;
+		stress_test_image.appendChild(stressImg);
+		$("#stress_test_image").show();
+
+	
+}
 
 
