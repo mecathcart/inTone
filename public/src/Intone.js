@@ -98,8 +98,6 @@ var nextPracticeStimuli =  function(){
 		}
 		window.setTimeout(insertContinuations,1000, practiceStimuli[i].continuationA , practiceStimuli[i].continuationB);
 
-	
-
 		/*Move on to next stimuli*/
 		i++;
 	/*Show results after last question*/	

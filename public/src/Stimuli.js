@@ -368,16 +368,32 @@ var zoo = new Filler(
 var practiceStimuli = [colorful, large, applepie, bigcities, like, planning, beach, boatride];
 var intoneStimuli = [ambitious, children, colorful, food, hair, intelligent, large, popular, read, rich, swimmer];
 
-function fisherYates ( myArray ) {
-  var i = myArray.length, j, tempi, tempj;
-  if ( i == 0 ) return false;
-  while ( --i ) {
-     j = Math.floor( Math.random() * ( i + 1 ) );
-     tempi = myArray[i];
-     tempj = myArray[j];
-     myArray[i] = tempj;
-     myArray[j] = tempi;
-   }
-}
 
-fisherYates(practiceStimuli);	
+
+Array.prototype.shuffle = function() {
+   var i = this.length;
+   while (--i) {
+      var j = Math.floor(Math.random() * (i + 1))
+      var temp = this[i];
+      this[i] = this[j];
+      this[j] = temp;
+   }
+
+   return this; // for convenience, in case we want a reference to the array
+};
+
+var randomSubset = practiceStimuli.slice(0).shuffle().slice(0,8);
+
+
+// function fisherYates ( myArray ) {
+//   var i = myArray.length, j, tempi, tempj;
+//   if ( i == 0 ) return false;
+//   while ( --i ) {
+//      j = Math.floor( Math.random() * ( i + 1 ) );
+//      tempi = myArray[i];
+//      tempj = myArray[j];
+//      myArray[i] = tempj;
+//      myArray[j] = tempi;
+//    }
+// }
+//fisherYates(practiceStimuli);	
