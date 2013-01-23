@@ -46,6 +46,10 @@ var clickContB = function(){
 
 var nextPracticeStimuli =  function(){
 	$("#practice_cross").show();
+	$("#continuationA").hide();
+	$("#continuationB").hide();
+
+
 
  /*Go through stimuli*/
 	if(i < practiceStimuli.length){	
@@ -118,5 +122,7 @@ var insertContinuations = function(a, b){
 
 		document.getElementById("continuationA").innerHTML = a;
 		document.getElementById("continuationB").innerHTML = b;
+		$("#continuationA").show();
+		$("#continuationB").show();
 }
 
