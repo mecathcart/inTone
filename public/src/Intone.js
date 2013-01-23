@@ -45,6 +45,8 @@ var clickContB = function(){
 }
 
 var nextPracticeStimuli =  function(){
+	$("#practice_cross").show();
+
  /*Go through stimuli*/
 	if(i < practiceStimuli.length){	
 
@@ -94,10 +96,9 @@ var nextPracticeStimuli =  function(){
 				correctAnswer = continuationA;
 			}
 		}
+		window.setTimeout(insertContinuations,1000, practiceStimuli[i].continuationA , practiceStimuli[i].continuationB);
+
 	
-		/*Insert continuations*/
-		document.getElementById("continuationA").innerHTML = sample.continuationA;
-		document.getElementById("continuationB").innerHTML = sample.continuationB;
 
 		/*Move on to next stimuli*/
 		i++;
@@ -113,6 +114,11 @@ var playAudioFile = function(divid) {
     document.getElementById(divid).play();
 };
 
+/*Insert continuations*/
+var insertContinuations = function(a, b){
+		$("#practice_cross").hide();
 
-
+		document.getElementById("continuationA").innerHTML = a;
+		document.getElementById("continuationB").innerHTML = b;
+}
 

@@ -62,7 +62,6 @@ var createMap1 = function(sample){
 		totalAnswer++;
 		stress_test_image.removeChild(stressMap1);
 		stressTest();
-
 	};
 
 	var area2 = document.createElement("area");
@@ -77,7 +76,6 @@ var createMap1 = function(sample){
 			stress_test_image.removeChild(stressMap1);
 			stressTest();
 			console.log("The correct answer is" + correctAnswer);
-
 	};
 
 	stressImg.useMap = "#stressMap1";
@@ -102,7 +100,6 @@ var createMap2 = function(sample){
 			stress_test_image.removeChild(stressMap2);
 			stressTest();
 			console.log("The correct answer is" + correctAnswer);
-
 	};
 
 	var area2 = document.createElement("area");
@@ -138,7 +135,6 @@ var createMap2 = function(sample){
 	stressMap2.appendChild(area1);
 	stressMap2.appendChild(area2);
 	stressMap2.appendChild(area3);
-
 };
 
 var createMap3 = function(sample){
@@ -159,7 +155,6 @@ var createMap3 = function(sample){
 			stress_test_image.removeChild(stressMap3);
 			stressTest();
 			console.log("The correct answer is" + correctAnswer);
-
 	};
 
 	var area2 = document.createElement("area");
@@ -188,7 +183,6 @@ var createMap3 = function(sample){
 			stress_test_image.removeChild(stressMap3);
 			stressTest();
 			console.log("The correct answer is" + correctAnswer);
-
 		};
 
 	var area4 = document.createElement("area");
@@ -203,7 +197,6 @@ var createMap3 = function(sample){
 			stress_test_image.removeChild(stressMap3);
 			stressTest();
 			console.log("The correct answer is" + correctAnswer);
-
 		};
 
 	stressImg.useMap = "#stressMap3";
@@ -249,9 +242,7 @@ var stressTest = function(){
 		document.getElementById("results").innerHTML ="Your score is " + correctAnswer +"/" +totalAnswer;
 		$("#practice").show();
 	}
-
 };
-
 
 var insertImage = function(sample){
 		$("#cross").hide();
@@ -259,9 +250,7 @@ var insertImage = function(sample){
 		/* Inserts Image*/
 		stressImg.src = sample;
 		stress_test_image.appendChild(stressImg);
-		$("#stress_test_image").show();
-
-	
+		$("#stress_test_image").show();	
 }
 
 
