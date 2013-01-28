@@ -49,10 +49,8 @@ var nextPracticeStimuli =  function(){
 	$("#continuationA").hide();
 	$("#continuationB").hide();
 
-
-
  /*Go through stimuli*/
-	if(i < practiceStimuli.length){	
+	if(i < window.practiceStimuli.length){	
 
 		var sample = window.practiceStimuli[i];	
 
@@ -100,7 +98,8 @@ var nextPracticeStimuli =  function(){
 				correctAnswer = continuationA;
 			}
 		}
-		window.setTimeout(insertContinuations,1000, practiceStimuli[i].continuationA , practiceStimuli[i].continuationB);
+		var continuationArray = [practiceStimuli[i].continuationA, practiceStimuli[i].continuationB];
+		window.setTimeout(insertContinuations,1000, continuationArray);
 
 		/*Move on to next stimuli*/
 		i++;
@@ -108,6 +107,7 @@ var nextPracticeStimuli =  function(){
 	}else{
 		$("#continuationA").hide();
 		$("#continuationB").hide();
+		$("#practice_cross").hide();
 		document.getElementById("practice_results").innerHTML ="Your score is " + answersCorrect +"/" +totalAnswer;
 	}
 }
@@ -117,11 +117,11 @@ var playAudioFile = function(divid) {
 };
 
 /*Insert continuations*/
-var insertContinuations = function(a, b){
+var insertContinuations = function(array){
 		$("#practice_cross").hide();
-
-		document.getElementById("continuationA").innerHTML = a;
-		document.getElementById("continuationB").innerHTML = b;
+		fisherYates(array);
+		document.getElementById("continuationA").innerHTML = array[1];
+		document.getElementById("continuationB").innerHTML = array[0];
 		$("#continuationA").show();
 		$("#continuationB").show();
 }

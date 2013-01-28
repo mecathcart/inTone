@@ -366,34 +366,45 @@ var zoo = new Filler(
 
 /*Array of stimuli*/
 var practiceStimuli1 = [colorful, large, applepie, bigcities, like, planning, beach, boatride];
+//array that has been shuffled
+var practiceStimuli = [bigcities, like, applepie, boatride, colorful, beach, large, planning];
 var intoneStimuli = [ambitious, children, colorful, food, hair, intelligent, large, popular, read, rich, swimmer];
 
-Array.prototype.shuffle = function() {
-   var i = this.length;
-   while (--i) {
-      var j = Math.floor(Math.random() * (i + 1))
-      var temp = this[i];
-      this[i] = this[j];
-      this[j] = temp;
-   }
+// Array.prototype.shuffle = function() {
+//    var i = this.length;
+//    while (--i) {
+//       var j = Math.floor(Math.random() * (i + 1))
+//       var temp = this[i];
+//       this[i] = this[j];
+//       this[j] = temp;
+//    }
 
-   return this; // for convenience, in case we want a reference to the array
+//    return this; // for convenience, in case we want a reference to the array
+// };
+
+
+//var practiceStimuli = practiceStimuli1.slice(0).shuffle().slice(0,8);
+
+function fisherYates ( myArray ) {
+  var i = myArray.length, j, tempi, tempj;
+  if ( i == 0 ) return false;
+  while ( --i ) {
+     j = Math.floor( Math.random() * ( i + 1 ) );
+     tempi = myArray[i];
+     tempj = myArray[j];
+     myArray[i] = tempj;
+     myArray[j] = tempi;
+   }
+   return this;
 };
 
-var practiceStimuli = practiceStimuli1.slice(0).shuffle().slice(0,8);
+// for(var i = 0; i < practiceStimuli.length; i++){
+// 	var continuationArray = [practiceStimuli[i].continuationA, practiceStimuli[i].continuationB];
 
+// 	fisherYates(continuationArray);
+// 	console.log(continuationArray);
 
-// function fisherYates ( myArray ) {
-//   var i = myArray.length, j, tempi, tempj;
-//   if ( i == 0 ) return false;
-//   while ( --i ) {
-//      j = Math.floor( Math.random() * ( i + 1 ) );
-//      tempi = myArray[i];
-//      tempj = myArray[j];
-//      myArray[i] = tempj;
-//      myArray[j] = tempi;
-//    }
-//    return this;
-// };
+// }
+
 
 // var practiceStimuli = fisherYates(practiceStimuli1);	
