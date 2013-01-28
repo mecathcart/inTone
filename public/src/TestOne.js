@@ -15,7 +15,7 @@ var testOne = function(){
 
 var T1_clickContA = function(){
 	totalAnswer++;	
-	if(correctAnswer == sample.continuationA){
+	if(correctAnswer == test1Stimuli[i].continuationA){
 		answersCorrect++;
 	}
 	nextT1Stimuli(test1Stimuli);
@@ -23,7 +23,7 @@ var T1_clickContA = function(){
 
 var T1_clickContB = function(){
 	totalAnswer++;	
-	if(correctAnswer == sample.continuationB){
+	if(correctAnswer == test1Stimuli[i].continuationB){
 		answersCorrect++;
 	}
 	nextT1Stimuli(test1Stimuli);
