@@ -368,7 +368,13 @@ var zoo = new Filler(
 var practiceStimuli1 = [colorful, large, applepie, bigcities, like, planning, beach, boatride];
 //array that has been shuffled
 var practiceStimuli = [bigcities, like, applepie, boatride, colorful, beach, large, planning];
-var intoneStimuli = [ambitious, children, colorful, food, hair, intelligent, large, popular, read, rich, swimmer];
+var test1Stimuli = [ambitious, children, food, hair, intelligent, popular, read, rich, swimmer,
+favoriteuncle, glassplate, goldbracelet, greenolives, newcamera, oldman, redshirt, uglydog, winterjacket, youngerbrother,
+appears, hoping, intends, looks, says, seemed, smells, sounds, thinks, wants,
+boyfriend, cake, children, clothes, concert, dinner, drowning, fishing, flowers, goal, haircut, hand, home, homework, house,
+joke, leak, library, lost, mall, money, mountain, movie, newyork, party, patient, postoffice, scarf, skirt, spanish, ticket, wallets, 
+wedding, zoo];
+fisherYates(test1Stimuli);
 
 // Array.prototype.shuffle = function() {
 //    var i = this.length;

@@ -63,6 +63,25 @@ a:hover,a:active {
   	display: none;
 }
 
+#test_1{
+	padding: 10px;
+	width: 700px;
+	margin-left: auto;
+  	margin-right: auto;
+  	display: none;
+}
+
+
+#test_2{
+	padding: 10px;
+	width: 700px;
+	margin-left: auto;
+  	margin-right: auto;
+  	display: none;
+}
+
+
+
 .cross{
 	padding: 10px;
 	width: 40px;
@@ -88,6 +107,21 @@ a:hover,a:active {
 }
 
 #continuationB{
+	padding: 10px;
+	width: 700px;
+	margin-left: auto;
+  	margin-right: auto;
+
+}
+
+#T1_continuationA{
+	padding: 10px;
+	width: 700px;
+	margin-left: auto;
+  	margin-right: auto;
+}
+
+#T1_continuationB{
 	padding: 10px;
 	width: 700px;
 	margin-left: auto;
