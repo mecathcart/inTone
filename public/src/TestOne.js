@@ -1,4 +1,4 @@
-var i = 0;
+var j = 0;
 var answersCorrect = 0;
 var totalAnswer = 0;
 var correctAnswer = "";
@@ -29,65 +29,65 @@ var T1_clickContB = function(){
 	nextT1Stimuli(test1Stimuli);
 }
 
-
 var nextT1Stimuli = function(sampleArray){
 $("#T1_continuationA").hide();
 $("#T1_continuationB").hide();
+$("#T1_cross").show();
 
  /*Go through stimuli*/
-	if(i < sampleArray.length){	
+if(j < sampleArray.length){	
 
-		var sample = sampleArray[i];	
+	var sample = sampleArray[j];	
 
-		/* Plays audio stimuli*/	
+	/* Plays audio stimuli*/	
 
-		/*Filler*/
-		if (sample.hasOwnProperty('audio') ) {
-			intoneAudio.src = sample.audio;
+	/*Filler*/
+	if (sample.hasOwnProperty('audio') ) {
+		intoneAudio.src = sample.audio;
+		playAudioFile("intone_stimuli");
+		correctAnswer = sample.continuationA;
+	/*Compliment*/
+	}else if(sample.category == 'compliment'){ 
+		if(complimentCount%2 == 0){
+			intoneAudio.src = sample.audioI;
 			playAudioFile("intone_stimuli");
 			correctAnswer = sample.continuationA;
-		/*Compliment*/
-		}else if(sample.category == 'compliment'){ 
-			if(complimentCount%2 == 0){
-				intoneAudio.src = sample.audioI;
-				playAudioFile("intone_stimuli");
-				correctAnswer = sample.continuationA;
-				complimentCount++
-			}else{
-				intoneAudio.src = sample.audioN;
-				playAudioFile("intone_stimuli");
-				correctAnswer = sample.continuationB;
+			complimentCount++
+		}else{
+			intoneAudio.src = sample.audioN;
+			playAudioFile("intone_stimuli");
+			correctAnswer = sample.continuationB;
 			}
 		/*Stress*/
-		}else if(sample.category == 'stressAdj'){
-			if(stressCount%2 ==0){
-				intoneAudio.src = sample.audioI;
-				playAudioFile("intone_stimuli");
-				correctAnswer = sample.continuationA;
-				stressCount++
-			}else{
-				intoneAudio.src = sample.audioN;
-				playAudioFile("intone_stimuli");
-				correctAnswer = sample.continuationB;
+	}else if(sample.category == 'stressAdj'){
+		if(stressCount%2 ==0){
+			intoneAudio.src = sample.audioI;
+			playAudioFile("intone_stimuli");
+			correctAnswer = sample.continuationA;
+			stressCount++
+		}else{
+			intoneAudio.src = sample.audioN;
+			playAudioFile("intone_stimuli");
+			correctAnswer = sample.continuationB;
 			}
 		/*Verb*/
+	}else{
+		if(verbCount%2 ==0){
+			intoneAudio.src = sample.audioN;
+			playAudioFile("intone_stimuli");
+			correctAnswer = sample.continuationA;
+			verbCount++
 		}else{
-			if(verbCount%2 ==0){
-				intoneAudio.src = sample.audioN;
-				playAudioFile("intone_stimuli");
-				correctAnswer = sample.continuationA;
-				verbCount++
-			}else{
-				intoneAudio.src = sample.audioI;
-				playAudioFile("intone_stimuli");
-				correctAnswer = sample.continuationA;
+			intoneAudio.src = sample.audioI;
+			playAudioFile("intone_stimuli");
+			correctAnswer = sample.continuationA;
 			}
 		}
 		var continuationArray = [sample.continuationA, sample.continuationB];
 		window.setTimeout(insertContinuationsT1,1000, continuationArray);
 
 		/*Move on to next stimuli*/
-		i++;
+		j++;
 	/*Show results after last question*/	
 	}else{
 		$("#T1_continuationA").hide();

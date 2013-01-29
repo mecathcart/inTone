@@ -255,7 +255,7 @@ var drowning = new Filler(
 	"He brought the boy to the hospital afterwards.",
 	"He ate some pizza for dinner afterwards.");
 var fishing = new Filler(
-	"./../audio_stimuli/Test1/F10-I-fishin.mp3",
+	"./../audio_stimuli/Test1/F10-I-fishing.mp3",
 	"She only caught one fish, though.",
 	"She rode a pony through the woods.");
 var flowers = new Filler(
