@@ -368,28 +368,7 @@ var zoo = new Filler(
 var practiceStimuli1 = [colorful, large, applepie, bigcities, like, planning, beach, boatride];
 //array that has been shuffled
 var practiceStimuli = [bigcities, like, applepie, boatride, colorful, beach, large, planning];
-var test1Stimuli = [ambitious, children, food, friendly, hair, intelligent, popular, read, rich, swimmer,
-favoriteuncle, glassplate, goldbracelet, greenolives, newcamera, oldman, redshirt, uglydog, winterjacket, youngerbrother,
-appears, hoping, intends, looks, says, seemed, smells, sounds, thinks, wants,
-boyfriend, cake, childrenF, clothes, concert, dinner, drowning, fishing, flowers, goal, haircut, hand, home, homework, house,
-joke, leak, library, lost, mall, money, mountain, movie, newyork, party, patient, postoffice, scarf, skirt, spanish, ticket, wallets, 
-wedding, zoo];
-fisherYates(test1Stimuli);
-
-// Array.prototype.shuffle = function() {
-//    var i = this.length;
-//    while (--i) {
-//       var j = Math.floor(Math.random() * (i + 1))
-//       var temp = this[i];
-//       this[i] = this[j];
-//       this[j] = temp;
-//    }
-
-//    return this; // for convenience, in case we want a reference to the array
-// };
-
-
-//var practiceStimuli = practiceStimuli1.slice(0).shuffle().slice(0,8);
+var test1Stimuli = [dinner,spanish,wants,patient,scarf,appears,concert,glassplate,favoriteuncle,party,sounds,lost,wallets,fishing,cake,intends,youngerbrother,seemed,newcamera,newyork,zoo,children,food,wedding,looks,rich,skirt,intelligent,hoping,oldman,house,greenolives,hair,mall,clothes,drowning,redshirt,boyfriend,joke,friendly,library,goldbracelet,haircut,says,money,hand,postoffice,smells,flowers,movie,home,thinks,winterjacket,leak,popular,ticket,goal,ambitious,mountain,uglydog,homework,read,childrenF,swimmer];
 
 function fisherYates ( myArray ) {
   var i = myArray.length, j, tempi, tempj;
@@ -404,13 +383,3 @@ function fisherYates ( myArray ) {
    return this;
 };
 
-// for(var i = 0; i < practiceStimuli.length; i++){
-// 	var continuationArray = [practiceStimuli[i].continuationA, practiceStimuli[i].continuationB];
-
-// 	fisherYates(continuationArray);
-// 	console.log(continuationArray);
-
-// }
-
-
-// var practiceStimuli = fisherYates(practiceStimuli1);	
