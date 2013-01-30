@@ -86,7 +86,7 @@ var nextStimuli =  function(sampleArray){
 
 		/*Verb*/
 		}else{
-			if(verbCount%2 ==0){
+			if(verbCount%2 ==1){
 				intoneAudio.src = sample.audioI;
 				playAudioFile("intone_stimuli");
 				correctAnswer = continuationA;
@@ -121,10 +121,23 @@ var playAudioFile = function(divid) {
 /*Insert continuations*/
 var insertContinuations = function(array){
 		$("#practice_cross").hide();
-		//fisherYates(array);
-		document.getElementById("continuationA").innerHTML = array[0];
-		document.getElementById("continuationB").innerHTML = array[1];
+		if(answerArrayPractice[i]){
+			document.getElementById("continuationA").innerHTML = array[0];
+			document.getElementById("continuationB").innerHTML = array[1];
+		}else{
+			document.getElementById("continuationA").innerHTML = array[1];
+			document.getElementById("continuationB").innerHTML = array[0];
+		}
+		
 		$("#continuationA").show();
 		$("#continuationB").show();
 }
+
+
+
+
+
+
+
+
 

@@ -111,7 +111,7 @@ if(j < sampleArray.length){
 /*Insert continuations*/
 var insertContinuationsT1 = function(array){
 		$("#T1_cross").hide();
-		if(answerArray[j] == "B"){
+		if(answerArrayT1[j] == "B"){
 			document.getElementById("T1_continuationA").innerHTML = array[0];
 			document.getElementById("T1_continuationB").innerHTML = array[1];	
 		}else{
