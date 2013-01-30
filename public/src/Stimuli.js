@@ -5,7 +5,6 @@ function IntoneStimuli(category,audioI, audioN, continuationA,continuationB){
 	this.audioN = audioN;
 	this.continuationA = continuationA;
 	this.continuationB = continuationB;
-
 }
 
 function Filler(audio,continuationA,continuationB){
@@ -77,7 +76,6 @@ var swimmer = new IntoneStimuli("compliment",
 	 "He can’t play any other sports, though.", 
 	 "He could even win an Olympic medal.");
 
-
 /*Test 1 Stress Adjectives*/
 var applepie = new IntoneStimuli("stressAdj",
 	 "./../audio_stimuli/Test1/13-SA-applepie.mp3",
@@ -91,7 +89,6 @@ var bigcities = new IntoneStimuli("stressAdj",
 	 "The small cities are safe.",
 	 "The big towns are safe."
 	);
-
 var favoriteuncle = new IntoneStimuli("stressAdj",
 	 "./../audio_stimuli/Test1/15-SA-favoriteuncle.mp3",
 	 "./../audio_stimuli/Test1/15-SN-favoriteuncle.mp3",
@@ -133,15 +130,13 @@ var redshirt = new IntoneStimuli("stressAdj",
 	 "./../audio_stimuli/Test1/21-SN-redshirt.mp3",
 	 "The blue shirt is dry.",
 	 "The red pants are dry."
-
 	);
 var uglydog = new IntoneStimuli("stressAdj",
 	"./../audio_stimuli/Test1/22-SA-uglydog.mp3",
 	 "./../audio_stimuli/Test1/22-SN-uglydog.mp3",
 	 "The cute dog sat quietly.",
 	 "The ugly cat sat quietly."
-
-		);
+	);
 var winterjacket = new IntoneStimuli("stressAdj",
 	"./../audio_stimuli/Test1/23-SA-winterjacket.mp3",
 	 "./../audio_stimuli/Test1/23-SN-winterjacket.mp3",
@@ -364,12 +359,16 @@ var zoo = new Filler(
 	"They saw the dinosaurs.");
 
 /*Array of stimuli*/
-var practiceStimuli1 = [colorful, large, applepie, bigcities, like, planning, beach, boatride];
+var practiceStimuli1 = [colorful, large, applepie, bigcities, like, planning, beach, boatride,];
 
 //array that has been shuffled
-var practiceStimuli = [bigcities, like, applepie, boatride, colorful, beach, large, planning];
-var answerArrayPractice = ["A", "B", "B", "B", "B", "B", "B", "A", "A", "B", "A", "A"];
-var test1Stimuli = [dinner,spanish,wants,patient,scarf,appears,concert,glassplate,favoriteuncle,party,sounds,lost,wallets,fishing,cake,intends,youngerbrother,seemed,newcamera,newyork,zoo,children,food,wedding,looks,rich,skirt,intelligent,hoping,oldman,house,greenolives,hair,mall,clothes,drowning,redshirt,boyfriend,joke,friendly,library,goldbracelet,haircut,says,money,hand,postoffice,smells,flowers,movie,home,thinks,winterjacket,leak,popular,ticket,goal,ambitious,mountain,uglydog,homework,read,childrenF,swimmer];
-var answerArrayT1 = ["B", "A", "A", "A", "B", "A", "A", "B", "A", "A", "A", "B", "B", "A", "B", "B", "B", "B", "A", "A", "A", "B", "B", "A", "B", "A", "A", "B", "A", "A", "B", "B", "A", "A", "A", "B", "A", "A", "A", "A", "B", "B", "B", "A", "B", "A", "B", "B", "A", "A", "A", "B", "A", "B", "B", "B", "A", "A", "B", "A", "B", "B", "A", "A"];
+var practiceStimuli = [bigcities,cake, like, childrenF, applepie, boatride, colorful, beach, large, clothes, planning, boyfriend];
+var answerArrayPractice = ["B", "A", "A", "A","A", "B", "B", "B", "B", "B", "B", "A", "A", "B", "A", "A"];
+var test1Stimuli = [dinner,spanish,wants,patient,scarf,appears,concert,glassplate,favoriteuncle,party,sounds,lost,wallets,
+fishing,intends,youngerbrother,seemed,newcamera,newyork,zoo,children,food,wedding,looks,rich,skirt,intelligent,hoping,
+oldman,house,greenolives,hair,mall,drowning,redshirt,joke,friendly,library,goldbracelet,haircut,says,money,
+hand,postoffice,smells,flowers,movie,home,thinks,winterjacket,leak,popular,ticket,goal,ambitious,mountain,uglydog,homework,read,
+swimmer];
+var answerArrayT1 = ["B", "A", "A", "B", "A", "A", "A", "B", "B", "A", "B", "B", "B", "B", "A", "A", "A", "B", "B", "A", "B", "A", "A", "B", "A", "A", "B", "B", "A", "A", "A", "B", "A", "A", "A", "A", "B", "B", "B", "A", "B", "A", "B", "B", "A", "A", "A", "B", "A", "B", "B", "B", "A", "A", "B", "A", "B", "B", "A", "A"];
 
 
