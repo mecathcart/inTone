@@ -87,11 +87,11 @@ var nextStimuli =  function(sampleArray){
 		/*Verb*/
 		}else{
 			if(verbCount%2 ==0){
-				intoneAudio.src = sample.audioN;
+				intoneAudio.src = sample.audioI;
 				playAudioFile("intone_stimuli");
 				correctAnswer = continuationA;
 			}else{
-				intoneAudio.src = sample.audioI;
+				intoneAudio.src = sample.audioN;
 				playAudioFile("intone_stimuli");
 				correctAnswer = continuationB;
 			}
