@@ -111,10 +111,16 @@ if(j < sampleArray.length){
 /*Insert continuations*/
 var insertContinuationsT1 = function(array){
 		$("#T1_cross").hide();
-		//fisherYates(array);
-		document.getElementById("T1_continuationA").innerHTML = array[0];
-		document.getElementById("T1_continuationB").innerHTML = array[1];
+		if(answerArray[j] == "B"){
+			document.getElementById("T1_continuationA").innerHTML = array[0];
+			document.getElementById("T1_continuationB").innerHTML = array[1];	
+		}else{
+			document.getElementById("T1_continuationA").innerHTML = array[1];
+			document.getElementById("T1_continuationB").innerHTML = array[0];
+			
+		}
 		$("#T1_continuationA").show();
 		$("#T1_continuationB").show();
+		
 }
 

@@ -27,6 +27,7 @@ var clickContA = function(){
 	totalAnswer++;	
 	if(correctAnswer == continuationA){
 		answersCorrect++;
+		console.log(answersCorrect);
 	}
 	nextStimuli(practiceStimuli);
 }
@@ -35,6 +36,7 @@ var clickContB = function(){
 	totalAnswer++;	
 	if(correctAnswer == continuationB){
 		answersCorrect++;
+				console.log(answersCorrect);
 	}
 	nextStimuli(practiceStimuli);
 }
@@ -62,36 +64,39 @@ var nextStimuli =  function(sampleArray){
 				intoneAudio.src = sample.audioI;
 				playAudioFile("intone_stimuli");
 				correctAnswer = continuationA;
-				complimentCount++
 			}else{
 				intoneAudio.src = sample.audioN;
 				playAudioFile("intone_stimuli");
 				correctAnswer = continuationB;
 			}
+			complimentCount++
+
 		/*Stress*/
 		}else if(sample.category == 'stressAdj'){
 			if(stressCount%2 ==0){
 				intoneAudio.src = sample.audioI;
 				playAudioFile("intone_stimuli");
 				correctAnswer = continuationA;
-				stressCount++
 			}else{
 				intoneAudio.src = sample.audioN;
 				playAudioFile("intone_stimuli");
 				correctAnswer = continuationB;
 			}
+			stressCount++
+
 		/*Verb*/
 		}else{
 			if(verbCount%2 ==0){
 				intoneAudio.src = sample.audioN;
 				playAudioFile("intone_stimuli");
 				correctAnswer = continuationA;
-				verbCount++
 			}else{
 				intoneAudio.src = sample.audioI;
 				playAudioFile("intone_stimuli");
-				correctAnswer = continuationA;
+				correctAnswer = continuationB;
 			}
+			verbCount++
+
 		}
 		var continuationArray = [sample.continuationA, sample.continuationB];
 		window.setTimeout(insertContinuations,1000, continuationArray);
@@ -117,8 +122,8 @@ var playAudioFile = function(divid) {
 var insertContinuations = function(array){
 		$("#practice_cross").hide();
 		//fisherYates(array);
-		document.getElementById("continuationA").innerHTML = array[1];
-		document.getElementById("continuationB").innerHTML = array[0];
+		document.getElementById("continuationA").innerHTML = array[0];
+		document.getElementById("continuationB").innerHTML = array[1];
 		$("#continuationA").show();
 		$("#continuationB").show();
 }

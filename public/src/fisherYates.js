@@ -19,5 +19,19 @@ function fisherYates ( myArray ) {
 
 fisherYates(array);
 
+//console.log(array.toString());
 
-console.log(array.toString());
+var answers = ["A", "B"];
+fisherYates(answers);
+console.log(answers.toString());
+var answerArray = [];
+var i = 0;
+for(i= 0; i<array.length; i++){
+	fisherYates(answers);
+	answerArray[i] = answers[0];
+};
+
+console.log(answerArray);
+
+
+

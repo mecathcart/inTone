@@ -363,23 +363,12 @@ var zoo = new Filler(
 	"They saw the monkeys.",
 	"They saw the dinosaurs.");
 
-
 /*Array of stimuli*/
 var practiceStimuli1 = [colorful, large, applepie, bigcities, like, planning, beach, boatride];
+
 //array that has been shuffled
 var practiceStimuli = [bigcities, like, applepie, boatride, colorful, beach, large, planning];
 var test1Stimuli = [dinner,spanish,wants,patient,scarf,appears,concert,glassplate,favoriteuncle,party,sounds,lost,wallets,fishing,cake,intends,youngerbrother,seemed,newcamera,newyork,zoo,children,food,wedding,looks,rich,skirt,intelligent,hoping,oldman,house,greenolives,hair,mall,clothes,drowning,redshirt,boyfriend,joke,friendly,library,goldbracelet,haircut,says,money,hand,postoffice,smells,flowers,movie,home,thinks,winterjacket,leak,popular,ticket,goal,ambitious,mountain,uglydog,homework,read,childrenF,swimmer];
+var answerArray = ["B", "A", "A", "A", "B", "A", "A", "B", "A", "A", "A", "B", "B", "A", "B", "B", "B", "B", "A", "A", "A", "B", "B", "A", "B", "A", "A", "B", "A", "A", "B", "B", "A", "A", "A", "B", "A", "A", "A", "A", "B", "B", "B", "A", "B", "A", "B", "B", "A", "A", "A", "B", "A", "B", "B", "B", "A", "A", "B", "A", "B", "B", "A", "A"];
 
-function fisherYates ( myArray ) {
-  var i = myArray.length, j, tempi, tempj;
-  if ( i == 0 ) return false;
-  while ( --i ) {
-     j = Math.floor( Math.random() * ( i + 1 ) );
-     tempi = myArray[i];
-     tempj = myArray[j];
-     myArray[i] = tempj;
-     myArray[j] = tempi;
-   }
-   return this;
-};
 
