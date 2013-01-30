@@ -1,4 +1,7 @@
 var i = 0;
+var answersCorrect = 0;
+var totalAnswer = 0;
+var correctAnswer = "";
 
 /*creates audio div*/
 var intoneAudio = document.createElement("audio");
@@ -113,7 +116,7 @@ var playAudioFile = function(divid) {
 /*Insert continuations*/
 var insertContinuations = function(array){
 		$("#practice_cross").hide();
-		fisherYates(array);
+		//fisherYates(array);
 		document.getElementById("continuationA").innerHTML = array[1];
 		document.getElementById("continuationB").innerHTML = array[0];
 		$("#continuationA").show();

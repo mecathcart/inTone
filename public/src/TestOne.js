@@ -1,11 +1,11 @@
 var j = 0;
-var answersCorrect = 0;
-var totalAnswer = 0;
-var correctAnswer = "";
+var T1answersCorrect = 0;
+var T1totalAnswer = 0;
+var T1correctAnswer = "";
 
-var complimentCount = 0;
-var stressCount = 0;
-var verbCount = 0;
+var T1complimentCount = 0;
+var T1stressCount = 0;
+var T1verbCount = 0;
 
 var testOne = function(){	
 	$("#T1_continuationA").show();
@@ -14,17 +14,23 @@ var testOne = function(){
 }
 
 var T1_clickContA = function(){
-	totalAnswer++;	
-	if(correctAnswer == test1Stimuli[i].continuationA){
-		answersCorrect++;
+	T1totalAnswer++;	
+	//console.log(test1Stimuli[j-1].continuationA);
+	//console.log(T1correctAnswer);
+	if(T1correctAnswer == test1Stimuli[j-1].continuationA){
+		T1answersCorrect++;
+		console.log(T1answersCorrect);
 	}
 	nextT1Stimuli(test1Stimuli);
 }
 
 var T1_clickContB = function(){
-	totalAnswer++;	
-	if(correctAnswer == test1Stimuli[i].continuationB){
-		answersCorrect++;
+//	console.log(test1Stimuli[j-1].continuationB);
+//	console.log(T1correctAnswer);
+	T1totalAnswer++;	
+	if(T1correctAnswer == test1Stimuli[j-1].continuationB){
+		T1answersCorrect++;
+		console.log(T1answersCorrect);
 	}
 	nextT1Stimuli(test1Stimuli);
 }
@@ -45,42 +51,45 @@ if(j < sampleArray.length){
 	if (sample.hasOwnProperty('audio') ) {
 		intoneAudio.src = sample.audio;
 		playAudioFile("intone_stimuli");
-		correctAnswer = sample.continuationA;
+		T1correctAnswer = sample.continuationA;
 	/*Compliment*/
 	}else if(sample.category == 'compliment'){ 
 		if(complimentCount%2 == 0){
 			intoneAudio.src = sample.audioI;
 			playAudioFile("intone_stimuli");
-			correctAnswer = sample.continuationA;
-			complimentCount++
+			T1correctAnswer = sample.continuationA;
+			T1complimentCount++
 		}else{
 			intoneAudio.src = sample.audioN;
 			playAudioFile("intone_stimuli");
-			correctAnswer = sample.continuationB;
+			T1correctAnswer = sample.continuationB;
+			T1complimentCount++
 			}
 		/*Stress*/
 	}else if(sample.category == 'stressAdj'){
 		if(stressCount%2 ==0){
 			intoneAudio.src = sample.audioI;
 			playAudioFile("intone_stimuli");
-			correctAnswer = sample.continuationA;
-			stressCount++
+			T1correctAnswer = sample.continuationA;
+			T1stressCount++
 		}else{
 			intoneAudio.src = sample.audioN;
 			playAudioFile("intone_stimuli");
-			correctAnswer = sample.continuationB;
+			T1correctAnswer = sample.continuationB;
+			T1stressCount++
 			}
 		/*Verb*/
 	}else{
 		if(verbCount%2 ==0){
 			intoneAudio.src = sample.audioN;
 			playAudioFile("intone_stimuli");
-			correctAnswer = sample.continuationA;
-			verbCount++
+			T1correctAnswer = sample.continuationA;
+			T1verbCount++
 		}else{
 			intoneAudio.src = sample.audioI;
 			playAudioFile("intone_stimuli");
-			correctAnswer = sample.continuationA;
+			T1correctAnswer = sample.continuationA;
+			T1verbCount++
 			}
 		}
 		var continuationArray = [sample.continuationA, sample.continuationB];
@@ -93,7 +102,7 @@ if(j < sampleArray.length){
 		$("#T1_continuationA").hide();
 		$("#T1_continuationB").hide();
 		$("#T1_cross").hide();
-		document.getElementById("T1_results").innerHTML ="Your score is " + answersCorrect +"/" +totalAnswer;
+		document.getElementById("T1_results").innerHTML ="Your score is " + T1answersCorrect +"/" +T1totalAnswer;
 		$("#test_2").show();
 	}
 
@@ -102,9 +111,9 @@ if(j < sampleArray.length){
 /*Insert continuations*/
 var insertContinuationsT1 = function(array){
 		$("#T1_cross").hide();
-		fisherYates(array);
-		document.getElementById("T1_continuationA").innerHTML = array[1];
-		document.getElementById("T1_continuationB").innerHTML = array[0];
+		//fisherYates(array);
+		document.getElementById("T1_continuationA").innerHTML = array[0];
+		document.getElementById("T1_continuationB").innerHTML = array[1];
 		$("#T1_continuationA").show();
 		$("#T1_continuationB").show();
 }

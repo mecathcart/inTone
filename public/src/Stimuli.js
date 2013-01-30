@@ -234,7 +234,7 @@ var cake = new Filler(
 	"./../audio_stimuli/Test1/F4-I-cake.mp3",
 	"But she didn’t have enough flour.",
 	"She added vegetables to it.");
-var children = new Filler(
+var childrenF = new Filler(
 	"./../audio_stimuli/Test1/F5-I-children.mp3",
 	"She fed them breakfast.",
 	"But she didn’t say goodbye.");
@@ -336,8 +336,8 @@ var postoffice = new Filler(
 	"He didn’t cash his check.");
 var scarf = new Filler(
 	"./../audio_stimuli/Test1/F30-I-scarf.mp3",
-	"asdfadf",
-	"asdfasdf");
+	"It was warm outside.",
+	"It was cold outside.");
 var skirt = new Filler(
 	"./../audio_stimuli/Test1/F31-I-skirt.mp3",
 	"She got dressed afterwards.",
@@ -368,10 +368,10 @@ var zoo = new Filler(
 var practiceStimuli1 = [colorful, large, applepie, bigcities, like, planning, beach, boatride];
 //array that has been shuffled
 var practiceStimuli = [bigcities, like, applepie, boatride, colorful, beach, large, planning];
-var test1Stimuli = [ambitious, children, food, hair, intelligent, popular, read, rich, swimmer,
+var test1Stimuli = [ambitious, children, food, friendly, hair, intelligent, popular, read, rich, swimmer,
 favoriteuncle, glassplate, goldbracelet, greenolives, newcamera, oldman, redshirt, uglydog, winterjacket, youngerbrother,
 appears, hoping, intends, looks, says, seemed, smells, sounds, thinks, wants,
-boyfriend, cake, children, clothes, concert, dinner, drowning, fishing, flowers, goal, haircut, hand, home, homework, house,
+boyfriend, cake, childrenF, clothes, concert, dinner, drowning, fishing, flowers, goal, haircut, hand, home, homework, house,
 joke, leak, library, lost, mall, money, mountain, movie, newyork, party, patient, postoffice, scarf, skirt, spanish, ticket, wallets, 
 wedding, zoo];
 fisherYates(test1Stimuli);
