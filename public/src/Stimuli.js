@@ -331,8 +331,8 @@ var postoffice = new Filler(
 	"He didn’t cash his check.");
 var scarf = new Filler(
 	"./../audio_stimuli/Test1/F30-I-scarf.mp3",
-	"It was warm outside.",
-	"It was cold outside.");
+	"It was cold outside.",
+	"It was warm outside.");
 var skirt = new Filler(
 	"./../audio_stimuli/Test1/F31-I-skirt.mp3",
 	"She got dressed afterwards.",
@@ -362,7 +362,7 @@ var zoo = new Filler(
 var practiceStimuli1 = [colorful, large, applepie, bigcities, like, planning, beach, boatride,];
 
 //array that has been shuffled
-var practiceStimuli = [bigcities,cake, like, childrenF, applepie, boatride, colorful, beach, large, clothes, planning, boyfriend];
+var practiceStimuli = [bigcities, cake, like, childrenF, applepie, boatride, colorful, beach, large, clothes, planning, boyfriend];
 var answerArrayPractice = ["B", "A", "A", "A","A", "B", "B", "B", "B", "B", "B", "A", "A", "B", "A", "A"];
 var test1Stimuli = [dinner,spanish,wants,patient,scarf,appears,concert,glassplate,favoriteuncle,party,sounds,lost,wallets,
 fishing,intends,youngerbrother,seemed,newcamera,newyork,zoo,children,food,wedding,looks,rich,skirt,intelligent,hoping,

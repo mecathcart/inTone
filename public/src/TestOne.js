@@ -15,8 +15,8 @@ var testOne = function(){
 
 var T1_clickContA = function(){
 	T1totalAnswer++;
-	//console.log(test1Stimuli[j-1].continuationA);
-	//console.log(T1correctAnswer);	
+	console.log(test1Stimuli[j-1].continuationA);
+	console.log(T1correctAnswer);	
 	if(answerArrayT1[j-1] == "A" && T1correctAnswer == test1Stimuli[j-1].continuationA){
 		T1answersCorrect++;
 		console.log(T1answersCorrect);
@@ -29,8 +29,8 @@ var T1_clickContA = function(){
 }
 
 var T1_clickContB = function(){
-	//console.log(test1Stimuli[j-1].continuationA);
-	//console.log(T1correctAnswer);
+	console.log(test1Stimuli[j-1].continuationA);
+	console.log(T1correctAnswer);
 	T1totalAnswer++;	
 	if(answerArrayT1[j-1] == "B" && T1correctAnswer == test1Stimuli[j-1].continuationA){
 		T1answersCorrect++;
@@ -65,39 +65,39 @@ if(j < sampleArray.length){
 			intoneAudio.src = sample.audioI;
 			playAudioFile("intone_stimuli");
 			T1correctAnswer = sample.continuationA;
-			T1complimentCount++
 		}else{
 			intoneAudio.src = sample.audioN;
 			playAudioFile("intone_stimuli");
 			T1correctAnswer = sample.continuationB;
-			T1complimentCount++
 			}
+		T1complimentCount++;
+
 		/*Stress*/
 	}else if(sample.category == 'stressAdj'){
 		if(stressCount%2 ==0){
 			intoneAudio.src = sample.audioI;
 			playAudioFile("intone_stimuli");
 			T1correctAnswer = sample.continuationA;
-			T1stressCount++
 		}else{
 			intoneAudio.src = sample.audioN;
 			playAudioFile("intone_stimuli");
 			T1correctAnswer = sample.continuationB;
-			T1stressCount++
 			}
+		T1stressCount++;
+
 		/*Verb*/
-	}else{
+	}else if(sample.category == 'verb'){
 		if(verbCount%2 ==0){
 			intoneAudio.src = sample.audioN;
 			playAudioFile("intone_stimuli");
-			T1correctAnswer = sample.continuationA;
-			T1verbCount++
+			T1correctAnswer = sample.continuationB;
 		}else{
 			intoneAudio.src = sample.audioI;
 			playAudioFile("intone_stimuli");
 			T1correctAnswer = sample.continuationA;
-			T1verbCount++
 			}
+		T1verbCount++
+	
 		}
 		var continuationArray = [sample.continuationA, sample.continuationB];
 		window.setTimeout(insertContinuationsT1,1000, continuationArray, j);
