@@ -25,8 +25,8 @@ var T1_clickContA = function(){
 }
 
 var T1_clickContB = function(){
-//	console.log(test1Stimuli[j-1].continuationB);
-//	console.log(T1correctAnswer);
+	console.log(test1Stimuli[j-1].continuationB);
+	console.log(T1correctAnswer);
 	T1totalAnswer++;	
 	if(T1correctAnswer == test1Stimuli[j-1].continuationB){
 		T1answersCorrect++;

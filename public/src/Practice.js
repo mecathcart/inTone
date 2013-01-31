@@ -25,7 +25,13 @@ var practice = function(){
 
 var clickContA = function(){
 	totalAnswer++;	
-	if(correctAnswer == continuationA){
+	//console.log(answerArrayPractice[i]);
+
+	if(answerArrayPractice[i] == "A" && correctAnswer == continuationA){
+		answersCorrect++;
+		console.log(answersCorrect);
+
+	}else if(answerArrayPractice[i] == "B" && correctAnswer == continuationB){
 		answersCorrect++;
 		console.log(answersCorrect);
 	}
@@ -34,10 +40,18 @@ var clickContA = function(){
 
 var clickContB = function(){
 	totalAnswer++;	
-	if(correctAnswer == continuationB){
+	//console.log(answerArrayPractice[i]);
+	//console.log(correctAnswer);
+	//console.log(continuationA);
+	if(answerArrayPractice[i]=="B" && correctAnswer == continuationA){
 		answersCorrect++;
-				console.log(answersCorrect);
+		console.log(answersCorrect);
+	}else if(answerArrayPractice[i]=="A" && correctAnswer == continuationB ){
+		answersCorrect++;
+		console.log(answersCorrect);
 	}
+	
+	
 	nextStimuli(practiceStimuli);
 }
 
@@ -74,21 +88,22 @@ var nextStimuli =  function(sampleArray){
 		/*Stress*/
 		}else if(sample.category == 'stressAdj'){
 			if(stressCount%2 ==0){
-				intoneAudio.src = sample.audioI;
+				intoneAudio.src = sample.audioN;
 				playAudioFile("intone_stimuli");
 				correctAnswer = continuationA;
 			}else{
-				intoneAudio.src = sample.audioN;
+				intoneAudio.src = sample.audioI;
 				playAudioFile("intone_stimuli");
 				correctAnswer = continuationB;
 			}
 			stressCount++
 
 		/*Verb*/
-		}else{
-			if(verbCount%2 ==1){
+		}else if(sample.category == 'verb') {
+			if(verbCount%2 ==0){
 				intoneAudio.src = sample.audioI;
 				playAudioFile("intone_stimuli");
+				console.log(continuationA);
 				correctAnswer = continuationA;
 			}else{
 				intoneAudio.src = sample.audioN;
@@ -99,7 +114,7 @@ var nextStimuli =  function(sampleArray){
 
 		}
 		var continuationArray = [sample.continuationA, sample.continuationB];
-		window.setTimeout(insertContinuations,1000, continuationArray);
+		window.setTimeout(insertContinuations,1000, continuationArray, i);
 
 		/*Move on to next stimuli*/
 		i++;
@@ -119,16 +134,18 @@ var playAudioFile = function(divid) {
 };
 
 /*Insert continuations*/
-var insertContinuations = function(array){
+var insertContinuations = function(array, counter){
 		$("#practice_cross").hide();
-		if(answerArrayPractice[i]){
+		if(answerArrayPractice[counter] == "A"){
+			//console.log(answerArrayPractice[counter]);
 			document.getElementById("continuationA").innerHTML = array[0];
 			document.getElementById("continuationB").innerHTML = array[1];
 		}else{
+			//console.log(answerArrayPractice[counter]);
 			document.getElementById("continuationA").innerHTML = array[1];
-			document.getElementById("continuationB").innerHTML = array[0];
+			document.getElementById("continuationB").innerHTML = array[0];	
+
 		}
-		
 		$("#continuationA").show();
 		$("#continuationB").show();
 }
