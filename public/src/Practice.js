@@ -24,7 +24,9 @@ var practice = function(){
 	$("h2").hide();
 	$("#practice_instructions").hide();
 	$("#start_practice").hide();
-		
+	$("#next").hide();
+	$("#practice_results").hide();
+	
 	nextStimuli(practiceStimuli);		
 }
 
@@ -54,7 +56,9 @@ var clickContA = function(){
 			fillerCorrect++;
 		}
 	}
-	nextStimuli(practiceStimuli);
+	//nextStimuli(practiceStimuli);
+	feedback();
+
 }
 
 var clickContB = function(){
@@ -81,10 +85,20 @@ var clickContB = function(){
 		}else if(practiceStimuli[i-1].hasOwnProperty('audio')){
 			fillerCorrect++;
 		}
-	}
-		
-	nextStimuli(practiceStimuli);
+	}		
+	//nextStimuli(practiceStimuli);
+	feedback();
 }
+
+var feedback = function(){
+		$("#continuationA").hide();
+		$("#continuationB").hide();
+		$("#practice_cross").hide();
+		document.getElementById("practice_results").innerHTML ="Your score is " + answersCorrect +"/" +totalAnswer;
+		$("#practice_results").show();
+		$("#next").show();
+}
+
 
 var nextStimuli =  function(sampleArray){
 	$("#practice_cross").show();
