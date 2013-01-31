@@ -358,6 +358,46 @@ var zoo = new Filler(
 	"They saw the monkeys.",
 	"They saw the dinosaurs.");
 
+
+/*Test 2 stimuli*/
+
+var brave = new IntoneStimuli();
+var movieS = new IntoneStimuli();
+var view = new IntoneStimuli();
+var eyes = new IntoneStimuli();
+var successful = new IntoneStimuli();
+var funny = new IntoneStimuli();
+var honest = new IntoneStimuli();
+var handsome = new IntoneStimuli();
+var warm = new IntoneStimuli();
+var brave = new IntoneStimuli();
+var brave = new IntoneStimuli();
+var brave = new IntoneStimuli();
+var brave = new IntoneStimuli();
+var brave = new IntoneStimuli();
+var brave = new IntoneStimuli();
+var brave = new IntoneStimuli();
+var brave = new IntoneStimuli();
+var brave = new IntoneStimuli();
+var brave = new IntoneStimuli();
+var brave = new IntoneStimuli();
+var brave = new IntoneStimuli();
+var brave = new IntoneStimuli();
+var brave = new IntoneStimuli();
+var brave = new IntoneStimuli();
+var brave = new IntoneStimuli();
+var brave = new IntoneStimuli();
+var brave = new IntoneStimuli();
+var brave = new IntoneStimuli();
+var brave = new IntoneStimuli();
+var brave = new IntoneStimuli();
+
+
+
+
+
+
+
 /*Array of stimuli*/
 var practiceStimuli1 = [colorful, large, applepie, bigcities, like, planning, beach, boatride,];
 

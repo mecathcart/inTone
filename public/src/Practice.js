@@ -3,6 +3,10 @@ var answersCorrect = 0;
 var totalAnswer = 0;
 var correctAnswer = "";
 
+var complimentCorrect = 0;
+var stressCorrect = 0;
+var verbCorrect = 0;
+
 /*creates audio div*/
 var intoneAudio = document.createElement("audio");
 intoneAudio.id = "intone_stimuli";
@@ -25,15 +29,27 @@ var practice = function(){
 
 var clickContA = function(){
 	totalAnswer++;	
-	//console.log(answerArrayPractice[i]);
-
-	if(answerArrayPractice[i] == "A" && correctAnswer == continuationA){
+	console.log(correctAnswer);
+	console.log(continuationA);
+	if(answerArrayPractice[i-1] == "A" && correctAnswer == continuationA){
 		answersCorrect++;
-		console.log(answersCorrect);
+		if(practiceStimuli[i-1].category == "compliment"){
+			complimentCorrect++;
+		}else if(practiceStimuli[i-1].category == "stressAdj"){
+			stressCorrect++;
+		}else if(practiceStimuli[i-1].category == "verb"){
+			verbCorrect++
+		}
 
-	}else if(answerArrayPractice[i] == "B" && correctAnswer == continuationB){
+	}else if(answerArrayPractice[i-1] == "B" && correctAnswer == continuationB){
 		answersCorrect++;
-		console.log(answersCorrect);
+		if(practiceStimuli[i-1].category == "compliment"){
+			complimentCorrect++;
+		}else if(practiceStimuli[i-1].category == "stressAdj"){
+			stressCorrect++;
+		}else if(practiceStimuli[i-1].category == "verb"){
+			verbCorrect++
+		}
 	}
 	nextStimuli(practiceStimuli);
 }
@@ -41,17 +57,31 @@ var clickContA = function(){
 var clickContB = function(){
 	totalAnswer++;	
 	//console.log(answerArrayPractice[i]);
-	//console.log(correctAnswer);
-	//console.log(continuationA);
-	if(answerArrayPractice[i]=="B" && correctAnswer == continuationA){
+	console.log(correctAnswer);
+	console.log(continuationA);
+	if(answerArrayPractice[i-1]=="B" && correctAnswer == continuationA){
 		answersCorrect++;
-		console.log(answersCorrect);
-	}else if(answerArrayPractice[i]=="A" && correctAnswer == continuationB ){
+		if(practiceStimuli[i-1].category == "compliment"){
+			complimentCorrect++;
+		}else if(practiceStimuli[i-1].category == "stressAdj"){
+			stressCorrect++;
+		}else if(practiceStimuli[i-1].category == "verb"){
+			verbCorrect++
+		}
+		//console.log(answersCorrect);
+	}else if(answerArrayPractice[i-1]=="A" && correctAnswer == continuationB ){
 		answersCorrect++;
-		console.log(answersCorrect);
+		if(practiceStimuli[i-1].category == "compliment"){
+			complimentCorrect++;
+		}else if(practiceStimuli[i-1].category == "stressAdj"){
+			stressCorrect++;
+		}else if(practiceStimuli[i-1].category == "verb"){
+			verbCorrect++
+		}
+		//console.log(answersCorrect);
+
 	}
-	
-	
+		
 	nextStimuli(practiceStimuli);
 }
 
@@ -90,11 +120,11 @@ var nextStimuli =  function(sampleArray){
 			if(stressCount%2 ==0){
 				intoneAudio.src = sample.audioN;
 				playAudioFile("intone_stimuli");
-				correctAnswer = continuationA;
+				correctAnswer = continuationB;
 			}else{
 				intoneAudio.src = sample.audioI;
 				playAudioFile("intone_stimuli");
-				correctAnswer = continuationB;
+				correctAnswer = continuationA;
 			}
 			stressCount++
 
@@ -121,7 +151,8 @@ var nextStimuli =  function(sampleArray){
 		$("#continuationA").hide();
 		$("#continuationB").hide();
 		$("#practice_cross").hide();
-		document.getElementById("practice_results").innerHTML ="Your score is " + answersCorrect +"/" +totalAnswer;
+		document.getElementById("practice_results").innerHTML =" Compliment correct = " + complimentCorrect +
+		" Stress correct = " +stressCorrect +" Verb correct = " +verbCorrect;
 		$("#test_1").show();
 	}
 }
