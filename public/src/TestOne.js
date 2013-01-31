@@ -14,10 +14,14 @@ var testOne = function(){
 }
 
 var T1_clickContA = function(){
-	T1totalAnswer++;	
+	T1totalAnswer++;
 	//console.log(test1Stimuli[j-1].continuationA);
-	//console.log(T1correctAnswer);
-	if(T1correctAnswer == test1Stimuli[j-1].continuationA){
+	//console.log(T1correctAnswer);	
+	if(answerArrayT1[j-1] == "A" && T1correctAnswer == test1Stimuli[j-1].continuationA){
+		T1answersCorrect++;
+		console.log(T1answersCorrect);
+
+	}else if(answerArrayT1[j-1] == "B" && T1correctAnswer == test1Stimuli[j-1].continuationB){
 		T1answersCorrect++;
 		console.log(T1answersCorrect);
 	}
@@ -25,10 +29,14 @@ var T1_clickContA = function(){
 }
 
 var T1_clickContB = function(){
-	console.log(test1Stimuli[j-1].continuationB);
-	console.log(T1correctAnswer);
+	//console.log(test1Stimuli[j-1].continuationA);
+	//console.log(T1correctAnswer);
 	T1totalAnswer++;	
-	if(T1correctAnswer == test1Stimuli[j-1].continuationB){
+	if(answerArrayT1[j-1] == "B" && T1correctAnswer == test1Stimuli[j-1].continuationA){
+		T1answersCorrect++;
+		console.log(T1answersCorrect);
+
+	}else if(answerArrayT1[j-1] == "A" && T1correctAnswer == test1Stimuli[j-1].continuationB){
 		T1answersCorrect++;
 		console.log(T1answersCorrect);
 	}
@@ -46,7 +54,6 @@ if(j < sampleArray.length){
 	var sample = sampleArray[j];	
 
 	/* Plays audio stimuli*/	
-
 	/*Filler*/
 	if (sample.hasOwnProperty('audio') ) {
 		intoneAudio.src = sample.audio;
@@ -93,7 +100,7 @@ if(j < sampleArray.length){
 			}
 		}
 		var continuationArray = [sample.continuationA, sample.continuationB];
-		window.setTimeout(insertContinuationsT1,1000, continuationArray);
+		window.setTimeout(insertContinuationsT1,1000, continuationArray, j);
 
 		/*Move on to next stimuli*/
 		j++;
@@ -109,15 +116,14 @@ if(j < sampleArray.length){
 }
 
 /*Insert continuations*/
-var insertContinuationsT1 = function(array){
+var insertContinuationsT1 = function(array, counter){
 		$("#T1_cross").hide();
-		if(answerArrayT1[j] == "B"){
+		if(answerArrayT1[counter] == "A"){
 			document.getElementById("T1_continuationA").innerHTML = array[0];
 			document.getElementById("T1_continuationB").innerHTML = array[1];	
 		}else{
 			document.getElementById("T1_continuationA").innerHTML = array[1];
-			document.getElementById("T1_continuationB").innerHTML = array[0];
-			
+			document.getElementById("T1_continuationB").innerHTML = array[0];		
 		}
 		$("#T1_continuationA").show();
 		$("#T1_continuationB").show();

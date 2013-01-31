@@ -103,7 +103,6 @@ var nextStimuli =  function(sampleArray){
 			if(verbCount%2 ==0){
 				intoneAudio.src = sample.audioI;
 				playAudioFile("intone_stimuli");
-				console.log(continuationA);
 				correctAnswer = continuationA;
 			}else{
 				intoneAudio.src = sample.audioN;
@@ -111,7 +110,6 @@ var nextStimuli =  function(sampleArray){
 				correctAnswer = continuationB;
 			}
 			verbCount++
-
 		}
 		var continuationArray = [sample.continuationA, sample.continuationB];
 		window.setTimeout(insertContinuations,1000, continuationArray, i);
@@ -125,7 +123,6 @@ var nextStimuli =  function(sampleArray){
 		$("#practice_cross").hide();
 		document.getElementById("practice_results").innerHTML ="Your score is " + answersCorrect +"/" +totalAnswer;
 		$("#test_1").show();
-
 	}
 }
 
@@ -144,7 +141,6 @@ var insertContinuations = function(array, counter){
 			//console.log(answerArrayPractice[counter]);
 			document.getElementById("continuationA").innerHTML = array[1];
 			document.getElementById("continuationB").innerHTML = array[0];	
-
 		}
 		$("#continuationA").show();
 		$("#continuationB").show();
