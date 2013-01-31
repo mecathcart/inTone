@@ -6,6 +6,7 @@ var correctAnswer = "";
 var complimentCorrect = 0;
 var stressCorrect = 0;
 var verbCorrect = 0;
+var fillerCorrect = 0;
 
 /*creates audio div*/
 var intoneAudio = document.createElement("audio");
@@ -29,8 +30,6 @@ var practice = function(){
 
 var clickContA = function(){
 	totalAnswer++;	
-	console.log(correctAnswer);
-	console.log(continuationA);
 	if(answerArrayPractice[i-1] == "A" && correctAnswer == continuationA){
 		answersCorrect++;
 		if(practiceStimuli[i-1].category == "compliment"){
@@ -39,6 +38,8 @@ var clickContA = function(){
 			stressCorrect++;
 		}else if(practiceStimuli[i-1].category == "verb"){
 			verbCorrect++
+		}else if(practiceStimuli[i-1].hasOwnProperty('audio')){
+			fillerCorrect++;
 		}
 
 	}else if(answerArrayPractice[i-1] == "B" && correctAnswer == continuationB){
@@ -49,6 +50,8 @@ var clickContA = function(){
 			stressCorrect++;
 		}else if(practiceStimuli[i-1].category == "verb"){
 			verbCorrect++
+		}else if(practiceStimuli[i-1].hasOwnProperty('audio')){
+			fillerCorrect++;
 		}
 	}
 	nextStimuli(practiceStimuli);
@@ -56,9 +59,6 @@ var clickContA = function(){
 
 var clickContB = function(){
 	totalAnswer++;	
-	//console.log(answerArrayPractice[i]);
-	console.log(correctAnswer);
-	console.log(continuationA);
 	if(answerArrayPractice[i-1]=="B" && correctAnswer == continuationA){
 		answersCorrect++;
 		if(practiceStimuli[i-1].category == "compliment"){
@@ -67,8 +67,9 @@ var clickContB = function(){
 			stressCorrect++;
 		}else if(practiceStimuli[i-1].category == "verb"){
 			verbCorrect++
+		}else if(practiceStimuli[i-1].hasOwnProperty('audio')){
+			fillerCorrect++;
 		}
-		//console.log(answersCorrect);
 	}else if(answerArrayPractice[i-1]=="A" && correctAnswer == continuationB ){
 		answersCorrect++;
 		if(practiceStimuli[i-1].category == "compliment"){
@@ -77,9 +78,9 @@ var clickContB = function(){
 			stressCorrect++;
 		}else if(practiceStimuli[i-1].category == "verb"){
 			verbCorrect++
+		}else if(practiceStimuli[i-1].hasOwnProperty('audio')){
+			fillerCorrect++;
 		}
-		//console.log(answersCorrect);
-
 	}
 		
 	nextStimuli(practiceStimuli);

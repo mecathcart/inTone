@@ -7,6 +7,11 @@ var T1complimentCount = 0;
 var T1stressCount = 0;
 var T1verbCount = 0;
 
+var T1complimentCorrect = 0;
+var T1stressCorrect = 0;
+var T1verbCorrect = 0;
+var T1fillerCorrect = 0;
+
 var testOne = function(){	
 	$("#T1_continuationA").show();
 	$("#T1_continuationB").show();
@@ -15,30 +20,60 @@ var testOne = function(){
 
 var T1_clickContA = function(){
 	T1totalAnswer++;
-	console.log(test1Stimuli[j-1].continuationA);
-	console.log(T1correctAnswer);	
+
 	if(answerArrayT1[j-1] == "A" && T1correctAnswer == test1Stimuli[j-1].continuationA){
+		if(test1Stimuli[j-1].category == "compliment"){
+			T1complimentCorrect++;
+		}else if(test1Stimuli[j-1].category == "stressAdj"){
+			T1stressCorrect++;
+		}else if(test1Stimuli[j-1].category == "verb"){
+			T1verbCorrect++
+		}else if(test1Stimuli[j-1].hasOwnProperty('audio')){
+			T1fillerCorrect++;
+		}
 		T1answersCorrect++;
-		console.log(T1answersCorrect);
 
 	}else if(answerArrayT1[j-1] == "B" && T1correctAnswer == test1Stimuli[j-1].continuationB){
+		if(test1Stimuli[j-1].category == "compliment"){
+			T1complimentCorrect++;
+		}else if(test1Stimuli[j-1].category == "stressAdj"){
+			T1stressCorrect++;
+		}else if(test1Stimuli[j-1].category == "verb"){
+			T1verbCorrect++
+		}else if(test1Stimuli[j-1].hasOwnProperty('audio')){
+			T1fillerCorrect++;
+		}
 		T1answersCorrect++;
-		console.log(T1answersCorrect);
 	}
 	nextT1Stimuli(test1Stimuli);
 }
 
 var T1_clickContB = function(){
-	console.log(test1Stimuli[j-1].continuationA);
-	console.log(T1correctAnswer);
+
 	T1totalAnswer++;	
 	if(answerArrayT1[j-1] == "B" && T1correctAnswer == test1Stimuli[j-1].continuationA){
+		if(test1Stimuli[j-1].category == "compliment"){
+			T1complimentCorrect++;
+		}else if(test1Stimuli[j-1].category == "stressAdj"){
+			T1stressCorrect++;
+		}else if(test1Stimuli[j-1].category == "verb"){
+			T1verbCorrect++
+		}else if(test1Stimuli[j-1].hasOwnProperty('audio')){
+			T1fillerCorrect++;
+		}
 		T1answersCorrect++;
-		console.log(T1answersCorrect);
 
 	}else if(answerArrayT1[j-1] == "A" && T1correctAnswer == test1Stimuli[j-1].continuationB){
+		if(test1Stimuli[j-1].category == "compliment"){
+			T1complimentCorrect++;
+		}else if(test1Stimuli[j-1].category == "stressAdj"){
+			T1stressCorrect++;
+		}else if(test1Stimuli[j-1].category == "verb"){
+			T1verbCorrect++
+		}else if(test1Stimuli[j-1].hasOwnProperty('audio')){
+			T1fillerCorrect++;
+		}
 		T1answersCorrect++;
-		console.log(T1answersCorrect);
 	}
 	nextT1Stimuli(test1Stimuli);
 }
