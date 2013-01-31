@@ -13,10 +13,21 @@ var T1verbCorrect = 0;
 var T1fillerCorrect = 0;
 
 var testOne = function(){	
+	$("#T1_next").hide();
 	$("#T1_continuationA").show();
 	$("#T1_continuationB").show();
 	nextT1Stimuli(test1Stimuli);	
 }
+
+var T1feedback = function(){
+		$("#T1_continuationA").hide();
+		$("#T1_continuationB").hide();
+		$("#T1__cross").hide();
+		document.getElementById("T1_results").innerHTML ="Your score is " + T1answersCorrect +"/" +T1totalAnswer;
+		$("#T1_results").show();
+		$("#T1_next").show();
+}
+
 
 var T1_clickContA = function(){
 	T1totalAnswer++;
@@ -45,7 +56,12 @@ var T1_clickContA = function(){
 		}
 		T1answersCorrect++;
 	}
-	nextT1Stimuli(test1Stimuli);
+
+	if(T1totalAnswer%6==0){
+		T1feedback();
+	}else{
+		nextT1Stimuli(test1Stimuli);
+	}
 }
 
 var T1_clickContB = function(){
@@ -75,13 +91,20 @@ var T1_clickContB = function(){
 		}
 		T1answersCorrect++;
 	}
-	nextT1Stimuli(test1Stimuli);
+
+	if(T1totalAnswer%6==0){
+		T1feedback();
+	}else{
+		nextT1Stimuli(test1Stimuli);
+	}	
 }
 
 var nextT1Stimuli = function(sampleArray){
-$("#T1_continuationA").hide();
-$("#T1_continuationB").hide();
-$("#T1_cross").show();
+	$("#T1_next").hide();
+	$("#T1_results").hide();
+	$("#T1_continuationA").hide();
+	$("#T1_continuationB").hide();
+	$("#T1_cross").show();
 
  /*Go through stimuli*/
 if(j < sampleArray.length){	

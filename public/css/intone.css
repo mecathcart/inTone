@@ -79,6 +79,13 @@ a:hover,a:active {
   	display: none;
 }
 
+#T1_next{
+	padding: 10px;
+	width: 700px;
+	margin-left: auto;
+  	margin-right: auto;
+}
+
 #test_2{
 	padding: 10px;
 	width: 700px;
