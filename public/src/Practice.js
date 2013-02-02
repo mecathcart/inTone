@@ -157,7 +157,7 @@ var nextStimuli =  function(sampleArray){
 			verbCount++
 		}
 		var continuationArray = [sample.continuationA, sample.continuationB];
-		window.setTimeout(insertContinuations,1000, continuationArray, i);
+		window.setTimeout(insertContinuations,3000, continuationArray, i);
 
 		/*Move on to next stimuli*/
 		i++;

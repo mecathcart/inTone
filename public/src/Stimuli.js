@@ -311,8 +311,8 @@ var mountain = new Filler(
 	"...She took a plane ride to Canada.");
 var movie = new Filler(
 	"./../audio_stimuli/Test1/F25-I-movie.mp3",
-	"...We think it will be great.",
-	"...He will play baseball next year.");
+	"...He fell asleep.",
+	"...He started singing.");
 var newyork = new Filler(
 	"./../audio_stimuli/Test1/F26-I-newyork.mp3",
 	"...She went to see the Statue of Liberty.",
@@ -359,39 +359,314 @@ var zoo = new Filler(
 	"...They saw the dinosaurs.");
 
 /*Test 2 stimuli*/
+/*Test 2 complimints*/
+var brave = new IntoneStimuli(
+	"compliment", 
+	"./../audio_stimuli/Test2/01-CI-brave.wav",
+	"./../audio_stimuli/Test2/01-CN-brave.wav",
+	"...He's not very reliable, though.",
+	"...He saved a little girl from a fire."
+	);
+var movies2 = new IntoneStimuli(
+	"compliment", 
+	"./../audio_stimuli/Test2/02-CI-movies2.wav",
+	"./../audio_stimuli/Test2/02-CN-movies2.wav",
+	"...But the theater was disgusting.",
+	"...It has some of my favorite actors."
+	);
+var view = new IntoneStimuli(
+	"compliment", 
+	"./../audio_stimuli/Test2/03-CI-view.wav",
+	"./../audio_stimuli/Test2/03-CN-view.wav",
+	"...However, it's much too expensive to stay there.",
+	"...It will be a lovely place to relax."
+	);
+var eyes = new IntoneStimuli(
+	"compliment", 
+	"./../audio_stimuli/Test2/04-CI-eyes.wav",
+	"./../audio_stimuli/Test2/04-CN-eyes.wav",
+	"...No one likes him, though.",
+	"...They are often admired."
+	);
+var successful = new IntoneStimuli(
+	"compliment", 
+	"./../audio_stimuli/Test2/05-CI-successful.wav",
+	"./../audio_stimuli/Test2/05-CN-successful.wav",
+	"...She has a boring personality, though.",
+	"...She has inspired many young women."
+	);
+var funny = new IntoneStimuli(
+	"compliment", 
+	"./../audio_stimuli/Test2/06-CI-funny.wav",
+	"./../audio_stimuli/Test2/06-CN-funny.wav",
+	"...But she's not a very good friend.",
+	"...She often makes me laugh."
+	);
+var honest = new IntoneStimuli(
+	"compliment", 
+	"./../audio_stimuli/Test2/07-CI-honest.wav",
+	"./../audio_stimuli/Test2/07-CN-honest.wav",
+	"...However, she's not great at comforting people.",
+	"...She always gives excellent advice."
+	);
+var handsome = new IntoneStimuli(
+	"compliment", 
+	"./../audio_stimuli/Test2/08-CI-handsome.wav",
+	"./../audio_stimuli/Test2/08-CN-handsome.wav",
+	"...But he's so dumb.",
+	"...He should be a model."
+	);
+var warm = new IntoneStimuli(
+	"compliment", 
+	"./../audio_stimuli/Test2/09-CI-warm.wav",
+	"./../audio_stimuli/Test2/09-CN-warm.wav",
+	"...Unfortunately, it's too dirty to swim in.",
+	"...The kids love to go swimming there."
+	);
+var dancer = new IntoneStimuli(
+	"compliment", 
+	"./../audio_stimuli/Test2/10-CI-dancer.wav",
+	"./../audio_stimuli/Test2/10-CN-dancer.wav",
+	"...She is a bad student, though.",
+	"...She has won many competitions."
+	);
 
-var brave = new IntoneStimuli();
-var movieS = new IntoneStimuli();
-var view = new IntoneStimuli();
-var eyes = new IntoneStimuli();
-var successful = new IntoneStimuli();
-var funny = new IntoneStimuli();
-var honest = new IntoneStimuli();
-var handsome = new IntoneStimuli();
-var warm = new IntoneStimuli();
-var brave = new IntoneStimuli();
-var brave = new IntoneStimuli();
-var brave = new IntoneStimuli();
-var brave = new IntoneStimuli();
-var brave = new IntoneStimuli();
-var brave = new IntoneStimuli();
-var brave = new IntoneStimuli();
-var brave = new IntoneStimuli();
-var brave = new IntoneStimuli();
-var brave = new IntoneStimuli();
-var brave = new IntoneStimuli();
-var brave = new IntoneStimuli();
-var brave = new IntoneStimuli();
-var brave = new IntoneStimuli();
-var brave = new IntoneStimuli();
-var brave = new IntoneStimuli();
-var brave = new IntoneStimuli();
-var brave = new IntoneStimuli();
-var brave = new IntoneStimuli();
-var brave = new IntoneStimuli();
-var brave = new IntoneStimuli();
+/*Stress Test2*/
+var cheerfulboy = new IntoneStimuli(
+	"stressAdj",
+	 "./../audio_stimuli/Test2/11-SA-cheerfulboy.wav",
+	 "./../audio_stimuli/Test2/11-SN-cheerfulboy.wav",
+	 "...The sad boy is painting a picture.",
+	 "...The cheerful girl is painting a picture."
+	);
+var fatman = new IntoneStimuli("stressAdj",
+	 "./../audio_stimuli/Test2/12-SA-fatman.wav",
+	 "./../audio_stimuli/Test2/12-SN-fatman.wav",
+	 "...The skinny man loves to sing.",
+	 "...The fat woman loves to sing."
+	);
+var tallhat = new IntoneStimuli("stressAdj",
+	 "./../audio_stimuli/Test2/13-SA-tallhat.wav",
+	 "./../audio_stimuli/Test2/13-SN-tallhat.wav",
+	"...The short hat is grey.",
+	"...The tall building is grey."
+	 );
+var brokenbike = new IntoneStimuli("stressAdj",
+	 "./../audio_stimuli/Test2/14-SA-brokenbike.wav",
+	 "./../audio_stimuli/Test2/14-SN-brokenbike.wav",
+	 "...The fixed bike is in the driveway.",
+	 "...The broken car is in the driveway."
+	 );
+var diamondring = new IntoneStimuli("stressAdj",
+	 "./../audio_stimuli/Test2/15-SA-diamondring.wav",
+	 "./../audio_stimuli/Test2/15-SN-diamondring.wav",
+	 "...The pearl ring is ugly.",
+	 "...The diamond necklace is ugly."
+	 );
+var freshtomatoes = new IntoneStimuli("stressAdj",
+	 "./../audio_stimuli/Test2/16-SA-freshtomatoes.wav",
+	 "./../audio_stimuli/Test2/16-SN-freshtomatoes.wav",
+	 "...These cooked tomatoes taste delicious.",
+	 "...These fresh cucumbers taste delicious."
+	 );
+var largespoons = new IntoneStimuli("stressAdj",
+	 "./../audio_stimuli/Test2/17-SA-largespoons.wav",
+	 "./../audio_stimuli/Test2/17-SN-largespoons.wav",
+	"...The small spoons are in the drawer.",
+	"...The large knives are in the drawer."
+	 );
+var redpeppers = new IntoneStimuli("stressAdj",
+	 "./../audio_stimuli/Test2/18-SA-redpeppers.wav",
+	 "./../audio_stimuli/Test2/18-SN-redpeppers.wav",
+	 "...The green peppers are mild.",
+	 "...The red onions are mild."
+	 );
+var bluepants = new IntoneStimuli("stressAdj",
+	 "./../audio_stimuli/Test2/19-SA-bluepants.wav",
+	 "./../audio_stimuli/Test2/19-SN-bluepants.wav",
+	 "...My white pants fit well.",
+	 "...My blue shoes fit well."
+	 );
+var leatherchair = new IntoneStimuli("stressAdj",
+	 "./../audio_stimuli/Test2/20-SA-leatherchair.wav",
+	 "./../audio_stimuli/Test2/20-SN-leatherchair.wav",
+	 "...That wooden chair looks terrible.",
+	 "...That leather couch looks terrible."
+	 );
 
+/*Verb*/
+var trying = new IntoneStimuli("verb",
+	"./../audio_stimuli/Test2/21-VI-trying.wav",
+	 "./../audio_stimuli/Test2/21-VN-trying.wav",
+	 "...However, he probably won't succeed.",
+	 "...He already speaks 4 other languages fluently.");
+var likes = new IntoneStimuli("verb",
+	"./../audio_stimuli/Test2/22-VI-likes.wav",
+	 "./../audio_stimuli/Test2/22-VN-likes.wav",
+	 "...It makes her stomach hurt, though.",
+	 "...She eats it in every meal.");
+var looks2 = new IntoneStimuli("verb",
+	"./../audio_stimuli/Test2/23-VI-looks.wav",
+	 "./../audio_stimuli/Test2/23-VN-looks.wav",
+	 "...But I think he's pretending.",
+	 "...Maybe we shouldn't bother him.");
+var started = new IntoneStimuli("verb",
+	"./../audio_stimuli/Test2/24-VI-started.wav",
+	 "./../audio_stimuli/Test2/24-VN-started.wav",
+	 "...It was too hard, though, so I quit.",
+	 "...I will be finished in one hour.");
+var says = new IntoneStimuli("verb",
+	"./../audio_stimuli/Test2/25-VI-says.wav",
+	 "./../audio_stimuli/Test2/25-VN-says.wav",
+	 "...But when I asked her about it, she couldn't remember anything.",
+	 "...Actually, she was surprised how much she enjoyed it.");
+var left = new IntoneStimuli("verb",
+	"./../audio_stimuli/Test2/26-VI-left.wav",
+	 "./../audio_stimuli/Test2/26-VN-left.wav",
+	 "...She didn't show up at the office, though.",
+	 "...She won't be back until late tonight.");
+var wants2 = new IntoneStimuli("verb",
+	"./../audio_stimuli/Test2/27-VI-wants.wav",
+	 "./../audio_stimuli/Test2/27-VN-wants.wav",
+	 "...But he's on a diet, so he can't have any.",
+	 "...So, I'll bake a cake tonight.");
+var sent = new IntoneStimuli("verb",
+	"./../audio_stimuli/Test2/28-VI-sent.wav",
+	 "./../audio_stimuli/Test2/28-VN-sent.wav",
+	 "...Somehow he didn't receive it.",
+	 "...He wrote me back right away.");
+var sounds2 = new IntoneStimuli("verb",
+	"./../audio_stimuli/Test2/29-VI-sounds.wav",
+	 "./../audio_stimuli/Test2/29-VN-sounds.wav",
+	 "...I don't know how much it pays, though.",
+	 "...I hope I get an interview.");
+var has = new IntoneStimuli("verb",
+	"./../audio_stimuli/Test2/30-VI-has.wav",
+	 "./../audio_stimuli/Test2/30-VN-has.wav",
+	 "...However, she still uses her old ripped one.",
+	 "...She gets lots of compliments about it.");
 
+/*Fillers*/
+var store = new Filler(
+	"./../audio_stimuli/Test2/F01-store.wav",
+	"...She bought some groceries.",
+	"...She robbed a bank.");
+var library = new Filler(
+	"./../audio_stimuli/Test2/F02-library.wav",
+	"...He studied hard there.",
+	"...He attended his classes.");
+var vacation = new Filler(
+	"./../audio_stimuli/Test2/F03-vacation.wav",
+	"...He visited many museums in Rome.",
+	"...He ate a lot of sushi there.");
+var circus = new Filler(
+	"./../audio_stimuli/Test2/F04-circus.wav",
+	"...She hopes to enjoy it.",
+	"...She plans to drink a lot there.");
+var liar = new Filler(
+	"./../audio_stimuli/Test2/F05-liar.wav",
+	"...He thinks everyone believes him, though.",
+	"...He goes to meetings all day.");
+var books = new Filler(
+	"./../audio_stimuli/Test2/F06-books.wav",
+	"...He's writing an autobiography right now.",
+	"...He's painting a house right now.");
+var car = new Filler(
+	"./../audio_stimuli/Test2/F07-car.wav",
+	"...Then he got into an accident.",
+	"...Then he read a book.");
+var pierced = new Filler(
+	"./../audio_stimuli/Test2/F08-pierced.wav",
+	"...Then she bought some earrings.",
+	"...Then she bought a bracelet.");
+var match = new Filler(
+	"./../audio_stimuli/Test2/F09-match.wav",
+	"...He celebrated with his friends afterwards.",
+	"...He went to the hospital, though.");
+var party2 = new Filler(
+	"./../audio_stimuli/Test2/F10-party.wav",
+	"...But he wasn't the only one who did.",
+	"...He drank milk there.");
+var tree = new Filler(
+	"./../audio_stimuli/Test2/F11-tree.wav",
+	"...It took her several hours to finish.",
+	"...But it caught on fire.");
+var gardening = new Filler(
+	"./../audio_stimuli/Test2/F12-gardening.wav",
+	"...She knows so much about plants.",
+	"...She eats a lot of vegetables.");
+var grandparents = new Filler(
+	"./../audio_stimuli/Test2/F13-grandparents.wav",
+	"...Her parents are away on a trip.",
+	"...She goes to bed really early.");
+var jail = new Filler(
+	"./../audio_stimuli/Test2/F14-jail.wav",
+	"...He was wrongly accused.",
+	"...He is considered a hero.");
+var mother = new Filler(
+	"./../audio_stimuli/Test2/F15-mother.wav",
+	"...She didn't answer, though.",
+	"...He talked to the baby.");
+var player = new Filler(
+	"./../audio_stimuli/Test2/F16-player.wav",
+	"...I love going to her concerts.",
+	"...She likes to help people in need.");
+var photographer = new Filler(
+	"./../audio_stimuli/Test2/F17-photographer.wav",
+	"...She is passionate about her work.",
+	"...She doesn't leave the house often.");
+var game = new Filler(
+	"./../audio_stimuli/Test2/F18-game.wav",
+	"...He's cheering for his favorite team.",
+	"...He is doing laundry.");
+var towels = new Filler(
+	"./../audio_stimuli/Test2/F19-towels.wav",
+	"...Then he put them in the closet.",
+	"...Then he washed them again.");
+var bank = new Filler(
+	"./../audio_stimuli/Test2/F20-bank.wav",
+	"...He spent it on a birthday present for his girlfriend.",
+	"...He worked out at the gym for two hours.");
+var house2 = new Filler(
+	"./../audio_stimuli/Test2/F21-house2.wav",
+	"...It caused a lot of damage.",
+	"...We stayed at a hotel.");
+var replaced = new Filler(
+	"./../audio_stimuli/Test2/F22-replaced.wav",
+	"...The neighbor threw a ball at it.",
+	"...The house is on fire.");
+var tonight = new Filler(
+	"./../audio_stimuli/Test2/F23-tonight.wav",
+	"...It's too bright to watch the stars.",
+	"...It's snowing outside right now.");
+var opera = new Filler(
+	"./../audio_stimuli/Test2/F24-opera.wav",
+	"...He can't understand what they're singing.",
+	"...He collects baseball cards.");
+var team = new Filler(
+	"./../audio_stimuli/Test2/F25-team.wav",
+	"...She's one of the best players on the team.",
+	"...She eats pizza and candy frequently.");
+var wet = new Filler(
+	"./../audio_stimuli/Test2/F26-wet.wav",
+	"...Now I can't read it.",
+	"...I'll drink my coffee anyway.");
+var accident = new Filler(
+	"./../audio_stimuli/Test2/F27-accident.wav",
+	"...She is very allergic.",
+	"...Her mother was happy.");
+var shoes = new Filler(
+	"./../audio_stimuli/Test2/F28-shoes.wav",
+	"...They were hidden under some clothes.",
+	"...She cooked dinner anyway.");
+var exam = new Filler(
+	"./../audio_stimuli/Test2/F29-exam.wav",
+	"...She has to retake it next month.",
+	"...She went to a party to celebrate.");
+var beef = new Filler(
+	"./../audio_stimuli/Test2/F30-beef.wav",
+	"...He feels bad for the animals.",
+	"...He ate a hamburger.");
 
 
 
@@ -403,10 +678,10 @@ var practiceStimuli1 = [colorful, large, applepie, bigcities, like, planning, be
 //array that has been shuffled
 var practiceStimuli = [bigcities, cake, like, childrenF, applepie, boatride, colorful, beach, large, clothes, planning, boyfriend];
 var answerArrayPractice = ["B", "A", "A", "A","A", "B", "B", "B", "B", "B", "B", "A", "A", "B", "A", "A"];
-var test1Stimuli = [dinner,spanish,wants,patient,scarf,appears,concert,glassplate,favoriteuncle,party,sounds,lost,wallets,
-fishing,intends,youngerbrother,seemed,newcamera,newyork,zoo,children,food,wedding,looks,rich,skirt,intelligent,hoping,
-oldman,house,greenolives,hair,mall,drowning,redshirt,joke,friendly,library,goldbracelet,haircut,says,money,
-hand,postoffice,smells,flowers,movie,home,thinks,winterjacket,leak,popular,ticket,goal,ambitious,mountain,uglydog,homework,read,
+var test1Stimuli = [dinner,spanish,wants,patient,scarf,appears,concert,glassplate,children,favoriteuncle,party,sounds,lost,wallets,
+fishing,intends,youngerbrother,seemed,newcamera,newyork,zoo,food,wedding,looks,rich,skirt,intelligent,hoping,
+oldman,read,house,greenolives,hair,mall,drowning,redshirt,joke,friendly,library,goldbracelet,haircut,says,money,
+hand,postoffice,smells,flowers,movie,home,thinks,winterjacket,leak,popular,ticket,goal,ambitious,mountain,uglydog,homework,
 swimmer];
 var answerArrayT1 = ["B", "A", "A", "B", "A", "A", "A", "B", "B", "A", "B", "B", "B", "B", "A", "A", "A", "B", "B", "A", "B", "A", "A", "B", "A", "A", "B", "B", "A", "A", "A", "B", "A", "A", "A", "A", "B", "B", "B", "A", "B", "A", "B", "B", "A", "A", "A", "B", "A", "B", "B", "B", "A", "A", "B", "A", "B", "B", "A", "A"];
 
