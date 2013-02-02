@@ -685,4 +685,4 @@ hand,postoffice,smells,flowers,movie,home,thinks,winterjacket,leak,popular,ticke
 swimmer];
 var answerArrayT1 = ["B", "A", "A", "B", "A", "A", "A", "B", "B", "A", "B", "B", "B", "B", "A", "A", "A", "B", "B", "A", "B", "A", "A", "B", "A", "A", "B", "B", "A", "A", "A", "B", "A", "A", "A", "A", "B", "B", "B", "A", "B", "A", "B", "B", "A", "A", "A", "B", "A", "B", "B", "B", "A", "A", "B", "A", "B", "B", "A", "A"];
 
-
+var test2Stimuli = [brave, movies2,view, eyes, successful,funny, honest,handsome,warm, dancer, cheerfulboy, fatman, tallhat, brokenbike, diamondring, freshtomatoes, largespoons, redpeppers,bluepants, leatherchair, trying, likes, looks2, started, says, left, wants2, sent, sounds2, has, library, store, vacation, circus, liar, books, car, pierced, match, party2, tree, gardening, grandparents, jail, mother, player, photographer, game, towels, bank, house2, replaced, tonight, opera, team, wet, accident, shoes, exam, beef];
