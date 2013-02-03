@@ -23,7 +23,7 @@ var T2feedback = function(){
     $("#T2_continuationA").hide();
     $("#T2_continuationB").hide();
     $("#T2__cross").hide();
-    document.getElementById("T2_results").innerHTML ="Your score is " + T2answersCorrect +"/" +T2totalAnswer;
+    document.getElementById("T2_results").innerHTML ="Your score is " + eval(answersCorrect/totalAnswer*100)+"%";
     $("#T2_results").show();
     $("#T2_next").show();
 }

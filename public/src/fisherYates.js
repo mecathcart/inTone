@@ -35,7 +35,7 @@ fisherYates(answers);
 console.log(answers.toString());
 var answerArray = [];
 var i = 0;
-for(i= 0; i<12; i++){
+for(i= 0; i<60; i++){
 	fisherYates(answers);
 	answerArray[i] = answers[0];
 };

@@ -21,14 +21,25 @@
     <h1>inTone</h1>
     <h2> Welcome to the inTone experiment!</h2>
 
+    <div >
+      <form name ="myForm" method="get">
+        <input type = "radio" name= "gender" value ="male"> Male</input>
+        <input type = "radio" name= "gender" value ="female"> Female</input> <br>
+       Age: <input type = "text" id= "age" name = "age"></input><br>
+       Native Language <input type = "text" name = "nativeLanguage"></text>
+       <input type = "button" onClick = "createParticipant()" value = "Submit"></input>
+     </form>
+    </div>
+
     <div id="audio_div" class="">
         <audio id="sound_check" src="./../audio_stimuli/test1/01-CI-ambitious.mp3"> </audio>
     </div>
+    <div id = "beginExperiment">
       <input class = "large green button" type="button" value="Sound Check" onClick="soundCheck()"/>
       <a href= "./../view/stressTest.html"><input class = "large green button" type="button" value="Stress Test" /></a>
-    
+    </div>
     <script type="text/javascript" charset="utf-8" src="./../src/StressTest.js"></script>
-    <script type="text/javascript" charset="utf-8" src="./../src/fisherYates.js"></script>
+    <script type="text/javascript" charset="utf-8" src="./../src/Participant.js"></script>
 
     
   </body>

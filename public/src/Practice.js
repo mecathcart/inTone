@@ -94,7 +94,7 @@ var feedback = function(){
 		$("#continuationA").hide();
 		$("#continuationB").hide();
 		$("#practice_cross").hide();
-		document.getElementById("practice_results").innerHTML ="Your score is " + answersCorrect +"/" +totalAnswer;
+		document.getElementById("practice_results").innerHTML ="Your score is" + eval(answersCorrect/totalAnswer*100)+"%";
 		$("#practice_results").show();
 		$("#next").show();
 }

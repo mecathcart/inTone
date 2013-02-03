@@ -668,10 +668,6 @@ var beef = new Filler(
 	"...He feels bad for the animals.",
 	"...He ate a hamburger.");
 
-
-
-
-
 /*Array of stimuli*/
 var practiceStimuli1 = [colorful, large, applepie, bigcities, like, planning, beach, boatride,];
 
@@ -684,6 +680,6 @@ oldman,read,house,greenolives,hair,mall,drowning,redshirt,joke,friendly,library,
 hand,postoffice,smells,flowers,movie,home,thinks,winterjacket,leak,popular,ticket,goal,ambitious,mountain,uglydog,homework,
 swimmer];
 var answerArrayT1 = ["B", "A", "A", "B", "A", "A", "A", "B", "B", "A", "B", "B", "B", "B", "A", "A", "A", "B", "B", "A", "B", "A", "A", "B", "A", "A", "B", "B", "A", "A", "A", "B", "A", "A", "A", "A", "B", "B", "B", "A", "B", "A", "B", "B", "A", "A", "A", "B", "A", "B", "B", "B", "A", "A", "B", "A", "B", "B", "A", "A"];
-var answerArrayT2 = ["B", "A", "A", "B", "A", "A", "A", "B", "B", "A", "B", "B", "B", "B", "A", "A", "A", "B", "B", "A", "B", "A", "A", "B", "A", "A", "B", "B", "A", "A", "A", "B", "A", "A", "A", "A", "B", "B", "B", "A", "B", "A", "B", "B", "A", "A", "A", "B", "A", "B", "B", "B", "A", "A", "B", "A", "B", "B", "A", "A"];
+var answerArrayT2 = ["B", "A", "B", "A", "A", "B", "B", "A", "B", "A", "A", "B", "A", "A", "A", "A", "A", "B", "B", "B", "A", "B", "B", "A", "A", "A", "B", "B", "A", "A", "A", "B", "A", "B", "B", "B", "B", "A", "B", "A", "A", "A", "B", "B", "A", "B", "A", "A", "A", "B", "B", "A", "A", "A", "B", "B", "B", "A", "B", "B"];
 var test2Stimuli = [bluepants,funny, match,cheerfulboy, house2, successful, says, grandparents, looks2, redpeppers, circus, game, accident, started, photographer, player, has, leatherchair, vacation, largespoons, books, towels,brave, party2, jail, left, opera, pierced, movies2, exam,trying, dancer, liar, eyes,warm,mother, fatman, beef, tonight, wants2, honest,view, freshtomatoes, team, wet, tallhat,handsome, store, sounds2, replaced, shoes, brokenbike, tree, car, likes, gardening, sent,library, diamondring, bank ]
 

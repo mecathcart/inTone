@@ -22,6 +22,10 @@ a:hover,a:active {
 	color: #C3B4B4;
 }
 
+#beginExperiment{
+	display: none;
+
+}
 #stress_test_instructions{
 	margin: 20px;
 }
