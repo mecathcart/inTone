@@ -1,3 +1,5 @@
+var partNum = 0;
+
 function Participant(age, gender, nativeLanguage, num){
 	this.age = age;
 	this.gender = gender;
@@ -8,8 +10,7 @@ function Participant(age, gender, nativeLanguage, num){
 var createParticipant = function(){
 	var age = document.myForm.age.value;
 	var gender =  $('input[@name="genderS"]:checked').val();
-	//var gender =  document.myForm.gender[value];
-	//var gender = document.getElementsByName('gender').value;
-	//var gender = document.myForm.gender.value;
-	console.log(gender);
+	var nativeLanguage = document.myForm.nativeLanguage.value;
+	var participant = new Participant(age, gender, nativeLanguage, partNum);
+	partNum++;
 };
