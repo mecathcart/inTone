@@ -223,7 +223,7 @@ var stressTest = function(){
 		stressAudio.src = sample.audio;
 		playAudioFile("stress_test_stimuli");
 		$("#cross").show();
-		window.setTimeout(insertImage,1000,[stressStimuli[i].image]);
+		window.setTimeout(insertImage,1500,[stressStimuli[i].image]);
 
 		/*Inserts Map*/
 		if(sample.numSyllables === 2){
