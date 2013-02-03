@@ -170,7 +170,6 @@ if(k < sampleArray.length){
     document.getElementById("T2_results").innerHTML ="Your score is " + T2answersCorrect +"/" +T2totalAnswer;
     $("#test_2").show();
   }
-
 }
 
 /*Insert continuations*/

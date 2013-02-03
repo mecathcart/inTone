@@ -628,7 +628,7 @@ var bank = new Filler(
 	"...He spent it on a birthday present for his girlfriend.",
 	"...He worked out at the gym for two hours.");
 var house2 = new Filler(
-	"./../audio_stimuli/Test2/F21-house2.wav",
+	"./../audio_stimuli/Test2/F21-house.wav",
 	"...It caused a lot of damage.",
 	"...We stayed at a hotel.");
 var replaced = new Filler(
@@ -685,9 +685,5 @@ hand,postoffice,smells,flowers,movie,home,thinks,winterjacket,leak,popular,ticke
 swimmer];
 var answerArrayT1 = ["B", "A", "A", "B", "A", "A", "A", "B", "B", "A", "B", "B", "B", "B", "A", "A", "A", "B", "B", "A", "B", "A", "A", "B", "A", "A", "B", "B", "A", "A", "A", "B", "A", "A", "A", "A", "B", "B", "B", "A", "B", "A", "B", "B", "A", "A", "A", "B", "A", "B", "B", "B", "A", "A", "B", "A", "B", "B", "A", "A"];
 var answerArrayT2 = ["B", "A", "A", "B", "A", "A", "A", "B", "B", "A", "B", "B", "B", "B", "A", "A", "A", "B", "B", "A", "B", "A", "A", "B", "A", "A", "B", "B", "A", "A", "A", "B", "A", "A", "A", "A", "B", "B", "B", "A", "B", "A", "B", "B", "A", "A", "A", "B", "A", "B", "B", "B", "A", "A", "B", "A", "B", "B", "A", "A"];
+var test2Stimuli = [bluepants,funny, match,cheerfulboy, house2, successful, says, grandparents, looks2, redpeppers, circus, game, accident, started, photographer, player, has, leatherchair, vacation, largespoons, books, towels,brave, party2, jail, left, opera, pierced, movies2, exam,trying, dancer, liar, eyes,warm,mother, fatman, beef, tonight, wants2, honest,view, freshtomatoes, team, wet, tallhat,handsome, store, sounds2, replaced, shoes, brokenbike, tree, car, likes, gardening, sent,library, diamondring, bank ]
 
-var test2Stimuli = [brave, movies2,view, eyes, successful,funny, honest,handsome,warm, dancer, 
-cheerfulboy, fatman, tallhat, brokenbike, diamondring, freshtomatoes, largespoons, redpeppers,bluepants, leatherchair,
- trying, likes, looks2, started, says, left, wants2, sent, sounds2, has, 
- library, store, vacation, circus, liar, books, car, pierced, match, party2, tree, gardening, grandparents, jail, 
- mother, player, photographer, game, towels, bank, house2, replaced, tonight, opera, team, wet, accident, shoes, exam, beef];
