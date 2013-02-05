@@ -28,6 +28,14 @@ function Participant(){
 	this.T1verbCorrect = 0;
 	this.T1fillerCorrect = 0;
 
+	/*Test2 Variables*/
+	this.T2answersCorrect = 0;
+	this.T2totalAnswer = 0;
+
+	this.T2complimentCorrect = 0;
+	this.T2stressCorrect = 0;
+	this.T2verbCorrect = 0;
+	this.T2fillerCorrect = 0;
  	 
 }
 

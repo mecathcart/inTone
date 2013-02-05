@@ -1,16 +1,13 @@
+var participant = localStorage.getObject('participant');
+console.log(participant);
+
 var k = 0;
-var T2answersCorrect = 0;
-var T2totalAnswer = 0;
 var T2correctAnswer = "";
+
 
 var T2complimentCount = 0;
 var T2stressCount = 0;
 var T2verbCount = 0;
-
-var T2complimentCorrect = 0;
-var T2stressCorrect = 0;
-var T2verbCorrect = 0;
-var T2fillerCorrect = 0;
 
 var testTwo = function(){ 
   $("#T2_next").hide();
@@ -23,41 +20,41 @@ var T2feedback = function(){
     $("#T2_continuationA").hide();
     $("#T2_continuationB").hide();
     $("#T2__cross").hide();
-    document.getElementById("T2_results").innerHTML ="Your score is " + eval(answersCorrect/totalAnswer*100)+"%";
+    document.getElementById("T2_results").innerHTML ="Your score is " + eval(Math.round(answersCorrect/totalAnswer*100))+"%";
     $("#T2_results").show();
     $("#T2_next").show();
 }
 
 
 var T2_clickContA = function(){
-  T2totalAnswer++;
+  participant.T2totalAnswer++;
 
   if(answerArrayT2[k-1] == "A" && T2correctAnswer == test2Stimuli[k-1].continuationA){
     if(test2Stimuli[k-1].category == "compliment"){
-      T2complimentCorrect++;
+      participant.T2complimentCorrect++;
     }else if(test2Stimuli[k-1].category == "stressAdj"){
-      T2stressCorrect++;
+      participant.T2stressCorrect++;
     }else if(test2Stimuli[k-1].category == "verb"){
-      T2verbCorrect++
+      participant.T2verbCorrect++
     }else if(test2Stimuli[k-1].hasOwnProperty('audio')){
-      T2fillerCorrect++;
+      participant.T2fillerCorrect++;
     }
-    T2answersCorrect++;
+    participant.T2answersCorrect++;
 
   }else if(answerArrayT2[k-1] == "B" && T2correctAnswer == test2Stimuli[k-1].continuationB){
     if(test2Stimuli[k-1].category == "compliment"){
-      T2complimentCorrect++;
+      participant.T2complimentCorrect++;
     }else if(test2Stimuli[k-1].category == "stressAdj"){
-      T2stressCorrect++;
+      participant.T2stressCorrect++;
     }else if(test2Stimuli[k-1].category == "verb"){
-      T2verbCorrect++
+      participant.T2verbCorrect++
     }else if(test2Stimuli[k-1].hasOwnProperty('audio')){
-      T2fillerCorrect++;
+      participant.T2fillerCorrect++;
     }
-    T2answersCorrect++;
+    participant.T2answersCorrect++;
   }
 
-  if(T2totalAnswer%6==0){
+  if(participant.T2totalAnswer%6==0){
     T2feedback();
   }else{
     nextT2Stimuli(test2Stimuli);
@@ -66,33 +63,33 @@ var T2_clickContA = function(){
 
 var T2_clickContB = function(){
 
-  T2totalAnswer++;  
+  participant.T2totalAnswer++;  
   if(answerArrayT2[k-1] == "B" && T2correctAnswer == test2Stimuli[k-1].continuationA){
     if(test2Stimuli[k-1].category == "compliment"){
-      T2complimentCorrect++;
+      participant.T2complimentCorrect++;
     }else if(test2Stimuli[k-1].category == "stressAdj"){
-      T2stressCorrect++;
+      participant.T2stressCorrect++;
     }else if(test2Stimuli[k-1].category == "verb"){
-      T2verbCorrect++
+      participant.T2verbCorrect++
     }else if(test2Stimuli[k-1].hasOwnProperty('audio')){
-      T2fillerCorrect++;
+      participant.T2fillerCorrect++;
     }
-    T2answersCorrect++;
+    participant.T2answersCorrect++;
 
   }else if(answerArrayT2[k-1] == "A" && T2correctAnswer == test2Stimuli[k-1].continuationB){
     if(test2Stimuli[k-1].category == "compliment"){
-      T2complimentCorrect++;
+      participant.T2complimentCorrect++;
     }else if(test2Stimuli[k-1].category == "stressAdj"){
-      T2stressCorrect++;
+      participant.T2stressCorrect++;
     }else if(test2Stimuli[k-1].category == "verb"){
-      T2verbCorrect++
+      participant.T2verbCorrect++
     }else if(test2Stimuli[k-1].hasOwnProperty('audio')){
-      T2fillerCorrect++;
+      participant.T2fillerCorrect++;
     }
-    T2answersCorrect++;
+    participant.T2answersCorrect++;
   }
 
-  if(T2totalAnswer%6==0){
+  if(participant.T2totalAnswer%6==0){
     T2feedback();
   }else{
     nextT2Stimuli(test2Stimuli);
@@ -167,7 +164,7 @@ if(k < sampleArray.length){
     $("#T2_continuationA").hide();
     $("#T2_continuationB").hide();
     $("#T2_cross").hide();
-    document.getElementById("T2_results").innerHTML ="Your score is " + T2answersCorrect +"/" +T2totalAnswer;
+    document.getElementById("T2_results").innerHTML ="Your score is " + participant.T2answersCorrect +"/" +participant.T2totalAnswer;
     $("#test_2").show();
   }
 }
