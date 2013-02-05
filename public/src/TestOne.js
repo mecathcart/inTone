@@ -1,15 +1,12 @@
 var participant = localStorage.getObject('participant');
 console.log(participant);
 
-
 var j = 0;
 var T1correctAnswer = "";
 
 var T1complimentCount = 0;
 var T1stressCount = 0;
 var T1verbCount = 0;
-
-
 
 var testOne = function(){	
 	$("#T1_next").hide();
@@ -22,7 +19,7 @@ var T1feedback = function(){
 		$("#T1_continuationA").hide();
 		$("#T1_continuationB").hide();
 		$("#T1__cross").hide();
-		document.getElementById("T1_results").innerHTML ="Your score is " + eval(Math.round(answersCorrect/totalAnswer*100))+"%";
+		document.getElementById("T1_results").innerHTML ="Your score is " + eval(Math.round(participant.T1answersCorrect/participant.T1totalAnswer*100))+"%";
 		$("#T1_results").show();
 		$("#T1_next").show();
 }

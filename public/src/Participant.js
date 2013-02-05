@@ -2,6 +2,7 @@ function Participant(){
 	this.age = 0;
  	this.gender = "";
  	this.nativeLanguage = "";
+ 	this.num = 0;
  	this.getAge = function() {
         return this.age;
     };
@@ -56,18 +57,13 @@ var createParticipant = function() {
  	participant.gender = $('input[@name="genderS"]:checked').val();
  	participant.nativeLanguage = document.myForm.nativeLanguage.value;
  	participants.push(participant);
- 	participant.num = participants.indexOf(participant);
- 	num = participant.num;
+ 	participant.num = participants.length;
  	localStorage.setObject('participant',participant);
- 	//localStorage.setItem('participant2', JSON.stringify(participant));
- 	//localStorage.setItem('participants',JSON.stringify(participants));
+ 	localStorage.setObject('participants', participants);
  	$("#beginExperiment").show();
- 	//return participant;
- 	//console.log(participant.num);
- 	//console.log(participant);
+ 	console.log(localStorage.getObject('participants'));
+ 	console.log(localStorage.getObject('participant'));
+
+
 };
-
-//var participants = localStorage.getItem('participants')
-
-//console.log(localStorage.getItem('participant'))
 

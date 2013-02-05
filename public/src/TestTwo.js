@@ -20,7 +20,7 @@ var T2feedback = function(){
     $("#T2_continuationA").hide();
     $("#T2_continuationB").hide();
     $("#T2__cross").hide();
-    document.getElementById("T2_results").innerHTML ="Your score is " + eval(Math.round(answersCorrect/totalAnswer*100))+"%";
+    document.getElementById("T2_results").innerHTML ="Your score is " + eval(Math.round(participant.T2answersCorrect/participant.T2totalAnswer*100))+"%";
     $("#T2_results").show();
     $("#T2_next").show();
 }
