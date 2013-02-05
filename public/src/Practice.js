@@ -1,14 +1,9 @@
+var participant = localStorage.getObject('participant');
+console.log(participant);
+
+
 var i = 0;
 var correctAnswer = "";
-
-	/*Practice Variables*/
-	var answersCorrect = 0;
-	var totalAnswer = 0;
-
-	var complimentCorrect = 0;
-	var stressCorrect = 0;
-	var verbCorrect = 0;
-	var fillerCorrect = 0;
 
 /*creates audio div*/
 var intoneAudio = document.createElement("audio");
@@ -33,29 +28,29 @@ var practice = function(){
 }
 
 var clickContA = function(){
-	totalAnswer++;	
+	participant.totalAnswerPractice++;	
 	if(answerArrayPractice[i-1] == "A" && correctAnswer == continuationA){
-		answersCorrect++;
+		participant.answersCorrectPractice++;
 		if(practiceStimuli[i-1].category == "compliment"){
-			complimentCorrect++;
+			participant.complimentCorrectPractice++;
 		}else if(practiceStimuli[i-1].category == "stressAdj"){
-			stressCorrect++;
+			participant.stressCorrectPractice++;
 		}else if(practiceStimuli[i-1].category == "verb"){
-			verbCorrect++
+			participant.verbCorrectPractice++
 		}else if(practiceStimuli[i-1].hasOwnProperty('audio')){
-			fillerCorrect++;
+			participant.fillerCorrectPractice++;
 		}
 
 	}else if(answerArrayPractice[i-1] == "B" && correctAnswer == continuationB){
-		answersCorrect++;
+		participant.answersCorrectPractice++;
 		if(practiceStimuli[i-1].category == "compliment"){
-			complimentCorrect++;
+			participant.complimentCorrectPractice++;
 		}else if(practiceStimuli[i-1].category == "stressAdj"){
-			stressCorrect++;
+			participant.stressCorrectPractice++;
 		}else if(practiceStimuli[i-1].category == "verb"){
-			verbCorrect++
+			participant.verbCorrectPractice++
 		}else if(practiceStimuli[i-1].hasOwnProperty('audio')){
-			fillerCorrect++;
+			participant.fillerCorrectPractice++;
 		}
 	}
 	//nextStimuli(practiceStimuli);
@@ -64,28 +59,28 @@ var clickContA = function(){
 }
 
 var clickContB = function(){
-	totalAnswer++;	
+	participant.totalAnswerPractice++;	
 	if(answerArrayPractice[i-1]=="B" && correctAnswer == continuationA){
-		answersCorrect++;
+		participant.answersCorrectPractice++;
 		if(practiceStimuli[i-1].category == "compliment"){
-			complimentCorrect++;
+			participant.complimentCorrectPractice++;
 		}else if(practiceStimuli[i-1].category == "stressAdj"){
-			stressCorrect++;
+			participant.stressCorrectPractice++;
 		}else if(practiceStimuli[i-1].category == "verb"){
-			verbCorrect++
+			participant.verbCorrectPractice++
 		}else if(practiceStimuli[i-1].hasOwnProperty('audio')){
-			fillerCorrect++;
+			participant.fillerCorrectPractice++;
 		}
 	}else if(answerArrayPractice[i-1]=="A" && correctAnswer == continuationB ){
-		answersCorrect++;
+		participant.answersCorrectPractice++;
 		if(practiceStimuli[i-1].category == "compliment"){
-			complimentCorrect++;
+			participant.complimentCorrectPractice++;
 		}else if(practiceStimuli[i-1].category == "stressAdj"){
-			stressCorrect++;
+			participant.stressCorrectPractice++;
 		}else if(practiceStimuli[i-1].category == "verb"){
-			verbCorrect++
+			participant.verbCorrectPractice++
 		}else if(practiceStimuli[i-1].hasOwnProperty('audio')){
-			fillerCorrect++;
+			participant.fillerCorrectPractice++;
 		}
 	}		
 	//nextStimuli(practiceStimuli);
@@ -96,7 +91,7 @@ var feedback = function(){
 		$("#continuationA").hide();
 		$("#continuationB").hide();
 		$("#practice_cross").hide();
-		document.getElementById("practice_results").innerHTML ="Your score is" + eval(answersCorrect/totalAnswer*100)+"%";
+		document.getElementById("practice_results").innerHTML ="Your score is " + eval(Math.round(participant.answersCorrectPractice/participant.totalAnswerPractice*100))+"%";
 		$("#practice_results").show();
 		$("#next").show();
 }
@@ -168,8 +163,8 @@ var nextStimuli =  function(sampleArray){
 		$("#continuationA").hide();
 		$("#continuationB").hide();
 		$("#practice_cross").hide();
-		document.getElementById("practice_results").innerHTML =" Compliment correct = " + complimentCorrect +
-		" Stress correct = " +stressCorrect +" Verb correct = " +verbCorrect;
+		document.getElementById("practice_results").innerHTML ="Your score is " + eval(Math.round(participant.answersCorrectPractice/participant.totalAnswerPractice*100))+"%";
+		$("#practice_results").show();
 		$("#test_1").show();
 	}
 }

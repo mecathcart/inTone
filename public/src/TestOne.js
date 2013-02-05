@@ -1,16 +1,15 @@
+var participant = localStorage.getObject('participant');
+console.log(participant);
+
+
 var j = 0;
-var T1answersCorrect = 0;
-var T1totalAnswer = 0;
 var T1correctAnswer = "";
 
 var T1complimentCount = 0;
 var T1stressCount = 0;
 var T1verbCount = 0;
 
-var T1complimentCorrect = 0;
-var T1stressCorrect = 0;
-var T1verbCorrect = 0;
-var T1fillerCorrect = 0;
+
 
 var testOne = function(){	
 	$("#T1_next").hide();
@@ -30,34 +29,34 @@ var T1feedback = function(){
 
 
 var T1_clickContA = function(){
-	T1totalAnswer++;
+	participant.T1totalAnswer++;
 
 	if(answerArrayT1[j-1] == "A" && T1correctAnswer == test1Stimuli[j-1].continuationA){
 		if(test1Stimuli[j-1].category == "compliment"){
-			T1complimentCorrect++;
+			participant.T1complimentCorrect++;
 		}else if(test1Stimuli[j-1].category == "stressAdj"){
-			T1stressCorrect++;
+			participant.T1stressCorrect++;
 		}else if(test1Stimuli[j-1].category == "verb"){
-			T1verbCorrect++
+			participant.T1verbCorrect++
 		}else if(test1Stimuli[j-1].hasOwnProperty('audio')){
-			T1fillerCorrect++;
+			participant.T1fillerCorrect++;
 		}
-		T1answersCorrect++;
+		participant.T1answersCorrect++;
 
 	}else if(answerArrayT1[j-1] == "B" && T1correctAnswer == test1Stimuli[j-1].continuationB){
 		if(test1Stimuli[j-1].category == "compliment"){
-			T1complimentCorrect++;
+			participant.T1complimentCorrect++;
 		}else if(test1Stimuli[j-1].category == "stressAdj"){
-			T1stressCorrect++;
+			participant.T1stressCorrect++;
 		}else if(test1Stimuli[j-1].category == "verb"){
-			T1verbCorrect++
+			participant.T1verbCorrect++
 		}else if(test1Stimuli[j-1].hasOwnProperty('audio')){
-			T1fillerCorrect++;
+			participant.T1fillerCorrect++;
 		}
-		T1answersCorrect++;
+		participant.T1answersCorrect++;
 	}
 
-	if(T1totalAnswer%6==0){
+	if(participant.T1totalAnswer%6==0){
 		T1feedback();
 	}else{
 		nextT1Stimuli(test1Stimuli);
@@ -66,33 +65,33 @@ var T1_clickContA = function(){
 
 var T1_clickContB = function(){
 
-	T1totalAnswer++;	
+	participant.T1totalAnswer++;	
 	if(answerArrayT1[j-1] == "B" && T1correctAnswer == test1Stimuli[j-1].continuationA){
 		if(test1Stimuli[j-1].category == "compliment"){
-			T1complimentCorrect++;
+			participant.T1complimentCorrect++;
 		}else if(test1Stimuli[j-1].category == "stressAdj"){
-			T1stressCorrect++;
+			participant.T1stressCorrect++;
 		}else if(test1Stimuli[j-1].category == "verb"){
-			T1verbCorrect++
+			participant.T1verbCorrect++
 		}else if(test1Stimuli[j-1].hasOwnProperty('audio')){
-			T1fillerCorrect++;
+			participant.T1fillerCorrect++;
 		}
-		T1answersCorrect++;
+		participant.T1answersCorrect++;
 
 	}else if(answerArrayT1[j-1] == "A" && T1correctAnswer == test1Stimuli[j-1].continuationB){
 		if(test1Stimuli[j-1].category == "compliment"){
-			T1complimentCorrect++;
+			participant.T1complimentCorrect++;
 		}else if(test1Stimuli[j-1].category == "stressAdj"){
-			T1stressCorrect++;
+			participant.T1stressCorrect++;
 		}else if(test1Stimuli[j-1].category == "verb"){
-			T1verbCorrect++
+			participant.T1verbCorrect++
 		}else if(test1Stimuli[j-1].hasOwnProperty('audio')){
-			T1fillerCorrect++;
+			participant.T1fillerCorrect++;
 		}
-		T1answersCorrect++;
+		participant.T1answersCorrect++;
 	}
 
-	if(T1totalAnswer%6==0){
+	if(participant.T1totalAnswer%6==0){
 		T1feedback();
 	}else{
 		nextT1Stimuli(test1Stimuli);
@@ -167,7 +166,7 @@ if(j < sampleArray.length){
 		$("#T1_continuationA").hide();
 		$("#T1_continuationB").hide();
 		$("#T1_cross").hide();
-		document.getElementById("T1_results").innerHTML ="Your score is " + T1answersCorrect +"/" +T1totalAnswer;
+		document.getElementById("T1_results").innerHTML ="Your score is " + participant.T1answersCorrect +"/" +participant.T1totalAnswer;
 		$("#test_2").show();
 	}
 

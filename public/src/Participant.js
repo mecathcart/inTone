@@ -6,9 +6,28 @@ function Participant(){
         return this.age;
     };
 
- 	//Stress Test
+ 	/*Stress Test*/
  	this.totalAnswerST = 0;
  	this.correctAnswerST = 0;
+
+	/*Practice Variables*/
+	this.answersCorrectPractice = 0;
+	this.totalAnswerPractice = 0;
+
+	this.complimentCorrectPractice = 0;
+	this.stressCorrectPractice = 0;
+	this.verbCorrectPractice = 0;
+	this.fillerCorrectPractice = 0;
+
+	/*Test1 Variables*/
+	this.T1answersCorrect = 0;
+	this.T1totalAnswer = 0;
+
+	this.T1complimentCorrect = 0;
+	this.T1stressCorrect = 0;
+	this.T1verbCorrect = 0;
+	this.T1fillerCorrect = 0;
+
  	 
 }
 
