@@ -50,7 +50,10 @@ Storage.prototype.getObject = function(key) {
 }
 
 var participant =  new Participant();
-var participants = [];
+
+var participants = localStorage.getObject('participants')
+
+//var participants = [];
 
 var createParticipant = function() {
 	participant.age = document.myForm.age.value;
