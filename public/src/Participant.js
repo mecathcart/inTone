@@ -64,6 +64,14 @@ var createParticipant = function() {
  	console.log(localStorage.getObject('participants'));
  	console.log(localStorage.getObject('participant'));
 
-
 };
+
+var chooseTest = function(){
+	if(participant.num%2 ==0){
+		window.location.href = './../view/testOne.html';
+	}else{
+		window.location.href = './../view/testTwo.html';
+
+	}
+}
 
