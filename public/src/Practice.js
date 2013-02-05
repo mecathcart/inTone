@@ -1,12 +1,14 @@
 var i = 0;
-var answersCorrect = 0;
-var totalAnswer = 0;
 var correctAnswer = "";
 
-var complimentCorrect = 0;
-var stressCorrect = 0;
-var verbCorrect = 0;
-var fillerCorrect = 0;
+	/*Practice Variables*/
+	var answersCorrect = 0;
+	var totalAnswer = 0;
+
+	var complimentCorrect = 0;
+	var stressCorrect = 0;
+	var verbCorrect = 0;
+	var fillerCorrect = 0;
 
 /*creates audio div*/
 var intoneAudio = document.createElement("audio");

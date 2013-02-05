@@ -1,22 +1,46 @@
+function Participant(){
+	this.age = 0;
+ 	this.gender = "";
+ 	this.nativeLanguage = "";
+ 	this.getAge = function() {
+        return this.age;
+    };
+
+ 	//Stress Test
+ 	this.totalAnswerST = 0;
+ 	this.correctAnswerST = 0;
+ 	 
+}
+
+
+Storage.prototype.setObject = function(key, value) {
+    this.setItem(key, JSON.stringify(value));
+}
+ 
+Storage.prototype.getObject = function(key) {
+    return JSON.parse(this.getItem(key));
+}
+
+var participant =  new Participant();
 var participants = [];
 
-function Participant(age, gender, nativeLanguage, num){
-	this.age = age;
-	this.gender = gender;
-	this.nativeLanguage = nativeLanguage;
-	this.num = num;
+var createParticipant = function() {
+	participant.age = document.myForm.age.value;
+ 	participant.gender = $('input[@name="genderS"]:checked').val();
+ 	participant.nativeLanguage = document.myForm.nativeLanguage.value;
+ 	participants.push(participant);
+ 	participant.num = participants.indexOf(participant);
+ 	num = participant.num;
+ 	localStorage.setObject('participant',participant);
+ 	//localStorage.setItem('participant2', JSON.stringify(participant));
+ 	//localStorage.setItem('participants',JSON.stringify(participants));
+ 	$("#beginExperiment").show();
+ 	//return participant;
+ 	//console.log(participant.num);
+ 	//console.log(participant);
 };
 
-var createParticipant = function(){
-	var age = document.myForm.age.value;
-	var gender =  $('input[@name="genderS"]:checked').val();
-	var nativeLanguage = document.myForm.nativeLanguage.value;
-	var participant = new Participant(age, gender, nativeLanguage);
-	participants.push(participant);
-	participant.num = participants.indexOf(participant);
-	localStorage.participant;
-	console.log(participant.num);
-	return participant;
-};
+//var participants = localStorage.getItem('participants')
 
-//console.log(participant);
+//console.log(localStorage.getItem('participant'))
+
