@@ -165,7 +165,11 @@ if(k < sampleArray.length){
     $("#T2_continuationB").hide();
     $("#T2_cross").hide();
     document.getElementById("T2_results").innerHTML ="Your score is " + participant.T2answersCorrect +"/" +participant.T2totalAnswer;
-    $("#test_2").show();
+    if(participant.num%2 !==0){
+      $("#test_1").show();
+    }else{
+      $(".end").show();
+    }
   }
 }
 
