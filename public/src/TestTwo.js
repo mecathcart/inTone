@@ -107,8 +107,59 @@ var nextT2Stimuli = function(sampleArray){
 if(k < sampleArray.length){ 
 
   var sample = sampleArray[k];  
+  if(participant.num%4==1){
+    /* Plays audio stimuli*/  
+    /*Filler*/
+    if (sample.hasOwnProperty('audio') ) {
+      intoneAudio.src = sample.audio;
+      playAudioFile("intone_stimuli");
+      T2correctAnswer = sample.continuationA;
+  /*Compliment*/
+    }else if(sample.category == 'compliment'){ 
+      if(T2complimentCount%2 == 0){
+        intoneAudio.src = sample.audioI;
+        playAudioFile("intone_stimuli");
+        T2correctAnswer = sample.continuationA;
+      }else{
+        intoneAudio.src = sample.audioN;
+        playAudioFile("intone_stimuli");
+        T2correctAnswer = sample.continuationB;
+       }
+      T2complimentCount++;
 
-  /* Plays audio stimuli*/  
+    /*Stress*/
+    }else if(sample.category == 'stressAdj'){
+      if(T2stressCount%2 ==0){
+        intoneAudio.src = sample.audioI;
+        playAudioFile("intone_stimuli");
+        T2correctAnswer = sample.continuationA;
+      }else{
+        intoneAudio.src = sample.audioN;
+        playAudioFile("intone_stimuli");
+        T2correctAnswer = sample.continuationB;
+        }
+      T2stressCount++;
+
+    /*Verb*/
+    }else if(sample.category == 'verb'){
+      if(T2verbCount%2 ==0){
+        intoneAudio.src = sample.audioN;
+        playAudioFile("intone_stimuli");
+        T2correctAnswer = sample.continuationB;
+      }else{
+        intoneAudio.src = sample.audioI;
+        playAudioFile("intone_stimuli");
+        T2correctAnswer = sample.continuationA;
+        }
+      T2verbCount++
+    
+    }
+    var continuationArray = [sample.continuationA, sample.continuationB];
+    window.setTimeout(insertContinuationsT2,3000, continuationArray, k);
+
+  }else{
+
+    /* Plays audio stimuli*/  
   /*Filler*/
   if (sample.hasOwnProperty('audio') ) {
     intoneAudio.src = sample.audio;
@@ -116,7 +167,7 @@ if(k < sampleArray.length){
     T2correctAnswer = sample.continuationA;
   /*Compliment*/
   }else if(sample.category == 'compliment'){ 
-    if(T2complimentCount%2 == 0){
+    if(T2complimentCount%2 == 1){
       intoneAudio.src = sample.audioI;
       playAudioFile("intone_stimuli");
       T2correctAnswer = sample.continuationA;
@@ -129,7 +180,7 @@ if(k < sampleArray.length){
 
     /*Stress*/
   }else if(sample.category == 'stressAdj'){
-    if(T2stressCount%2 ==0){
+    if(T2stressCount%2 ==1){
       intoneAudio.src = sample.audioI;
       playAudioFile("intone_stimuli");
       T2correctAnswer = sample.continuationA;
@@ -142,7 +193,7 @@ if(k < sampleArray.length){
 
     /*Verb*/
   }else if(sample.category == 'verb'){
-    if(T2verbCount%2 ==0){
+    if(T2verbCount%2 ==1){
       intoneAudio.src = sample.audioN;
       playAudioFile("intone_stimuli");
       T2correctAnswer = sample.continuationB;
@@ -157,6 +208,7 @@ if(k < sampleArray.length){
     var continuationArray = [sample.continuationA, sample.continuationB];
     window.setTimeout(insertContinuationsT2,3000, continuationArray, k);
 
+    }  
     /*Move on to next stimuli*/
     k++;
   /*Show results after last question*/  
