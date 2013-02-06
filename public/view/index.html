@@ -17,11 +17,19 @@
   </head>
 
   <body>
+    <div id ="Heading">
+      <!-- the left side of the fork effect -->
+        <div class="l-triangle-top"></div>
+        <div class="l-triangle-bottom"></div>
+        <div class = "rectangle">
+            <h1> Welcome to the inTone experiment!</h1>
+        </div>
+       <!-- the right side of the fork effect -->
+         <div class="r-triangle-top"></div>
+         <div class="r-triangle-bottom"></div>
+    </div>
 
-    <h1>inTone</h1>
-    <h2> Welcome to the inTone experiment!</h2>
-
-    <div >
+    
       <form name ="myForm" method="get">
         <input type = "radio" name= "gender" value ="male"> Male</input>
         <input type = "radio" name= "gender" value ="female"> Female</input> <br>
@@ -29,7 +37,7 @@
        Native Language <input type = "text" name = "nativeLanguage"></text>
        <input type = "button" onClick = "createParticipant()" value = "Submit"></input>
      </form>
-    </div>
+    
 
     <div id="audio_div" class="">
         <audio id="sound_check" src="./../audio_stimuli/test1/01-CI-ambitious.mp3"> </audio>

@@ -1,10 +1,82 @@
 h1,h2,h3,h4 {
-	text-align: center;
 	font-family: Verdana, Tahoma, sans-serif;
+	color: #f1f0dc;
+	display: block;
+	float: left;
 }
 
+#Heading {
+   margin: 0 auto;
+   width: 960px;
+   text-shadow: 0 2px 1px rgba(0,0,0,0.5);    
+   display: block;
+   list-style: none;
+   text-align: center;
+
+}
+
+.rectangle {
+   background: #cd8476;
+   height: 62px;
+   position: relative;
+   -moz-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+   box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+   -webkit-border-radius: 3px;
+   -moz-border-radius: 3px;
+   border-radius: 3px;
+   z-index: 500; /* the stack order: foreground */
+   margin: 3em 0;
+}
+
+.l-triangle-top {
+   border-color: #cd8476 transparent transparent;
+   border-style:solid;
+   border-width:50px;
+   height:0px;
+   width:0px;
+   position: relative;
+   float: left;
+   top: 1px;
+   left: -50px;
+}
+.l-triangle-bottom {
+   border-color: transparent transparent #cd8476;
+   border-style:solid;
+   border-width:50px;
+   height:0px;
+   width:0px;
+   position: relative;
+   float: left;
+   top: -40px;
+   left: -150px;
+}
+
+.r-triangle-top {
+   border-color: #cd8476 transparent transparent;
+   border-style:solid;
+   border-width:50px;
+   height:0px;
+   width:0px;
+   position: relative;
+   float: right;
+   right: -45px;
+   top: -107px;
+}
+.r-triangle-bottom {
+   border-color: transparent transparent #cd8476;
+   border-style:solid;
+   border-width:50px;
+   height:0px;
+   width:0px;
+   position: relative;
+   float: right;
+   top: -149px;
+   right: -145px;
+}
+
+
 body {
-	background: white;
+	background: #f1f0dc;
 	font-family: "Trebuchet MS", Verdana, Tahoma, sans-serif;
 	font-size: 1em;
 	margin: 0em;
