@@ -17,14 +17,14 @@
   </head>
 
   <body>
-    <div id ="Heading">
+    <div class ="Heading">
 
       <!-- the left side of the fork effect -->
         <div class="l-triangle-top"></div>
         <div class="l-triangle-bottom"></div>
 
         <div class = "rectangle">
-                  <ul id="inTone">    <li><h1>  &#10029; Welcome to the inTone experiment!  &#10029;</h1></li> 
+                  <ul class="inTone">    <li><h1>  &#10029; Welcome to the inTone experiment!  &#10029;</h1></li> 
                   </ul>
           </div>
        <!-- the right side of the fork effect -->
@@ -35,29 +35,30 @@
     <div id="form">
       <form name ="myForm" method="get">
         <input type = "radio" name= "gender" value ="male"> Male</input>
-        <input type = "radio" name= "gender" value ="female"> Female</input> <br>
-       Age: <input type = "text" id= "age" name = "age"></input><br>
-       Native Language: <input type = "text" name = "nativeLanguage"></text></br>
+        <input type = "radio" name= "gender" value ="female"> Female</input> <br> <p>
+       Age: <input type = "text" id= "age" name = "age"></input><br> <p>
+       Native Language: <input type = "text" name = "nativeLanguage"></text><br> <p>
        <input type = "button" class="button" onClick = "createParticipant()" value = "Submit"></input>
      </form>
     </div>
 
-    <div id="audio_div" class="">
-        <audio id="sound_check" src="./../audio_stimuli/test1/01-CI-ambitious.mp3"> </audio>
-    </div>
+  
     <div id = "beginExperiment">
       <input class = "large green button" type="button" value="Sound Check" onClick="soundCheck()"/>
       <a href= "./../view/stressTest.html"><input class = "large green button" type="button" value="Stress Test" /></a>
-      <a href= "./../view/practice.html"><input class = "large green button" type="button" value="Practice" /></a>
+  <!--    <a href= "./../view/practice.html"><input class = "large green button" type="button" value="Practice" /></a>
       <a href= "./../view/testOne.html"><input class = "large green button" type="button" value="Test One" /></a>
-      <a href= "./../view/testTwo.html"><input class = "large green button" type="button" value="Test TWo" /></a>
+      <a href= "./../view/testTwo.html"><input class = "large green button" type="button" value="Test Two" /></a> -->
+    </div>
 
 
 
+
+
+
+  <div id="audio_div" class="">
+        <audio id="sound_check" src="./../audio_stimuli/test1/01-CI-ambitious.mp3"> </audio>
     </div>
       <script type="text/javascript" charset="utf-8" src="./../src/Participant.js"></script>
-
-
-    
   </body>
 </html>

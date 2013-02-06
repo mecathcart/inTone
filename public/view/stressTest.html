@@ -17,16 +17,30 @@
 
   <body>
 
-    <h1>inTone</h1>
-    <h2> Stress Test</h2>
+   <div id="stressHeading">
+
+      <!-- the left side of the fork effect -->
+        <div class="l-triangle-top"></div>
+        <div class="l-triangle-bottom"></div>
+
+        <div class = "rectangle">
+                  <ul class="stressTest"> <h1>    <li> &#10029; Stress Test &#10029;</h1></li></ul>
+          </div>
+       <!-- the right side of the fork effect -->
+         <div class="r-triangle-top"></div>
+         <div class="r-triangle-bottom"></div>
+    </div>
     <div id="stress_test_instructions">
-<p>In this 1st part of the experiment, you will hear English words and will be asked to identify the syllable
-with the most stress. The word will appear written on the screen after you hear it, and it will be separated into syllables
-for you.  You must click the syllable that matches the stressed syllable. This part of the experiment should take only a couple of minutes.</p>
+In this 1st part of the experiment, you will hear English words and will be asked to identify the syllable with the most stress. The word will appear written on the screen after you hear it, and it will be separated into syllables for you.  You must click the syllable that matches the stressed syllable. This part of the experiment should take only a couple of minutes.
 </div>
+
+
   <div id="start_stress_test">
     <input  class = "large green button" type="button" value="Start StressTest" onClick="stressTest()"/>
 </div>
+
+
+<div>
     <div id="audio_div" class=""></div>
       <div id="cross" class= "cross"> + </div>
 
@@ -36,6 +50,7 @@ for you.  You must click the syllable that matches the stressed syllable. This p
       Great Job! Now let's do some practice for the real experiment! 
         <a href= "./../view/practice.html"> <input  class = "large green button" type="button" value="Practice" onClick=""/></a>
     </div>
+  </div>  
     
   <script type="text/javascript" charset="utf-8" src="./../src/Participant.js"></script>
   <script type="text/javascript" charset="utf-8" src="./../src/StressTest.js"></script>

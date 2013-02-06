@@ -43,16 +43,37 @@ Source: http://designmodo.com/create-css3-buttons/#ixzz2K8IZC7n9
 
 
 #form{
-	margin: 10px;
+	margin-left: 50px;
+	float: left;
 }
 
-#Heading {
+.Heading {
    margin: 0 auto;
    width: 960px;
 
 }
 
-#inTone li{    
+#stressHeading{
+	  margin: 0 auto;
+   	  width: 560px;
+   	  display: block;
+}
+
+
+.stressTest li{
+	  	list-style: none;
+        display: inline-block;
+        float: left;
+        text-shadow: 0 2px 1px rgba(0,0,0,0.5);
+        display: block;
+        text-decoration: none;
+        color: #f1f0dc;
+        margin-left: -10px;
+
+    
+}
+
+.inTone li{    
         list-style: none;
         display: block;
         float: left;
@@ -77,6 +98,8 @@ Source: http://designmodo.com/create-css3-buttons/#ixzz2K8IZC7n9
    z-index: 500; /* the stack order: foreground */
    margin: 3em 0;
    text-align: center;
+      	  vertical-align: middle;
+
 }
 
 .l-triangle-top {
@@ -147,16 +170,24 @@ a:hover,a:active {
 
 #beginExperiment{
 	display: none;
+	float: right;
 
 }
 #stress_test_instructions{
-	margin: 20px;
+	height: 100px;
+	display: inline-block;
+	width: 960px;
+	margin-top: -100px;
+	margin-left: 100px;
+	margin-right: 100px;
+	vertical-align: middle;
 }
 
 #start_stress_test{
 	width: 135px;
 	margin-left: auto;
 	margin-right: auto;
+	display: block;
 }
 
 #stress_test_image{
