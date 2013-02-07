@@ -194,7 +194,7 @@ a:hover,a:active {
 	display: none;
 	margin-top: 75px;
 	width: 640px;
-	border: solid;
+	border: outset;
 	margin-left: auto;
   	margin-right: auto;
 }
