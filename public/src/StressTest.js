@@ -218,8 +218,11 @@ var stressTest = function(){
 	$("#stress_test_image").hide();
 	$("#stress_test_instructions").hide();
 	$("#start_stress_test").hide();
+	$("#stressHeading").hide;
 	$("h1").hide();
 	$("h2").hide();
+	$(".banner").hide();
+
 
 	if(i < stressStimuli.length){	
 
@@ -255,7 +258,9 @@ var insertImage = function(sample){
 
 		/* Inserts Image*/
 		stressImg.src = sample;
-		stress_test_image.appendChild(stressImg);
+		//stress_test_image.appendChild(stressImg);
+		$("#stress_test_image").append(stressImg);
+
 		$("#stress_test_image").show();	
 }
 

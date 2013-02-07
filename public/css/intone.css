@@ -191,8 +191,10 @@ a:hover,a:active {
 }
 
 #stress_test_image{
-	padding: 10px;
-	width: 700px;
+	display: none;
+	margin-top: 75px;
+	width: 640px;
+	border: solid;
 	margin-left: auto;
   	margin-right: auto;
 }
@@ -265,7 +267,7 @@ a:hover,a:active {
 }
 
 .cross{
-	padding: 10px;
+	margin-top: 75px;
 	width: 40px;
 	margin-left: auto;
   	margin-right: auto;
