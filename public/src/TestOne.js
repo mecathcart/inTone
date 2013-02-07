@@ -114,96 +114,42 @@ if(j < sampleArray.length){
 			intoneAudio.src = sample.audio;
 			playAudioFile("intone_stimuli");
 			T1correctAnswer = sample.continuationA;
-		/*Compliment*/
-		}else if(sample.category == 'compliment'){ 
-			if(T1complimentCount%2 == 0){
-				intoneAudio.src = sample.audioI;
-				playAudioFile("intone_stimuli");
-				T1correctAnswer = sample.continuationA;
-			}else{
-				intoneAudio.src = sample.audioN;
-				playAudioFile("intone_stimuli");
-				T1correctAnswer = sample.continuationB;
-				}
-			T1complimentCount++;
-
-		/*Stress*/
-		}else if(sample.category == 'stressAdj'){
-			if(T1stressCount%2 ==0){
-				intoneAudio.src = sample.audioI;
-				playAudioFile("intone_stimuli");
-				T1correctAnswer = sample.continuationA;
-			}else{
-				intoneAudio.src = sample.audioN;
-				playAudioFile("intone_stimuli");
-				T1correctAnswer = sample.continuationB;
-				}
-			T1stressCount++;
-
-		/*Verb*/
-		}else if(sample.category == 'verb'){
-			if(T1verbCount%2 ==0){
-				intoneAudio.src = sample.audioN;
-				playAudioFile("intone_stimuli");
-				T1correctAnswer = sample.continuationB;
-			}else{
-				intoneAudio.src = sample.audioI;
-				playAudioFile("intone_stimuli");
-				T1correctAnswer = sample.continuationA;
-				}
-			T1verbCount++
-	
 		}
+		else if(sample.condition === "I"){
+			intoneAudio.src = sample.audioI;
+			playAudioFile("intone_stimuli");
+			T1correctAnswer = sample.continuationA;
+		}
+		else{
+			intoneAudio.src = sample.audioN;
+			playAudioFile("intone_stimuli");
+			T1correctAnswer = sample.continuationB;
+		}	
+
+
 		var continuationArray = [sample.continuationA, sample.continuationB];
 		window.setTimeout(insertContinuationsT1,3000, continuationArray, j);
 
 	}else{
 		/* Plays audio stimuli*/	
 	/*Filler*/
-	if (sample.hasOwnProperty('audio') ) {
-		intoneAudio.src = sample.audio;
-		playAudioFile("intone_stimuli");
-		T1correctAnswer = sample.continuationA;
-	/*Compliment*/
-	}else if(sample.category == 'compliment'){ 
-		if(T1complimentCount%2 == 1){
-			intoneAudio.src = sample.audioI;
+		if (sample.hasOwnProperty('audio') ) {
+			intoneAudio.src = sample.audio;
 			playAudioFile("intone_stimuli");
 			T1correctAnswer = sample.continuationA;
-		}else{
-			intoneAudio.src = sample.audioN;
-			playAudioFile("intone_stimuli");
-			T1correctAnswer = sample.continuationB;
-			}
-		T1complimentCount++;
-
-		/*Stress*/
-	}else if(sample.category == 'stressAdj'){
-		if(T1stressCount%2 ==1){
-			intoneAudio.src = sample.audioI;
-			playAudioFile("intone_stimuli");
-			T1correctAnswer = sample.continuationA;
-		}else{
-			intoneAudio.src = sample.audioN;
-			playAudioFile("intone_stimuli");
-			T1correctAnswer = sample.continuationB;
-			}
-		T1stressCount++;
-
-		/*Verb*/
-	}else if(sample.category == 'verb'){
-		if(T1verbCount%2 ==1){
-			intoneAudio.src = sample.audioN;
-			playAudioFile("intone_stimuli");
-			T1correctAnswer = sample.continuationB;
-		}else{
-			intoneAudio.src = sample.audioI;
-			playAudioFile("intone_stimuli");
-			T1correctAnswer = sample.continuationA;
-			}
-		T1verbCount++
-	
 		}
+		else if(sample.condition === "N"){
+			intoneAudio.src = sample.audioI;
+			playAudioFile("intone_stimuli");
+			T1correctAnswer = sample.continuationA;
+		}
+		else{
+			intoneAudio.src = sample.audioN;
+			playAudioFile("intone_stimuli");
+			T1correctAnswer = sample.continuationB;
+		}	
+
+
 		var continuationArray = [sample.continuationA, sample.continuationB];
 		window.setTimeout(insertContinuationsT1,3000, continuationArray, j);
 

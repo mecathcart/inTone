@@ -668,6 +668,50 @@ var beef = new Filler(
 	"...He feels bad for the animals.",
 	"...He ate a hamburger.");
 
+
+
+ambitious.condition = "I";
+children.condition = "N";
+food.condition = "N";
+friendly.condition = "I";
+hair.condition = "N";
+intelligent.condition = "I";
+popular.condition = "I";
+read.condition = "N";
+rich.condition = "I";
+swimmer.condition = "N";
+
+favoriteuncle.condition = "I";
+glassplate.condition = "N";
+goldbracelet.condition = "I";
+greenolives.condition = "N";
+newcamera.condition = "I";
+oldman.condition = "N";
+redshirt.condition = "I";
+uglydog.condition = "N";
+winterjacket.condition = "I";
+youngerbrother.condition = "N";
+
+appears.condition = "I";
+hoping.condition = "N";
+intends.condition = "I";
+like.condition = "N";
+looks.condition = "I";
+says.condition = "N";
+seemed.condition = "I";
+smells.condition = "N";
+thinks.condition = "I";
+wants.condition = "N";
+
+
+colorful.condition = "N";
+large.condition = "I";
+applepie.condition = "N";
+bigcities.condition = "I";
+planning.condition = "N";
+sounds.condition = "I";
+
+
 /*Array of stimuli*/
 var practiceStimuli1 = [colorful, large, applepie, bigcities, like, planning, beach, boatride,];
 

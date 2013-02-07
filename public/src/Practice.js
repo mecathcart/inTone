@@ -23,6 +23,8 @@ var practice = function(){
 	$("#start_practice").hide();
 	$("#next").hide();
 	$("#practice_results").hide();
+	$(".banner").hide();
+
 	
 	nextStimuli(practiceStimuli);		
 }
