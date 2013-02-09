@@ -108,6 +108,8 @@ if(k < sampleArray.length){
 
   var sample = sampleArray[k];  
   if(participant.num%4==1){
+    console.log("Je suis examen un");
+
     /* Plays audio stimuli*/  
     /*Filler*/
     if (sample.hasOwnProperty('audio') ) {
@@ -158,6 +160,7 @@ if(k < sampleArray.length){
     window.setTimeout(insertContinuationsT2,3000, continuationArray, k);
 
   }else{
+        console.log("Je suis examen deux");
 
     /* Plays audio stimuli*/  
   /*Filler*/
@@ -217,7 +220,8 @@ if(k < sampleArray.length){
     $("#T2_continuationB").hide();
     $("#T2_cross").hide();
     document.getElementById("T2_results").innerHTML ="Your score is " + participant.T2answersCorrect +"/" +participant.T2totalAnswer;
-    if(participant.num%2 !==0){
+    
+    if(participant.num%2 !== 0){
       $("#test_1").show();
     }else{
       $(".end").show();

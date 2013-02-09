@@ -107,7 +107,7 @@ if(j < sampleArray.length){
 
 	var sample = sampleArray[j];	
 	if(participant.num%4==0){
-
+		console.log("Je suis examen un");
 		/* Plays audio stimuli*/	
 		/*Filler*/
 		if (sample.hasOwnProperty('audio') ) {
@@ -126,11 +126,12 @@ if(j < sampleArray.length){
 			T1correctAnswer = sample.continuationB;
 		}	
 
-
 		var continuationArray = [sample.continuationA, sample.continuationB];
 		window.setTimeout(insertContinuationsT1,3000, continuationArray, j);
 
 	}else{
+				console.log("Je suis examen deux");
+
 		/* Plays audio stimuli*/	
 	/*Filler*/
 		if (sample.hasOwnProperty('audio') ) {
@@ -148,11 +149,8 @@ if(j < sampleArray.length){
 			playAudioFile("intone_stimuli");
 			T1correctAnswer = sample.continuationB;
 		}	
-
-
 		var continuationArray = [sample.continuationA, sample.continuationB];
 		window.setTimeout(insertContinuationsT1,3000, continuationArray, j);
-
 	}
 	
 	/*Move on to next stimuli*/
@@ -168,9 +166,7 @@ if(j < sampleArray.length){
 		}else{
 			$(".end").show();
 		}
-
 	}
-
 }
 
 /*Insert continuations*/

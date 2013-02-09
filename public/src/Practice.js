@@ -116,45 +116,16 @@ var nextStimuli =  function(sampleArray){
 			intoneAudio.src = sample.audio;
 			playAudioFile("intone_stimuli");
 			correctAnswer = continuationA;
-		/*Compliment*/
-		}else if(sample.category == 'compliment'){ 
-			if(complimentCount%2 == 0){
-				intoneAudio.src = sample.audioI;
-				playAudioFile("intone_stimuli");
-				correctAnswer = continuationA;
-			}else{
-				intoneAudio.src = sample.audioN;
-				playAudioFile("intone_stimuli");
-				correctAnswer = continuationB;
-			}
-			complimentCount++
-
-		/*Stress*/
-		}else if(sample.category == 'stressAdj'){
-			if(stressCount%2 ==0){
-				intoneAudio.src = sample.audioN;
-				playAudioFile("intone_stimuli");
-				correctAnswer = continuationB;
-			}else{
-				intoneAudio.src = sample.audioI;
-				playAudioFile("intone_stimuli");
-				correctAnswer = continuationA;
-			}
-			stressCount++
-
-		/*Verb*/
-		}else if(sample.category == 'verb') {
-			if(verbCount%2 ==0){
-				intoneAudio.src = sample.audioI;
-				playAudioFile("intone_stimuli");
-				correctAnswer = continuationA;
-			}else{
-				intoneAudio.src = sample.audioN;
-				playAudioFile("intone_stimuli");
-				correctAnswer = continuationB;
-			}
-			verbCount++
+		}else if(sample.condition === "I"){
+			intoneAudio.src = sample.audioI;
+			playAudioFile("intone_stimuli");
+			correctAnswer = continuationA;
 		}
+		else{
+			intoneAudio.src = sample.audioN;
+			playAudioFile("intone_stimuli");
+			correctAnswer = continuationB;
+		}	
 		var continuationArray = [sample.continuationA, sample.continuationB];
 		window.setTimeout(insertContinuations,3000, continuationArray, i);
 

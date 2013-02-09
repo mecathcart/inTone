@@ -515,7 +515,7 @@ var started = new IntoneStimuli("verb",
 	 "./../audio_stimuli/Test2/24-VN-started.wav",
 	 "...It was too hard, though, so I quit.",
 	 "...I will be finished in one hour.");
-var says = new IntoneStimuli("verb",
+var says2 = new IntoneStimuli("verb",
 	"./../audio_stimuli/Test2/25-VI-says.wav",
 	 "./../audio_stimuli/Test2/25-VN-says.wav",
 	 "...But when I asked her about it, she couldn't remember anything.",
@@ -551,7 +551,7 @@ var store = new Filler(
 	"./../audio_stimuli/Test2/F01-store.wav",
 	"...She bought some groceries.",
 	"...She robbed a bank.");
-var library = new Filler(
+var library2 = new Filler(
 	"./../audio_stimuli/Test2/F02-library.wav",
 	"...He studied hard there.",
 	"...He attended his classes.");
@@ -725,5 +725,5 @@ hand,postoffice,smells,flowers,movie,home,thinks,winterjacket,leak,popular,ticke
 swimmer];
 var answerArrayT1 = ["B", "A", "A", "B", "A", "A", "A", "B", "B", "A", "B", "B", "B", "B", "A", "A", "A", "B", "B", "A", "B", "A", "A", "B", "A", "A", "B", "B", "A", "A", "A", "B", "A", "A", "A", "A", "B", "B", "B", "A", "B", "A", "B", "B", "A", "A", "A", "B", "A", "B", "B", "B", "A", "A", "B", "A", "B", "B", "A", "A"];
 var answerArrayT2 = ["B", "A", "B", "A", "A", "B", "B", "A", "B", "A", "A", "B", "A", "A", "A", "A", "A", "B", "B", "B", "A", "B", "B", "A", "A", "A", "B", "B", "A", "A", "A", "B", "A", "B", "B", "B", "B", "A", "B", "A", "A", "A", "B", "B", "A", "B", "A", "A", "A", "B", "B", "A", "A", "A", "B", "B", "B", "A", "B", "B"];
-var test2Stimuli = [bluepants,funny, match,cheerfulboy, house2, successful, says, grandparents, looks2, redpeppers, circus, game, accident, started, photographer, player, has, leatherchair, vacation, largespoons, books, towels,brave, party2, jail, left, opera, pierced, movies2, exam,trying, dancer, liar, eyes,warm,mother, fatman, beef, tonight, wants2, honest,view, freshtomatoes, team, wet, tallhat,handsome, store, sounds2, replaced, shoes, brokenbike, tree, car, likes, gardening, sent,library, diamondring, bank ]
+var test2Stimuli = [bluepants,funny, match,cheerfulboy, house2, successful, says2, grandparents, looks2, redpeppers, circus, game, accident, started, photographer, player, has, leatherchair, vacation, largespoons, books, towels,brave, party2, jail, left, opera, pierced, movies2, exam,trying, dancer, liar, eyes,warm,mother, fatman, beef, tonight, wants2, honest,view, freshtomatoes, team, wet, tallhat,handsome, store, sounds2, replaced, shoes, brokenbike, tree, car, likes, gardening, sent,library2, diamondring, bank ]
 

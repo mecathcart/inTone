@@ -71,19 +71,22 @@ Source: http://designmodo.com/create-css3-buttons/#ixzz2K8IZC7n9
         color: #f1f0dc;
         margin-left: -10px;
 
-    
 }
 
 .inTone li{    
         list-style: none;
         display: block;
-        float: left;
-        margin: 1em;
+        margin-left: auto;
+        margin-right: auto;
         text-shadow: 0 2px 1px rgba(0,0,0,0.5);
         display: block;
         text-decoration: none;
         color: #f1f0dc;
         margin: 0 .5em;
+        vertical-align: middle;
+        text-align: center;
+        float: left;
+
 
 }
 
@@ -99,7 +102,7 @@ Source: http://designmodo.com/create-css3-buttons/#ixzz2K8IZC7n9
    z-index: 500; /* the stack order: foreground */
    margin: 3em 0;
    text-align: center;
-      	  vertical-align: middle;
+   vertical-align: middle;
 
 }
 
@@ -208,7 +211,12 @@ a:hover,a:active {
 
 }
 
+.T1{
+	margin-top: 75px;
+}
+
 #practice_results{
+	font-size: 20px;
 	margin-top:75px;
 	width: 700px;
 	margin-left: auto;
@@ -286,10 +294,11 @@ a:hover,a:active {
 
 
 #continuationA{
+	text-align: center;
 	background: white;
 	display: none;
 	border: outset;
-	font-size: 25px;
+	font-size: 20px;
 	margin-top: 75px;
 	padding: 10px;
 	width: 500px;
@@ -298,10 +307,11 @@ a:hover,a:active {
 }
 
 #continuationB{
+	text-align: center;
 	background: white;
 	display: none;
 	border: outset;
-	font-size: 25px;
+	font-size: 20px;
 	margin-top: 75px;
 	padding: 10px;
 	width: 500px;
@@ -311,34 +321,57 @@ a:hover,a:active {
 }
 
 #T1_continuationA{
+	text-align: center;
+	background: white;
+	display: none;
+	border: outset;
+	font-size: 20px;
+	margin-top: 75px;
 	padding: 10px;
-	width: 700px;
+	width: 500px;
 	margin-left: auto;
   	margin-right: auto;
+
 }
 
 #T1_continuationB{
+	text-align: center;
+	background: white;
+	display: none;
+	border: outset;
+	font-size: 20px;
+	margin-top: 75px;
 	padding: 10px;
-	width: 700px;
+	width: 500px;
 	margin-left: auto;
   	margin-right: auto;
-
 }
 
 
 
 #T2_continuationA{
+	text-align: center;
+	background: white;
+	display: none;
+	border: outset;
+	font-size: 20px;
+	margin-top: 75px;
 	padding: 10px;
-	width: 700px;
+	width: 500px;
 	margin-left: auto;
   	margin-right: auto;
 }
 
 #T2_continuationB{
+	text-align: center;
+	background: white;
+	display: none;
+	border: outset;
+	font-size: 20px;
+	margin-top: 75px;
 	padding: 10px;
-	width: 700px;
+	width: 500px;
 	margin-left: auto;
   	margin-right: auto;
-
 }
 
