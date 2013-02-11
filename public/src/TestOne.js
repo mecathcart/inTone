@@ -56,7 +56,7 @@ var T1_clickContA = function(){
 	if(participant.T1totalAnswer%6==0){
 		T1feedback();
 	}else{
-		nextT1Stimuli(test1Stimuli);
+		showCross();
 	}
 }
 
@@ -91,17 +91,23 @@ var T1_clickContB = function(){
 	if(participant.T1totalAnswer%6==0){
 		T1feedback();
 	}else{
-		nextT1Stimuli(test1Stimuli);
+		showCross();
 	}	
 }
 
-var nextT1Stimuli = function(sampleArray){
+
+var showCross = function(){
 	$("#T1_next").hide();
 	$("#T1_results").hide();
 	$("#T1_continuationA").hide();
 	$("#T1_continuationB").hide();
 	$("#T1_cross").show();
+	window.setTimeout(nextT1Stimuli,500, test1Stimuli);
 
+};
+
+var nextT1Stimuli = function(sampleArray){
+	
  /*Go through stimuli*/
 if(j < sampleArray.length){	
 
