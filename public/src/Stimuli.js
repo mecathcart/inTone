@@ -251,8 +251,8 @@ var drowning = new Filler(
 	"...He ate some pizza for dinner afterwards.");
 var fishing = new Filler(
 	"./../audio_stimuli/Test1/F10-I-fishing.mp3",
-	"...She only caught one fish, though.",
-	"...She rode a pony through the woods.");
+	"...He only caught one fish, though.",
+	"...He rode a pony through the woods.");
 var flowers = new Filler(
 	"./../audio_stimuli/Test1/F11-I-flowers.mp3",
 	"...Then she watered them.",

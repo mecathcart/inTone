@@ -57,7 +57,7 @@ var T2_clickContA = function(){
   if(participant.T2totalAnswer%6==0){
     T2feedback();
   }else{
-    nextT2Stimuli(test2Stimuli);
+    showCrossT2();
   }
 }
 
@@ -92,16 +92,23 @@ var T2_clickContB = function(){
   if(participant.T2totalAnswer%6==0){
     T2feedback();
   }else{
-    nextT2Stimuli(test2Stimuli);
+    showCrossT2();
   } 
 }
 
+var showCrossT2 = function(){
+   $("#T2_next").hide();
+   $("#T2_results").hide();
+   $("#T2_continuationA").hide();
+   $("#T2_continuationB").hide();
+   $("#T2_cross").show();
+    window.setTimeout(nextT2Stimuli,500, test2Stimuli);
+
+}
+
+
 var nextT2Stimuli = function(sampleArray){
-  $("#T2_next").hide();
-  $("#T2_results").hide();
-  $("#T2_continuationA").hide();
-  $("#T2_continuationB").hide();
-  $("#T2_cross").show();
+ 
 
  /*Go through stimuli*/
 if(k < sampleArray.length){ 
