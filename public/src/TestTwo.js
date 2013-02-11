@@ -226,11 +226,13 @@ if(k < sampleArray.length){
     $("#T2_continuationA").hide();
     $("#T2_continuationB").hide();
     $("#T2_cross").hide();
-    document.getElementById("T2_results").innerHTML ="Your score is " + participant.T2answersCorrect +"/" +participant.T2totalAnswer;
-    
-    if(participant.num%2 !== 0){
+   // document.getElementById("T2_results").innerHTML ="Your score is " + participant.T2answersCorrect +"/" +participant.T2totalAnswer;
+    if(participant.num%2 == 1){
+      console.log("I am odd");
       $("#test_1").show();
     }else{
+      console.log("I am even");
+
       $(".end").show();
     }
   }
