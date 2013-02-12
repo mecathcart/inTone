@@ -1,7 +1,15 @@
 var participant = localStorage.getObject('participant');
-console.log(participant);
+var participant = localStorage.getObject('participant');
+participant.correctAudiosT2 = [];
+participant.incorrectAudiosT2 = [];
+var correctAudiosT2 = participant.correctAudiosT2;
+var incorrectAudiosT2 = participant.incorrectAudiosT2;
 
-var k = 59;
+
+
+//console.log(participant);
+
+var k = 0;
 var T2correctAnswer = "";
 
 
@@ -30,6 +38,11 @@ var T2_clickContA = function(){
   participant.T2totalAnswer++;
 
   if(answerArrayT2[k-1] == "A" && T2correctAnswer == test2Stimuli[k-1].continuationA){
+
+    var answer= intoneAudio.src;
+    answer = answer.replace("file://localhost/Users/mdotedot/Desktop/inTone/public/audio_stimuli", "");
+    correctAudiosT2.push(answer);
+
     if(test2Stimuli[k-1].category == "compliment"){
       participant.T2complimentCorrect++;
     }else if(test2Stimuli[k-1].category == "stressAdj"){
@@ -42,6 +55,11 @@ var T2_clickContA = function(){
     participant.T2answersCorrect++;
 
   }else if(answerArrayT2[k-1] == "B" && T2correctAnswer == test2Stimuli[k-1].continuationB){
+
+    answer= intoneAudio.src;
+    answer = answer.replace("file://localhost/Users/mdotedot/Desktop/inTone/public/audio_stimuli", "");
+    correctAudiosT2.push(answer);
+
     if(test2Stimuli[k-1].category == "compliment"){
       participant.T2complimentCorrect++;
     }else if(test2Stimuli[k-1].category == "stressAdj"){
@@ -52,6 +70,11 @@ var T2_clickContA = function(){
       participant.T2fillerCorrect++;
     }
     participant.T2answersCorrect++;
+  }else{
+
+    answer= intoneAudio.src;
+    answer = answer.replace("file://localhost/Users/mdotedot/Desktop/inTone/public/audio_stimuli", "");
+    incorrectAudiosT2.push(answer);
   }
 
   if(participant.T2totalAnswer%6==0){
@@ -59,12 +82,19 @@ var T2_clickContA = function(){
   }else{
     showCrossT2();
   }
+
+
 }
 
 var T2_clickContB = function(){
 
   participant.T2totalAnswer++;  
   if(answerArrayT2[k-1] == "B" && T2correctAnswer == test2Stimuli[k-1].continuationA){
+
+    answer= intoneAudio.src;
+    answer = answer.replace("file://localhost/Users/mdotedot/Desktop/inTone/public/audio_stimuli", "");
+    correctAudiosT2.push(answer);
+
     if(test2Stimuli[k-1].category == "compliment"){
       participant.T2complimentCorrect++;
     }else if(test2Stimuli[k-1].category == "stressAdj"){
@@ -77,6 +107,11 @@ var T2_clickContB = function(){
     participant.T2answersCorrect++;
 
   }else if(answerArrayT2[k-1] == "A" && T2correctAnswer == test2Stimuli[k-1].continuationB){
+
+    answer= intoneAudio.src;
+    answer = answer.replace("file://localhost/Users/mdotedot/Desktop/inTone/public/audio_stimuli", "");
+    correctAudiosT2.push(answer);
+
     if(test2Stimuli[k-1].category == "compliment"){
       participant.T2complimentCorrect++;
     }else if(test2Stimuli[k-1].category == "stressAdj"){
@@ -87,6 +122,10 @@ var T2_clickContB = function(){
       participant.T2fillerCorrect++;
     }
     participant.T2answersCorrect++;
+  }else{
+    answer= intoneAudio.src;
+    answer = answer.replace("file://localhost/Users/mdotedot/Desktop/inTone/public/audio_stimuli", "");
+    incorrectAudiosT2.push(answer);
   }
 
   if(participant.T2totalAnswer%6==0){

@@ -91,6 +91,11 @@ var clickContA = function(){
 var clickContB = function(){
 	participant.totalAnswerPractice++;	
 	if(answerArrayPractice[i-1]=="B" && correctAnswer == continuationA){
+
+		answer= intoneAudio.src;
+		answer = answer.replace("file://localhost/Users/mdotedot/Desktop/inTone/public/audio_stimuli", "");
+		correctAudiosPractice.push(answer);
+
 		participant.answersCorrectPractice++;
 		if(practiceStimuli[i-1].category == "compliment"){
 			participant.complimentCorrectPractice++;
@@ -102,6 +107,11 @@ var clickContB = function(){
 			participant.fillerCorrectPractice++;
 		}
 	}else if(answerArrayPractice[i-1]=="A" && correctAnswer == continuationB ){
+
+		answer= intoneAudio.src;
+		answer = answer.replace("file://localhost/Users/mdotedot/Desktop/inTone/public/audio_stimuli", "");
+		correctAudiosPractice.push(answer);
+
 		participant.answersCorrectPractice++;
 		if(practiceStimuli[i-1].category == "compliment"){
 			participant.complimentCorrectPractice++;
@@ -113,6 +123,10 @@ var clickContB = function(){
 			participant.fillerCorrectPractice++;
 		}
 	}
+
+		answer= intoneAudio.src;
+		answer = answer.replace("file://localhost/Users/mdotedot/Desktop/inTone/public/audio_stimuli", "");
+		incorrectAudiosPractice.push(answer);
 	//nextStimuli(practiceStimuli);
 	feedback();
 }
