@@ -1,7 +1,7 @@
 var participant = localStorage.getObject('participant');
 console.log(participant);
 
-var k = 0;
+var k = 59;
 var T2correctAnswer = "";
 
 
@@ -228,12 +228,10 @@ if(k < sampleArray.length){
     $("#T2_cross").hide();
    // document.getElementById("T2_results").innerHTML ="Your score is " + participant.T2answersCorrect +"/" +participant.T2totalAnswer;
     if(participant.num%2 == 1){
-      console.log("I am odd");
       $("#test_1").show();
     }else{
-      console.log("I am even");
-
       $(".end").show();
+      //submitForm(window.actionURL);
     }
   }
 }

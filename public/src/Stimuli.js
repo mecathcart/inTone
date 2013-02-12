@@ -713,7 +713,7 @@ sounds.condition = "I";
 
 
 /*Array of stimuli*/
-var practiceStimuli1 = [colorful, large, applepie, bigcities, like, planning, beach, boatride,];
+var practiceStimuli1 = [colorful, large, applepie, bigcities, like, planning, beach, boatride];
 
 //array that has been shuffled
 var practiceStimuli = [bigcities, cake, like, childrenF, applepie, boatride, colorful, beach, large, clothes, planning, boyfriend];
@@ -726,4 +726,5 @@ swimmer];
 var answerArrayT1 = ["B", "A", "A", "B", "A", "A", "A", "B", "B", "A", "B", "B", "B", "B", "A", "A", "A", "B", "B", "A", "B", "A", "A", "B", "A", "A", "B", "B", "A", "A", "A", "B", "A", "A", "A", "A", "B", "B", "B", "A", "B", "A", "B", "B", "A", "A", "A", "B", "A", "B", "B", "B", "A", "A", "B", "A", "B", "B", "A", "A"];
 var answerArrayT2 = ["B", "A", "B", "A", "A", "B", "B", "A", "B", "A", "A", "B", "A", "A", "A", "A", "A", "B", "B", "B", "A", "B", "B", "A", "A", "A", "B", "B", "A", "A", "A", "B", "A", "B", "B", "B", "B", "A", "B", "A", "A", "A", "B", "B", "A", "B", "A", "A", "A", "B", "B", "A", "A", "A", "B", "B", "B", "A", "B", "B"];
 var test2Stimuli = [bluepants,funny, match,cheerfulboy, house2, successful, says2, grandparents, looks2, redpeppers, circus, game, accident, started, photographer, player, has, leatherchair, vacation, largespoons, books, towels,brave, party2, jail, left, opera, pierced, movies2, exam,trying, dancer, liar, eyes,warm,mother, fatman, beef, tonight, wants2, honest,view, freshtomatoes, team, wet, tallhat,handsome, store, sounds2, replaced, shoes, brokenbike, tree, car, likes, gardening, sent,library2, diamondring, bank ]
+
 

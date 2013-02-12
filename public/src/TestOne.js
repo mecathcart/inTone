@@ -166,10 +166,12 @@ if(j < sampleArray.length){
 		$("#T1_continuationB").hide();
 		$("#T1_cross").hide();
 		//document.getElementById("T1_results").innerHTML ="Your score is " + participant.T1answersCorrect +"/" +participant.T1totalAnswer;
-		if(participant.num%2 ==0){
+		if(participant.num%2 == 0){
 			$("#test_2").show();
 		}else{
 			$(".end").show();
+
+			 submitForm(actionURL);
 		}
 	}
 }

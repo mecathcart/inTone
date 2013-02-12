@@ -1,7 +1,14 @@
 var participant = localStorage.getObject('participant');
-console.log(participant);
+participant.correctAudiosPractice = [];
+participant.incorrectAudiosPractice = [];
+var correctAudiosPractice = participant.correctAudiosPractice;
+var incorrectAudiosPractice = participant.incorrectAudiosPractice;
+
+//console.log( participant.incorrectAudiosPractice);
 
 
+
+/*initiate my variables*/
 var i = 0;
 var correctAnswer = "";
 
@@ -24,14 +31,23 @@ var practice = function(){
 	$("#next").hide();
 	$("#practice_results").hide();
 	$(".banner").hide();
-
 	
+	//Start the experiment!
 	nextStimuli(practiceStimuli);		
 }
 
+
+/*The function that is called when the top continuation is clicked*/
 var clickContA = function(){
+
 	participant.totalAnswerPractice++;	
 	if(answerArrayPractice[i-1] == "A" && correctAnswer == continuationA){
+		
+		/*Add name of audio that they got correct to the array of correct audios*/
+		var answer= intoneAudio.src;
+		answer = answer.replace("file://localhost/Users/mdotedot/Desktop/inTone/public/audio_stimuli", "");
+		correctAudiosPractice.push(answer);
+
 		participant.answersCorrectPractice++;
 		if(practiceStimuli[i-1].category == "compliment"){
 			participant.complimentCorrectPractice++;
@@ -44,6 +60,11 @@ var clickContA = function(){
 		}
 
 	}else if(answerArrayPractice[i-1] == "B" && correctAnswer == continuationB){
+
+		answer= intoneAudio.src;
+		answer = answer.replace("file://localhost/Users/mdotedot/Desktop/inTone/public/audio_stimuli", "");
+		correctAudiosPractice.push(answer);
+
 		participant.answersCorrectPractice++;
 		if(practiceStimuli[i-1].category == "compliment"){
 			participant.complimentCorrectPractice++;
@@ -54,9 +75,16 @@ var clickContA = function(){
 		}else if(practiceStimuli[i-1].hasOwnProperty('audio')){
 			participant.fillerCorrectPractice++;
 		}
+	}else{
+		answer= intoneAudio.src;
+		answer = answer.replace("file://localhost/Users/mdotedot/Desktop/inTone/public/audio_stimuli", "");
+		incorrectAudiosPractice.push(answer);
 	}
-	//nextStimuli(practiceStimuli);
+
+
 	feedback();
+	console.log(correctAudiosPractice);
+	console.log(incorrectAudiosPractice);
 
 }
 
@@ -84,7 +112,7 @@ var clickContB = function(){
 		}else if(practiceStimuli[i-1].hasOwnProperty('audio')){
 			participant.fillerCorrectPractice++;
 		}
-	}		
+	}
 	//nextStimuli(practiceStimuli);
 	feedback();
 }
@@ -139,6 +167,7 @@ var nextStimuli =  function(sampleArray){
 		document.getElementById("practice_results").innerHTML ="Your score is " + eval(Math.round(participant.answersCorrectPractice/participant.totalAnswerPractice*100))+"%";
 		$("#practice_results").show();
 		$("#test_1").show();
+		console.log(participant.practiceAnswers);
 	}
 }
 
