@@ -1,5 +1,9 @@
 
-var actionURL ="https://docs.google.com/spreadsheet/ccc?key=0Ah7KsKvpIoTodGU5cmlELTFEaGdHMVNBVUNmcEdhV1E#gid=0";
+var actionURL ="https://docs.google.com/spreadsheet/formResponse?formkey=1J_yitWO6IBparQvd1wgzZKpFULFjz_cl1D6d5aWqmvM&ampifq";
+//https://docs.google.com/forms/d/1J_yitWO6IBparQvd1wgzZKpFULFjz_cl1D6d5aWqmvM/formResponse
+
+//https://docs.google.com/forms/d/1J_yitWO6IBparQvd1wgzZKpFULFjz_cl1D6d5aWqmvM/formResponse
+
   function post_to_url(path, params, method) {
       method = method || "post"; // Set method to post by default, if not specified.
 
@@ -18,21 +22,28 @@ var actionURL ="https://docs.google.com/spreadsheet/ccc?key=0Ah7KsKvpIoTodGU5cml
       document.body.appendChild(form);
       //alert(params.toString());
       form.submit();
+      document.body.removeChild(form);
+
   }
 
   var submitForm = function(formurl){
-    var participant = localStorage.getObject('participant');
+    var participant = localStorage.getItem('participant');
+        participant = JSON.parse(participant);
+
 
     if(!participant){
       return;
     }
-    //participant = JSON.parse(participant);
+
+    //console.log(participant.age);
+    //  post_to_url(formurl,params,"post");
     var params = [];
     params["entry.0.single"] = participant.age;
     params["entry.1.single"] = participant.gender;
     params["entry.2.single"] = participant.nativeLanguage;
     params["entry.3.single"] = participant.num;
     
+    localStorage.setItem("participant", participant);
     post_to_url(formurl,params,"post");
   }
 
