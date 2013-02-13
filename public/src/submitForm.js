@@ -1,7 +1,23 @@
+/*
+ * View form 
+ * new: https://docs.google.com/forms/d/1J_yitWO6IBparQvd1wgzZKpFULFjz_cl1D6d5aWqmvM/viewform
+ * old: https://docs.google.com/spreadsheet/viewform?formkey=dHAzVW80RXhNVU1CNFo0TGZJNzJZTXc6MQ#gid=0
+ */
 
-var actionURL ="https://docs.google.com/spreadsheet/formResponse?formkey=1J_yitWO6IBparQvd1wgzZKpFULFjz_cl1D6d5aWqmvM&ampifq";
-//https://docs.google.com/forms/d/1J_yitWO6IBparQvd1wgzZKpFULFjz_cl1D6d5aWqmvM/formResponse
+/*
+ * Submit form
+ *  new actionURL = https://docs.google.com/forms/d/1J_yitWO6IBparQvd1wgzZKpFULFjz_cl1D6d5aWqmvM/formResponse
+ *  old actionURL = https://docs.google.com/spreadsheet/formResponse?formkey=dHAzVW80RXhNVU1CNFo0TGZJNzJZTXc6MQ&ampifq in code
+ *  old actionURL = https://docs.google.com/spreadsheet/formResponse?formkey=dHAzVW80RXhNVU1CNFo0TGZJNzJZTXc6MQ&ifq in form
+ */
 
+/*
+ * Thank you screen
+ * new  https://docs.google.com/forms/d/1J_yitWO6IBparQvd1wgzZKpFULFjz_cl1D6d5aWqmvM/formResponse
+ * old  https://docs.google.com/spreadsheet/formResponse?formkey=dHAzVW80RXhNVU1CNFo0TGZJNzJZTXc6MQ&ifq
+ */
+
+var actionURL ="https://docs.google.com/forms/d/1J_yitWO6IBparQvd1wgzZKpFULFjz_cl1D6d5aWqmvM/formResponse";
 //https://docs.google.com/forms/d/1J_yitWO6IBparQvd1wgzZKpFULFjz_cl1D6d5aWqmvM/formResponse
 
   function post_to_url(path, params, method) {
@@ -27,6 +43,9 @@ var actionURL ="https://docs.google.com/spreadsheet/formResponse?formkey=1J_yitW
   }
 
   var submitForm = function(formurl){
+    if (!formurl){
+      formurl = actionURL;
+    }
     var participant = localStorage.getItem('participant');
         participant = JSON.parse(participant);
 
@@ -37,11 +56,24 @@ var actionURL ="https://docs.google.com/spreadsheet/formResponse?formkey=1J_yitW
 
     //console.log(participant.age);
     //  post_to_url(formurl,params,"post");
+    
+    /* 
+     * I looked at the network tab and saw this as the post data, it is different than the old schema
+     * entry.1437479718=f&
+     * entry.813960129=2&
+     * entry.1323392911=testingformsubmitinformtofindparams&
+     * entry.1553991148=2&
+     * draftResponse=%5B%5D%0D%0A&
+     * pageHistory=0
+     * 
+     */
     var params = [];
-    params["entry.0.single"] = participant.age;
-    params["entry.1.single"] = participant.gender;
-    params["entry.2.single"] = participant.nativeLanguage;
-    params["entry.3.single"] = participant.num;
+    params["entry.813960129"] = participant.age;
+    params["entry.1437479718"] = participant.gender;
+    params["entry.1323392911"] = participant.nativeLanguage;
+    params["entry.1553991148"] = participant.num;
+    params["draftResponse"] = "%5B%5D%0D%0A";
+    params["pageHistory"] = "0";
     
     localStorage.setItem("participant", participant);
     post_to_url(formurl,params,"post");
