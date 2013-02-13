@@ -50,7 +50,7 @@ Storage.prototype.getObject = function(key) {
 
 var participant =  new Participant();
 
-var participants = localStorage.getObject('participants') || [];
+var participants = localStorage.getObject('participants')
 
 //var participants = [];
 

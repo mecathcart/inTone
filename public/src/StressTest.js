@@ -1,7 +1,7 @@
 //var participant.totalAnswerST = 0;
 //var participant.correctAnswerST = 0;
 //participant.totalAnswerST = 0;
-var participant = localStorage.getObject('participant') || {};
+var participant = localStorage.getObject('participant');
 console.log(participant.totalAnswerST);
 
 //var participant = localStorage.getItem('participant2');
