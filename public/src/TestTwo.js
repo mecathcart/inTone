@@ -1,15 +1,14 @@
 var participant = localStorage.getObject('participant');
 var participant = localStorage.getObject('participant');
-participant.correctAudiosT2 = [];
 participant.incorrectAudiosT2 = [];
-var correctAudiosT2 = participant.correctAudiosT2;
+//var correctAudiosT2 = participant.correctAudiosT2;
 var incorrectAudiosT2 = participant.incorrectAudiosT2;
 
 
 
 //console.log(participant);
 
-var k = 59;
+var k = 50;
 var T2correctAnswer = "";
 
 
@@ -51,7 +50,8 @@ var T2_clickContA = function(){
 
     var answer= intoneAudio.src;
     answer = answer.replace("file://localhost/Users/mdotedot/Desktop/inTone/public/audio_stimuli", "");
-    correctAudiosT2.push(answer);
+    participant.correctAudiosT2.push(answer);
+    console.log(participant.correctAudiosT2);
 
     if(test2Stimuli[k-1].category == "compliment"){
       participant.T2complimentCorrect++;
@@ -68,7 +68,7 @@ var T2_clickContA = function(){
 
     answer= intoneAudio.src;
     answer = answer.replace("file://localhost/Users/mdotedot/Desktop/inTone/public/audio_stimuli", "");
-    correctAudiosT2.push(answer);
+    participant.correctAudiosT2.push(answer);
 
     if(test2Stimuli[k-1].category == "compliment"){
       participant.T2complimentCorrect++;
@@ -101,7 +101,7 @@ var T2_clickContB = function(){
 
     var answer= intoneAudio.src;
     answer = answer.replace("file://localhost/Users/mdotedot/Desktop/inTone/public/audio_stimuli", "");
-    correctAudiosT2.push(answer);
+    participant.correctAudiosT2.push(answer);
 
     if(test2Stimuli[k-1].category == "compliment"){
       participant.T2complimentCorrect++;
@@ -118,7 +118,7 @@ var T2_clickContB = function(){
 
     answer= intoneAudio.src;
     answer = answer.replace("file://localhost/Users/mdotedot/Desktop/inTone/public/audio_stimuli", "");
-    correctAudiosT2.push(answer);
+    participant.correctAudiosT2.push(answer);
 
     if(test2Stimuli[k-1].category == "compliment"){
       participant.T2complimentCorrect++;
@@ -278,6 +278,7 @@ if(k < sampleArray.length){
       $("#test_1").show();
     }else{
       $(".end").show();
+        localStorage.setObject('participant',participant);
       //submitForm(window.actionURL);
     }
   }

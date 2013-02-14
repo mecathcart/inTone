@@ -76,8 +76,9 @@ var actionURL ="https://docs.google.com/forms/d/1J_yitWO6IBparQvd1wgzZKpFULFjz_c
     params["entry.1553991148"] = participant.num;
     params["entry.2014552474"] = participant.correctAnswerST
     params["entry.179386326"] =  participant.answersCorrectPractice;
-    params["entry.477017213"] = participant.T1answersCorrect
-    params["entry.1770553051"] = participant.T2answersCorrect
+    params["entry.477017213"] = participant.T1answersCorrect;
+    params["entry.1770553051"] = participant.T2answersCorrect;
+    params["entry.1249585780"] = participant.correctAudiosT2;
 
     params["draftResponse"] = "%5B%5D%0D%0A";
     params["pageHistory"] = "0";

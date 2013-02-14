@@ -35,6 +35,9 @@ function Participant(){
 	this.T2verbCorrect = 0;
 	this.T2fillerCorrect = 0;
  
+
+	this.correctAudiosT2 = [];
+
 }
 
 
