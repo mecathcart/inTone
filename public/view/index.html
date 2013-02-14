@@ -17,6 +17,7 @@
   </head>
 
   <body>
+    <!-- Banner-->
     <div class ="Heading">
 
       <!-- the left side of the fork effect -->
@@ -32,6 +33,8 @@
          <div class="r-triangle-bottom banner"></div>
     </div>
 
+
+    <!-- Form-->
     <div id="form">
       <form name ="myForm" method="get">
         <input type = "radio" name= "gender" value ="male"> Male</input>
@@ -43,22 +46,21 @@
     </div>
 
   
+    <!-- Butoons show up after form is submitted-->
     <div id = "beginExperiment">
       <input class = "large green button" type="button" value="Sound Check" onClick="soundCheck()"/>
       <a href= "./../view/stressTest.html"><input class = "large green button" type="button" value="Stress Test" /></a>
-                  <input  class = "large green button" type="button" value="Post" onClick="submitForm()"/>
 
-  <!--    <a href= "./../view/practice.html"><input class = "large green button" type="button" value="Practice" /></a>
+  <!--<a href= "./../view/practice.html"><input class = "large green button" type="button" value="Practice" /></a>
       <a href= "./../view/testOne.html"><input class = "large green button" type="button" value="Test One" /></a>
       <a href= "./../view/testTwo.html"><input class = "large green button" type="button" value="Test Two" /></a> -->
     </div>
 
   <div id="audio_div" class="">
         <audio id="sound_check" src="./../audio_stimuli/Test2/F27-accident.wav"> </audio>
+  </div>
 
-    </div>
       <script type="text/javascript" charset="utf-8" src="./../src/submitForm.js"></script>
-
       <script type="text/javascript" charset="utf-8" src="./../src/Participant.js"></script>
       <script type="text/javascript" charset="utf-8" src="./../src/StressTest.js"></script>
 

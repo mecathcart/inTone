@@ -9,13 +9,23 @@ var incorrectAudiosT2 = participant.incorrectAudiosT2;
 
 //console.log(participant);
 
-var k = 0;
+var k = 59;
 var T2correctAnswer = "";
 
 
 var T2complimentCount = 0;
 var T2stressCount = 0;
 var T2verbCount = 0;
+
+
+/*creates audio div*/
+var intoneAudio = document.createElement("audio");
+intoneAudio.id = "intone_stimuli";
+audio_div.appendChild(intoneAudio);
+
+var playAudioFile = function(divid) {
+    document.getElementById(divid).play();
+};
 
 var testTwo = function(){ 
   $("#T2_next").hide();
@@ -82,8 +92,6 @@ var T2_clickContA = function(){
   }else{
     showCrossT2();
   }
-
-
 }
 
 var T2_clickContB = function(){
@@ -91,7 +99,7 @@ var T2_clickContB = function(){
   participant.T2totalAnswer++;  
   if(answerArrayT2[k-1] == "B" && T2correctAnswer == test2Stimuli[k-1].continuationA){
 
-    answer= intoneAudio.src;
+    var answer= intoneAudio.src;
     answer = answer.replace("file://localhost/Users/mdotedot/Desktop/inTone/public/audio_stimuli", "");
     correctAudiosT2.push(answer);
 

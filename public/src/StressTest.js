@@ -260,7 +260,6 @@ var insertImage = function(sample){
 		stressImg.src = sample;
 		//stress_test_image.appendChild(stressImg);
 		$("#stress_test_image").append(stressImg);
-
 		$("#stress_test_image").show();	
 }
 

@@ -34,8 +34,6 @@ function Participant(){
 	this.T2stressCorrect = 0;
 	this.T2verbCorrect = 0;
 	this.T2fillerCorrect = 0;
-
-	this.banana = 0;
  
 }
 
@@ -50,7 +48,7 @@ Storage.prototype.getObject = function(key) {
 
 var participant =  new Participant();
 
-var participants = localStorage.getObject('participants')
+var participants = localStorage.getObject('participants') || [];
 
 //var participants = [];
 

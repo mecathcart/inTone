@@ -6,8 +6,6 @@ var incorrectAudiosPractice = participant.incorrectAudiosPractice;
 
 //console.log( participant.incorrectAudiosPractice);
 
-
-
 /*initiate my variables*/
 var i = 0;
 var correctAnswer = "";
