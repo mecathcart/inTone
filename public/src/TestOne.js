@@ -146,8 +146,18 @@ var showCross = function(){
 	$("#T1_continuationB").hide();
 	$("#T1_cross").show();
 	window.setTimeout(nextT1Stimuli,500, test1Stimuli);
-
 };
+
+var versionT1 = function(){
+	if(participant.num%4==0 || participant.num%4 == 1){
+		participant.T1Version = "un";
+	}else{
+		participant.T1Version = "deux";
+	}
+}
+
+versionT1();
+
 
 var nextT1Stimuli = function(sampleArray){
 	
@@ -156,7 +166,6 @@ if(j < sampleArray.length){
 
 	var sample = sampleArray[j];	
 	if(participant.num%4==0 || participant.num%4 == 1){
-		console.log("Je suis version un");
 		/* Plays audio stimuli*/	
 		/*Filler*/
 		if (sample.hasOwnProperty('audio') ) {
@@ -179,8 +188,6 @@ if(j < sampleArray.length){
 		window.setTimeout(insertContinuationsT1,3000, continuationArray, j);
 
 	}else{
-		console.log("Je suis version deux");
-
 		/* Plays audio stimuli*/	
 		/*Filler*/
 		if (sample.hasOwnProperty('audio') ) {

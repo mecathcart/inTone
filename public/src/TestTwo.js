@@ -151,6 +151,15 @@ var showCrossT2 = function(){
 
 }
 
+var versionT2 = function(){
+  if(participant.num%4==1 || participant.num%4==2){
+    participant.T2Version = "un";
+  }else{
+    participant.T2Version = "deux";
+  }
+}
+
+versionT2();
 
 var nextT2Stimuli = function(sampleArray){
  
@@ -160,7 +169,6 @@ if(k < sampleArray.length){
 
   var sample = sampleArray[k];  
   if(participant.num%4==1 || participant.num%4==2){
-    console.log("Je suis version un");
 
     /* Plays audio stimuli*/  
     /*Filler*/
@@ -212,8 +220,6 @@ if(k < sampleArray.length){
     window.setTimeout(insertContinuationsT2,3000, continuationArray, k);
 
   }else{
-        console.log("Je suis version deux");
-
     /* Plays audio stimuli*/  
   /*Filler*/
   if (sample.hasOwnProperty('audio') ) {

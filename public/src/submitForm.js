@@ -69,16 +69,42 @@ var actionURL ="https://docs.google.com/forms/d/1J_yitWO6IBparQvd1wgzZKpFULFjz_c
      */
 
 
+
+
+
     var params = [];
-    params["entry.813960129"] = participant.age;
-    params["entry.1437479718"] = participant.gender;
+    params["entry.1437479718"] = participant.age;
+    params["entry.813960129"] = participant.gender;
     params["entry.1323392911"] = participant.nativeLanguage;
     params["entry.1553991148"] = participant.num;
-    params["entry.2014552474"] = participant.correctAnswerST
-    params["entry.179386326"] =  participant.answersCorrectPractice;
-    params["entry.477017213"] = participant.T1answersCorrect;
-    params["entry.1770553051"] = participant.T2answersCorrect;
+    params["entry.390775856"] = participant.T1Version;
+    params["entry.1699502844"] = participant.T2Version;
+    params["entry.2014552474"] = paticipant.correctAnswerST;
+    params["entry.1770553051"] = participant.answersCorrectPractice;
+    params["entry.179386326"] = participant.T1answersCorrect;
+    params["entry.477017213"] = participant.T2answersCorrect;
+    params["entry.1770553051"] = participant.correctAudiosT1;
+    params["entry.215074257"] = participant.incorrectAudiosT1;
     params["entry.1249585780"] = participant.correctAudiosT2;
+    params["entry.2873922"] = participant.incorrectAudiosT2;
+
+    params["entry.1252292097"] = participant.T1complimentCorrect;
+    params["entry.1836167318"] = participant.T1stressCorrect;
+    params["entry.872883465"] = participant.T1verbCorrect;
+    params["entry.1628336029"] = participant.T1fillerCorrect;
+    params["entry.310029863"] = participant.T2complimentCorrect;
+    params["entry.1623538295"] = participant.T2stressCorrect;
+    params["entry.2021608344"] = participant.T2verbCorrect;
+    params["entry.1770363601"] = participant.T2fillerCorrect;
+
+  //  params[""] = participant. ;
+
+
+
+
+
+
+
 
     params["draftResponse"] = "%5B%5D%0D%0A";
     params["pageHistory"] = "0";

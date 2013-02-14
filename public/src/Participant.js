@@ -42,10 +42,11 @@ function Participant(){
 	this.incorrectAudiosT2 = [];
 	this.correctAudiosT1 = [];
 	this.incorrectAudiosT1 = [];
-	
 
+	/*Test Version*/
+	this.T1Version = "";
+	this.T2Version = "";	
 }
-
 
 Storage.prototype.setObject = function(key, value) {
     this.setItem(key, JSON.stringify(value));
@@ -56,7 +57,6 @@ Storage.prototype.getObject = function(key) {
 }
 
 var participant =  new Participant();
-
 var participants = localStorage.getObject('participants') || [];
 
 //var participants = [];
