@@ -13,6 +13,34 @@ function Filler(audio,continuationA,continuationB){
 	this.continuationB = continuationB;
 }
 
+
+/*Constructor*/
+function StressStimuli(audio,image,numSyllables,stressSyllable){
+	this.audio = audio;
+	this.image = image;
+	this.numSyllables = numSyllables;
+	this.stressSyllable = stressSyllable;
+
+}
+
+/*Stimuli*/
+var believe = new StressStimuli( "./../audio_stimuli/stressTest/believe_full.wav","./../stress_images/believe.gif",2,2);
+var biology = new StressStimuli( "./../audio_stimuli/stressTest/biology_full.wav","./../stress_images/biology.gif",4,2);
+var blanket = new StressStimuli( "./../audio_stimuli/stressTest/blanket_full.wav","./../stress_images/blanket.gif",2,1);
+var critical = new StressStimuli( "./../audio_stimuli/stressTest/critical_full.wav","./../stress_images/critical.gif",3,1);
+var energy = new StressStimuli( "./../audio_stimuli/stressTest/energy_full.wav","./../stress_images/energy.gif",3,1);
+var evaporate = new StressStimuli( "./../audio_stimuli/stressTest/evaporate_full.wav","./../stress_images/evaporate.gif",4,2);
+var paper = new StressStimuli( "./../audio_stimuli/stressTest/paper_full.wav","./../stress_images/paper.gif",2,1);
+var politician = new StressStimuli( "./../audio_stimuli/stressTest/politician_full.wav","./../stress_images/politician.gif",4,3);
+var procedure = new StressStimuli( "./../audio_stimuli/stressTest/procedure_full.wav","./../stress_images/procedure.gif",3,2);
+var reputation = new StressStimuli( "./../audio_stimuli/stressTest/reputation_full.wav","./../stress_images/reputation.gif",4,3);
+var today = new StressStimuli( "./../audio_stimuli/stressTest/today_full.wav","./../stress_images/today.gif",2,2);
+var tomato = new StressStimuli( "./../audio_stimuli/stressTest/tomato_full.wav","./../stress_images/tomato.gif",3,2);
+
+/*array of stimuli*/
+var stressStimuli = [believe, biology, blanket, critical, energy, evaporate, paper, politician, procedure, reputation, today, tomato];
+
+
 /*Stimuli*/
 /*Test 1 Compliment*/
 var ambitious = new IntoneStimuli("compliment", 

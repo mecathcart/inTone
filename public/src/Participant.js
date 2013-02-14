@@ -35,8 +35,14 @@ function Participant(){
 	this.T2verbCorrect = 0;
 	this.T2fillerCorrect = 0;
  
-
+ 	/*Array of correct answers*/
+	this.correctAudiosPractice = [];
+	this.incorrectAudiosPractice = [];
 	this.correctAudiosT2 = [];
+	this.incorrectAudiosT2 = [];
+	this.correctAudiosT1 = [];
+	this.incorrectAudiosT1 = [];
+	
 
 }
 
@@ -64,8 +70,8 @@ var createParticipant = function() {
  	localStorage.setObject('participant',participant);
  	localStorage.setObject('participants', participants);
  	$("#beginExperiment").show();
- 	console.log(localStorage.getObject('participants'));
- 	console.log(localStorage.getObject('participant'));
+ //	console.log(localStorage.getObject('participants'));
+ //	console.log(localStorage.getObject('participant'));
 
 };
 

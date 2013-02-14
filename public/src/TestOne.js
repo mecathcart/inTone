@@ -1,6 +1,5 @@
 var participant = localStorage.getObject('participant');
-participant.correctAudiosT1 = [];
-participant.incorrectAudiosT1 = [];
+
 var correctAudiosT1 = participant.correctAudiosT1;
 var incorrectAudiosT1 = participant.incorrectAudiosT1;
 
@@ -47,7 +46,7 @@ var T1_clickContA = function(){
 
 		var answer= intoneAudio.src;
 		answer = answer.replace("file://localhost/Users/mdotedot/Desktop/inTone/public/audio_stimuli", "");
-		correctAudiosT1.push(answer);
+		participant.correctAudiosT1.push(answer);
 		//console.log(correctAudiosT1);
 
 		if(test1Stimuli[j-1].category == "compliment"){
@@ -65,7 +64,7 @@ var T1_clickContA = function(){
 
 		answer= intoneAudio.src;
 		answer = answer.replace("file://localhost/Users/mdotedot/Desktop/inTone/public/audio_stimuli", "");
-		correctAudiosT1.push(answer);
+		participant.correctAudiosT1.push(answer);
 
 		if(test1Stimuli[j-1].category == "compliment"){
 			participant.T1complimentCorrect++;
@@ -81,7 +80,7 @@ var T1_clickContA = function(){
 
 		answer= intoneAudio.src;
 		answer = answer.replace("file://localhost/Users/mdotedot/Desktop/inTone/public/audio_stimuli", "");
-		incorrectAudiosT1.push(answer);
+		participant.incorrectAudiosT1.push(answer);
 	}
 
 	if(participant.T1totalAnswer%6==0){
@@ -89,8 +88,6 @@ var T1_clickContA = function(){
 	}else{
 		showCross();
 	}
-	console.log(correctAudiosT1);
-	console.log(incorrectAudiosT1);	
 }
 
 var T1_clickContB = function(){
@@ -100,7 +97,7 @@ var T1_clickContB = function(){
 
 		var answer= intoneAudio.src;
 		answer = answer.replace("file://localhost/Users/mdotedot/Desktop/inTone/public/audio_stimuli", "");
-		correctAudiosT1.push(answer);
+		participant.correctAudiosT1.push(answer);
 
 		if(test1Stimuli[j-1].category == "compliment"){
 			participant.T1complimentCorrect++;
@@ -117,7 +114,7 @@ var T1_clickContB = function(){
 
 		answer= intoneAudio.src;
 		answer = answer.replace("file://localhost/Users/mdotedot/Desktop/inTone/public/audio_stimuli", "");
-		correctAudiosT1.push(answer);
+		participant.correctAudiosT1.push(answer);
 
 		if(test1Stimuli[j-1].category == "compliment"){
 			participant.T1complimentCorrect++;
@@ -132,7 +129,7 @@ var T1_clickContB = function(){
 	}else{
 		answer= intoneAudio.src;
 		answer = answer.replace("file://localhost/Users/mdotedot/Desktop/inTone/public/audio_stimuli", "");
-		incorrectAudiosT1.push(answer);
+		participant.incorrectAudiosT1.push(answer);
 	}
 
 	if(participant.T1totalAnswer%6==0){
@@ -140,8 +137,6 @@ var T1_clickContB = function(){
 	}else{
 		showCross();
 	}
-	console.log(correctAudiosT1);
-	console.log(incorrectAudiosT1);	
 }
 
 var showCross = function(){
@@ -187,7 +182,7 @@ if(j < sampleArray.length){
 		console.log("Je suis version deux");
 
 		/* Plays audio stimuli*/	
-	/*Filler*/
+		/*Filler*/
 		if (sample.hasOwnProperty('audio') ) {
 			intoneAudio.src = sample.audio;
 			playAudioFile("intone_stimuli");
@@ -214,13 +209,11 @@ if(j < sampleArray.length){
 		$("#T1_continuationA").hide();
 		$("#T1_continuationB").hide();
 		$("#T1_cross").hide();
-		//document.getElementById("T1_results").innerHTML ="Your score is " + participant.T1answersCorrect +"/" +participant.T1totalAnswer;
+		localStorage.setObject('participant',participant);
 		if(participant.num%2 == 0){
 			$("#test_2").show();
 		}else{
 			$(".end").show();
-
-			// submitForm(actionURL);
 		}
 	}
 }

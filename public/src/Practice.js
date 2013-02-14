@@ -1,23 +1,20 @@
-var participant = localStorage.getObject('participant');
-participant.correctAudiosPractice = [];
-participant.incorrectAudiosPractice = [];
-var correctAudiosPractice = participant.correctAudiosPractice;
-var incorrectAudiosPractice = participant.incorrectAudiosPractice;
-
-//console.log( participant.incorrectAudiosPractice);
-
 /*initiate my variables*/
+var participant = localStorage.getObject('participant');
 var i = 0;
 var correctAnswer = "";
+
+var complimentCount = 0;
+var stressCount = 0;
+var verbCount = 0;
 
 /*creates audio div*/
 var intoneAudio = document.createElement("audio");
 intoneAudio.id = "intone_stimuli";
 audio_div.appendChild(intoneAudio);
 
-var complimentCount = 0;
-var stressCount = 0;
-var verbCount = 0;
+var playAudioFile = function(divid) {
+    document.getElementById(divid).play();
+};
 
 /*The function that is called when the practice button is clicked*/
 var practice = function(){
@@ -44,8 +41,9 @@ var clickContA = function(){
 		/*Add name of audio that they got correct to the array of correct audios*/
 		var answer= intoneAudio.src;
 		answer = answer.replace("file://localhost/Users/mdotedot/Desktop/inTone/public/audio_stimuli", "");
-		correctAudiosPractice.push(answer);
+		participant.correctAudiosPractice.push(answer);
 
+		/*Increment category correct*/
 		participant.answersCorrectPractice++;
 		if(practiceStimuli[i-1].category == "compliment"){
 			participant.complimentCorrectPractice++;
@@ -61,7 +59,7 @@ var clickContA = function(){
 
 		answer= intoneAudio.src;
 		answer = answer.replace("file://localhost/Users/mdotedot/Desktop/inTone/public/audio_stimuli", "");
-		correctAudiosPractice.push(answer);
+		participant.correctAudiosPractice.push(answer);
 
 		participant.answersCorrectPractice++;
 		if(practiceStimuli[i-1].category == "compliment"){
@@ -76,14 +74,10 @@ var clickContA = function(){
 	}else{
 		answer= intoneAudio.src;
 		answer = answer.replace("file://localhost/Users/mdotedot/Desktop/inTone/public/audio_stimuli", "");
-		incorrectAudiosPractice.push(answer);
+		participant.incorrectAudiosPractice.push(answer);
 	}
 
-
 	feedback();
-	console.log(correctAudiosPractice);
-	console.log(incorrectAudiosPractice);
-
 }
 
 var clickContB = function(){
@@ -92,7 +86,7 @@ var clickContB = function(){
 
 		answer= intoneAudio.src;
 		answer = answer.replace("file://localhost/Users/mdotedot/Desktop/inTone/public/audio_stimuli", "");
-		correctAudiosPractice.push(answer);
+		participant.correctAudiosPractice.push(answer);
 
 		participant.answersCorrectPractice++;
 		if(practiceStimuli[i-1].category == "compliment"){
@@ -108,7 +102,7 @@ var clickContB = function(){
 
 		answer= intoneAudio.src;
 		answer = answer.replace("file://localhost/Users/mdotedot/Desktop/inTone/public/audio_stimuli", "");
-		correctAudiosPractice.push(answer);
+		participant.correctAudiosPractice.push(answer);
 
 		participant.answersCorrectPractice++;
 		if(practiceStimuli[i-1].category == "compliment"){
@@ -120,12 +114,11 @@ var clickContB = function(){
 		}else if(practiceStimuli[i-1].hasOwnProperty('audio')){
 			participant.fillerCorrectPractice++;
 		}
-	}
-
+	}else{
 		answer= intoneAudio.src;
 		answer = answer.replace("file://localhost/Users/mdotedot/Desktop/inTone/public/audio_stimuli", "");
-		incorrectAudiosPractice.push(answer);
-	//nextStimuli(practiceStimuli);
+		participant.incorrectAudiosPractice.push(answer);
+	}
 	feedback();
 }
 
@@ -138,7 +131,6 @@ var feedback = function(){
 		$("#next").show();
 }
 
-
 var nextStimuli =  function(sampleArray){
 	$("#practice_cross").show();
 	$("#continuationA").hide();
@@ -150,7 +142,6 @@ var nextStimuli =  function(sampleArray){
 		var sample = sampleArray[i];	
 
 		/* Plays audio stimuli*/	
-
 		/*Filler*/
 		if (sample.hasOwnProperty('audio') ) {
 			intoneAudio.src = sample.audio;
@@ -179,13 +170,10 @@ var nextStimuli =  function(sampleArray){
 		document.getElementById("practice_results").innerHTML ="Your score is " + eval(Math.round(participant.answersCorrectPractice/participant.totalAnswerPractice*100))+"%";
 		$("#practice_results").show();
 		$("#test_1").show();
-		console.log(participant.practiceAnswers);
+		localStorage.setObject('participant',participant);
+
 	}
 }
-
-var playAudioFile = function(divid) {
-    document.getElementById(divid).play();
-};
 
 /*Insert continuations*/
 var insertContinuations = function(array, counter){

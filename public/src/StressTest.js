@@ -1,10 +1,6 @@
-//var participant.totalAnswerST = 0;
-//var participant.correctAnswerST = 0;
-//participant.totalAnswerST = 0;
-var participant = localStorage.getObject('participant');
-console.log(participant.totalAnswerST);
 
-//var participant = localStorage.getItem('participant2');
+var participant = localStorage.getObject('participant');
+var i = 0;
 
 /* Play sound check*/
 var soundCheck = function(){
@@ -14,33 +10,6 @@ var soundCheck = function(){
 var playAudioFile = function(divid) {
     document.getElementById(divid).play();
 };
-
-/*Constructor*/
-function StressStimuli(audio,image,numSyllables,stressSyllable){
-	this.audio = audio;
-	this.image = image;
-	this.numSyllables = numSyllables;
-	this.stressSyllable = stressSyllable;
-
-}
-
-/*Stimuli*/
-var believe = new StressStimuli( "./../audio_stimuli/stressTest/believe_full.wav","./../stress_images/believe.gif",2,2);
-var biology = new StressStimuli( "./../audio_stimuli/stressTest/biology_full.wav","./../stress_images/biology.gif",4,2);
-var blanket = new StressStimuli( "./../audio_stimuli/stressTest/blanket_full.wav","./../stress_images/blanket.gif",2,1);
-var critical = new StressStimuli( "./../audio_stimuli/stressTest/critical_full.wav","./../stress_images/critical.gif",3,1);
-var energy = new StressStimuli( "./../audio_stimuli/stressTest/energy_full.wav","./../stress_images/energy.gif",3,1);
-var evaporate = new StressStimuli( "./../audio_stimuli/stressTest/evaporate_full.wav","./../stress_images/evaporate.gif",4,2);
-var paper = new StressStimuli( "./../audio_stimuli/stressTest/paper_full.wav","./../stress_images/paper.gif",2,1);
-var politician = new StressStimuli( "./../audio_stimuli/stressTest/politician_full.wav","./../stress_images/politician.gif",4,3);
-var procedure = new StressStimuli( "./../audio_stimuli/stressTest/procedure_full.wav","./../stress_images/procedure.gif",3,2);
-var reputation = new StressStimuli( "./../audio_stimuli/stressTest/reputation_full.wav","./../stress_images/reputation.gif",4,3);
-var today = new StressStimuli( "./../audio_stimuli/stressTest/today_full.wav","./../stress_images/today.gif",2,2);
-var tomato = new StressStimuli( "./../audio_stimuli/stressTest/tomato_full.wav","./../stress_images/tomato.gif",3,2);
-
-/*array of stimuli*/
-var stressStimuli = [believe, biology, blanket, critical, energy, evaporate, paper, politician, procedure, reputation, today, tomato];
-var i = 0;
 
 /* Inserts Image placeholder*/
 var stressImg = document.createElement("img");
@@ -223,7 +192,6 @@ var stressTest = function(){
 	$("h2").hide();
 	$(".banner").hide();
 
-
 	if(i < stressStimuli.length){	
 
 		/* Plays audio stimuli*/
@@ -250,6 +218,7 @@ var stressTest = function(){
 		document.getElementById("results").innerHTML ="Your score is " + participant.correctAnswerST +"/" +participant.totalAnswerST;
 		//console.log(createParticipant().participant.correctAnswerST);
 		$("#practice").show();
+		localStorage.setObject('participant',participant);
 	}
 };
 
@@ -258,7 +227,6 @@ var insertImage = function(sample){
 
 		/* Inserts Image*/
 		stressImg.src = sample;
-		//stress_test_image.appendChild(stressImg);
 		$("#stress_test_image").append(stressImg);
 		$("#stress_test_image").show();	
 }

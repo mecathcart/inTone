@@ -1,8 +1,6 @@
 var participant = localStorage.getObject('participant');
-var participant = localStorage.getObject('participant');
-participant.incorrectAudiosT2 = [];
 //var correctAudiosT2 = participant.correctAudiosT2;
-var incorrectAudiosT2 = participant.incorrectAudiosT2;
+//var incorrectAudiosT2 = participant.incorrectAudiosT2;
 
 
 
@@ -84,7 +82,7 @@ var T2_clickContA = function(){
 
     answer= intoneAudio.src;
     answer = answer.replace("file://localhost/Users/mdotedot/Desktop/inTone/public/audio_stimuli", "");
-    incorrectAudiosT2.push(answer);
+    participant.incorrectAudiosT2.push(answer);
   }
 
   if(participant.T2totalAnswer%6==0){
@@ -133,7 +131,7 @@ var T2_clickContB = function(){
   }else{
     answer= intoneAudio.src;
     answer = answer.replace("file://localhost/Users/mdotedot/Desktop/inTone/public/audio_stimuli", "");
-    incorrectAudiosT2.push(answer);
+    participant.incorrectAudiosT2.push(answer);
   }
 
   if(participant.T2totalAnswer%6==0){
@@ -273,13 +271,11 @@ if(k < sampleArray.length){
     $("#T2_continuationA").hide();
     $("#T2_continuationB").hide();
     $("#T2_cross").hide();
-   // document.getElementById("T2_results").innerHTML ="Your score is " + participant.T2answersCorrect +"/" +participant.T2totalAnswer;
+    localStorage.setObject('participant',participant);
     if(participant.num%2 == 1){
       $("#test_1").show();
     }else{
       $(".end").show();
-        localStorage.setObject('participant',participant);
-      //submitForm(window.actionURL);
     }
   }
 }
